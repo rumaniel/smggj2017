@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 11426786}
   - component: {fileID: 11456224}
   - component: {fileID: 8272376}
+  - component: {fileID: 111674679868505540}
   m_Layer: 0
   m_Name: Player
   m_TagString: PlayerShip
@@ -3862,7 +3863,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 249df850c3c631243815e9531c374d9a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 85e77772a29df4182bdd7fe12b4e477f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4573,6 +4574,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!111 &111674679868505540
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133288}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 60a463233071a4c9791336b445821e99, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 60a463233071a4c9791336b445821e99, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &114249375692941816
 MonoBehaviour:
   m_ObjectHideFlags: 1

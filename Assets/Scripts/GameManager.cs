@@ -16,8 +16,9 @@ public class GameManager : MonoBehaviour {
 	public enum GameManagerState
 	{
 		Opening,
-		Gameplay,
+		InGame,
 		GameOver,
+		InterMission
 	}
 
 	GameManagerState GMState;
@@ -46,16 +47,16 @@ public class GameManager : MonoBehaviour {
 			// Show the 'Play' button.
 			playButton.SetActive(true);
 				break;
-		case GameManagerState.Gameplay:
+		case GameManagerState.InGame:
 			// Hide the cursor.
 			Cursor.visible = false;
 			// Hide the game titles.
 			// GameTitle.SetActive(false);
-			// Hide the "Play" button during gameplay.
+			// Hide the "Play" button during InGame.
 			playButton.SetActive(false);
 			// Show the main HUD text.
 			hud.SetActive(true);
-			// Set the player ship to be visible during gameplay.
+			// Set the player ship to be visible during InGame.
 			playerShip.GetComponent<PlayerControl>().Init();
 			// Start the enemy spawner.
 			enemySpawner.GetComponent<EnemySpawner>().ScheduleEnemySpawner();
@@ -76,7 +77,7 @@ public class GameManager : MonoBehaviour {
 			// Display the game over text.
 			GameOver.SetActive (true);
 			// Change the game state to 'Opening' after 5 seconds.
-			Invoke("RestartGamePlay", 5f);
+			Invoke("RestartInGame", 5f);
 			break;
 		}
 	}
@@ -87,15 +88,15 @@ public class GameManager : MonoBehaviour {
 		UpdateGameManagerState ();
 	}
 	// Call this function when the "Play" button is pressed.
-	public void StartGamePlay()
+	public void StartInGame()
 	{
-		GMState = GameManagerState.Gameplay;
+		GMState = GameManagerState.InGame;
 		UpdateGameManagerState ();
 	}
 	// This will reload the main scene.
-	public void RestartGamePlay()
+	public void RestartInGame()
 	{
 		// Reset the scene.
-		SceneManager.LoadScene("Demo");
+		SceneManager.LoadScene("Game");
 	}
 }

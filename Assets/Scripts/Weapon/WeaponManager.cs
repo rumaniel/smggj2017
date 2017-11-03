@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class WeaponManager : MonoSingleton<WeaponManager> 
 {
-	
-	public IWeapon GetWeapon(Defines.WeaponType weaponType)
+	public MonoObjectPool bulletList;
+
+	public IWeapon GetWeapon(Defines.WeaponType weaponType, bool isPlayer = false)
 	{
 		// todo
 		return null;

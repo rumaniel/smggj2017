@@ -5,7 +5,8 @@ using UnityEngine;
 public class DataManager : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		Time.timeScale = .8f;
 	}
 	

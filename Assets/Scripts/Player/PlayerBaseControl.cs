@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class PlayerBaseControl : MonoBehaviour 
 {
-	protected IWeapon currentWeapon;
+	protected Weapon currentWeapon;
 
 	public List<Transform> firePointList;
     public GameObject explosionObject;

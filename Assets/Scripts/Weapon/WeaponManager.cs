@@ -6,12 +6,16 @@ public class WeaponManager : MonoSingleton<WeaponManager>
 {
 	public MonoObjectPool bulletList;
 
-	public IWeapon GetWeapon(Defines.WeaponType weaponType, bool isPlayer = false)
+	public Weapon GetWeapon(Defines.WeaponType weaponType, bool isPlayer = false)
 	{
+		switch (weaponType)
+		{
+			case Defines.WeaponType.Normal:
+				bulletList[0]
+		}
 		// todo
 		return null;
 	}
-
 
 
 }

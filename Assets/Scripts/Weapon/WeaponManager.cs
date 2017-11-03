@@ -10,8 +10,8 @@ public class WeaponManager : MonoSingleton<WeaponManager>
 	{
 		switch (weaponType)
 		{
-			case Defines.WeaponType.Normal:
-				bulletList[0]
+			// case Defines.WeaponType.Normal:
+			// 	bulletList[0]
 		}
 		// todo
 		return null;

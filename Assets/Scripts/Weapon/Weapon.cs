@@ -19,7 +19,7 @@ public class Weapon
 
     public float GetFireRate()
     {
-
+        return 0f;
     }
 
     public void Fire()

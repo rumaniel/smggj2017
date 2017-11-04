@@ -5,6 +5,18 @@ using System.Collections.Generic;
 using DG.Tweening;
 public class PlayerBaseControl : MonoBehaviour 
 {
+	private UnitData _unitData;
+	public UnitData unitData
+	{
+		get
+		{
+			if (_unitData == null)
+			{
+				_unitData = GetComponent<UnitData>();
+			}
+			return _unitData;
+		}
+	}
 	public ShipInfo shipInfo;
 	protected Weapon currentWeapon;
 
@@ -24,6 +36,7 @@ public class PlayerBaseControl : MonoBehaviour
 	protected void Awake()
 	{
 		gameManger = GameObject.Find("GameManager").GetComponent<GameManager>();
+		
 		DOTween.Init(false, true, LogBehaviour.ErrorsOnly);
 	}
 
@@ -45,7 +58,15 @@ public class PlayerBaseControl : MonoBehaviour
 
 	protected virtual void OnTriggerEnter2D(Collider2D col)
 	{
-		// Debug.Log(col.transform.GetComponent<BulletBase>().weaponInfo);
+		if ((col.tag == "PlayerBullet"))
+		{
+			BulletBase bullet = col.transform.GetComponent<BulletBase>();
+			if (bullet != null)
+			{
+				unitData.AddHealth(-bullet.weaponInfo.damage);
+				Debug.Log(unitData.health);
+			}
+		}
 	}
 
 }

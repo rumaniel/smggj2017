@@ -26,6 +26,7 @@ public class UnitControl : PlayerBaseControl
 		this.pattern = pattern;
 		this.shipInfo = ship;
 		sprite.sprite = shipInfo.sprite;
+		unitData.SetHealth(this.shipInfo.health);
 	}
 
 	public override void Init()
@@ -66,6 +67,11 @@ public class UnitControl : PlayerBaseControl
 				{
 					transform.DOMove(pattern.customAppearList[i], 1f);
 					yield return new WaitForSeconds(1f);
+					// while (!Mathf.Approximately(pattern.customAppearList[i].x, transform.position.x) && !Mathf.Approximately(pattern.customAppearList[i].y, transform.position.y))
+					// {
+					// 	MoveTo(pattern.customAppearList[i]);
+					// 	yield return null;
+					// }
 				}
 			break;
 		}
@@ -135,6 +141,17 @@ public class UnitControl : PlayerBaseControl
 
 		GetComponent<MonoPooledObject>().ReturnToPool();
 		yield return null;
+	}
+
+	// todo
+	public void MoveTo(Vector2 toPosition)
+	{
+		float deltax = toPosition.x - transform.position.x > 0 ? 1 : -1;
+		float deltay = toPosition.y - transform.position.y > 0 ? -1 : 1;
+
+		transform.position = new Vector3(transform.position.x + deltax * shipInfo.moveSpeed * Time.deltaTime, 
+										 transform.position.y + deltay * shipInfo.moveSpeed * Time.deltaTime, 
+										 transform.position.z);
 	}
 
 }

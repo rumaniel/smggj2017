@@ -17,3 +17,13 @@ MonoBehaviour:
   weaponInfo: {fileID: 11400000, guid: 0baf5232ff6f849839866bb15f5ff18c, type: 2}
   bulletIndex: 1
   health: 100
+  portraitList:
+  - {fileID: 21300000, guid: 7258aa904bb205a44bfb8fba48573f4b, type: 3}
+  - {fileID: 21300000, guid: 9ef3ef11875424f4ca826099152eb474, type: 3}
+  follwerType: 1
+  follwerBuf: 0.1
+  Name: "\uBC14\uD558\uB8E8\uC2A4\uD1A0\uC988"
+  quoteList:
+  - "\uD06C\uB77C\uB794"
+  - "\uD06C\uB974\uB974\uB974"
+  - "\uAFB8\uC5C9"

@@ -12,6 +12,11 @@ public class StageManager : MonoSingleton<StageManager>
         stageQueue = stageInfo.sequenceList.ConvertAll(item => new StageSequencer(item));
     }
 
+    public void ClearStage()
+    {
+        stageQueue.Clear();
+    }
+
     void Update()
     {
         if (GameManager.Instance.isPause) return;

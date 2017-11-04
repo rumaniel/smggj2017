@@ -2,9 +2,12 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class PlayerControl : PlayerBaseControl 
 {
+    public GameObject gameoverObject;
+
 	public List<FollowerControl> followerList;
 	float timeToFire = 0f;
 
@@ -40,19 +43,6 @@ public class PlayerControl : PlayerBaseControl
 		}
 	}
 
-	public override void FireWeapon()
-	{
-		base.FireWeapon();
-        for (int i = 0 ; i < followerList.Count; ++i)
-		{
-			if (followerList[i].gameObject.activeInHierarchy)
-			{
-				followerList[i].FireWeapon();
-			}
-		}
-	}
-	
-
 	void MovePlayer()
 	{
 		float horizontalRatio = Input.GetAxis("Horizontal") * shipInfo.moveSpeed * Time.deltaTime;
@@ -69,7 +59,29 @@ public class PlayerControl : PlayerBaseControl
 			if (bullet != null)
 			{
 				PlayerData.Instance.AddHealth(-bullet.weaponInfo.damage);
-			}
-		}
-	}
+                if (unitData.IsDie())
+                {
+                    StartCoroutine("Die");
+                }
+            }
+        }
+    }
+
+    IEnumerator Die()
+    {
+        explosionObject.SetActive(true);
+        yield return new WaitForSeconds(0.3f);
+        explosionObject.SetActive(false);
+        this.gameObject.SetActive(false);
+        gameoverObject.SetActive(true);
+       // yield return new WaitForSeconds(3f);
+
+        //GetComponent<MonoPooledObject>().ReturnToPool();
+    }
+
+    public void OnGameOver()
+    {
+        StageManager.Instance.ClearStage();
+        SceneManager.LoadScene("Intro", LoadSceneMode.Single);
+    }
 }

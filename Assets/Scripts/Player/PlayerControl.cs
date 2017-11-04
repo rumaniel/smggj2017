@@ -40,6 +40,19 @@ public class PlayerControl : PlayerBaseControl
 		}
 	}
 
+	public override void FireWeapon()
+	{
+		base.FireWeapon();
+        for (int i = 0 ; i < followerList.Count; ++i)
+		{
+			if (followerList[i].gameObject.activeInHierarchy)
+			{
+				followerList[i].FireWeapon();
+			}
+		}
+	}
+	
+
 	void MovePlayer()
 	{
 		float horizontalRatio = Input.GetAxis("Horizontal") * shipInfo.moveSpeed * Time.deltaTime;

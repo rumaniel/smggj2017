@@ -20,12 +20,20 @@ public class SetCutscene : MonoBehaviour {
 		
 	}
 
-    public void ShowCutscene(ShipInfo info)
+    public void ShowCutscene(ShipInfo info, bool isBoom = false)
     {
         if(!isRunning)
         {
-            face.sprite = info.portraitList[0];
-            text = info.quoteList[0];
+            if (isBoom)
+            {
+                face.sprite = info.portraitList[1];
+                text = info.quoteList[2];                
+            }
+            else
+            {
+                face.sprite = info.portraitList[0];
+                text = info.quoteList[0];
+            }
             StartCoroutine(StartCutscene());
         }
         

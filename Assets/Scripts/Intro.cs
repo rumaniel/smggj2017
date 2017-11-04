@@ -8,8 +8,13 @@ using UnityEngine.SceneManagement;
 public class Intro : MonoBehaviour {
     public ScrollRect scrollRect;
 
+    private void Awake()
+    {
+        Screen.SetResolution(640, 1136, false);
+    }
     // Use this for initialization
     void Start () {
+
         DOTween.Init(false, true, LogBehaviour.ErrorsOnly);
        // scrollRect.DOVerticalPos( 0,  10f,false);
         

@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde5e61284a6f40719e0c7de52436c56, type: 3}
   m_Name: rifleWeapon
   m_EditorClassIdentifier: 
-  fireRate: 8
+  fireRate: 5
   damage: 5
   shotSpeed: 4
   firePositionList: 0100000000

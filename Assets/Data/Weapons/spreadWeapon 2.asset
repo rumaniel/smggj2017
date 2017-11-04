@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: spreadWeapon 2
   m_EditorClassIdentifier: 
   fireRate: 1
-  damage: 10
+  damage: 5
   shotSpeed: 5
   firePositionList: 0101010101

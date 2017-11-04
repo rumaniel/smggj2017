@@ -16,7 +16,7 @@ MonoBehaviour:
   rotateSpeed: 50
   weaponInfo: {fileID: 11400000, guid: c7e96832b63ce4ff992d62acaa40f523, type: 2}
   bulletIndex: 1
-  health: 100
+  health: 70
   portraitList:
   - {fileID: 21300000, guid: 34428e2cae0c8e142972bde8cf652c3c, type: 3}
   - {fileID: 21300000, guid: 76022ed24949a60428aafa4aa9cc6b27, type: 3}

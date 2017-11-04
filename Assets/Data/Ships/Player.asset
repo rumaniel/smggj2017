@@ -11,6 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83cf1c14b3951491da6185cc47f501c8, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   moveSpeed: 5
-  weaponInfo: {fileID: 11400000, guid: 8a5593c4f6d204d46b6c898534036c37, type: 2}
+  rotateSpeed: 5
+  weaponInfo: {fileID: 11400000, guid: 4e6d96c6bfe322b4f920a75154790523, type: 2}
   bulletIndex: 0
+  health: 0

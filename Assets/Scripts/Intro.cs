@@ -24,7 +24,9 @@ public class Intro : MonoBehaviour {
 
     public void OnStart()
     {
-        SceneManager.LoadScene("Game", LoadSceneMode.Additive);
+        DOTween.Kill(gameObject);
+        
+        SceneManager.LoadScene("Game", LoadSceneMode.Single);
     }
 
 }

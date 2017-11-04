@@ -77,7 +77,7 @@ public class PlayerControl : PlayerBaseControl
 				PlayerData.Instance.AddHealth(-bullet.weaponInfo.damage);
                 if (unitData.IsDie())
                 {
-                    StartCoroutine("Die");
+                   // StartCoroutine("Die");
                 }
             }
         }
@@ -89,7 +89,7 @@ public class PlayerControl : PlayerBaseControl
         yield return new WaitForSeconds(0.3f);
         explosionObject.SetActive(false);
         this.gameObject.SetActive(false);
-        gameoverObject.SetActive(true);
+        //gameoverObject.SetActive(true);
        // yield return new WaitForSeconds(3f);
 
         //GetComponent<MonoPooledObject>().ReturnToPool();

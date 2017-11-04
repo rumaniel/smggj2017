@@ -31,6 +31,7 @@ public class GameManager : MonoSingleton<GameManager>
 	
 	void Start () 
 	{
+		Time.timeScale = .8f;
         DOTween.Init(false, true, LogBehaviour.ErrorsOnly);
         // Set the default state to 'Opening'.
         GMState = GameManagerState.Opening;

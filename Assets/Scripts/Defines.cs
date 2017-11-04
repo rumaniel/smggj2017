@@ -44,6 +44,11 @@ public class Defines
 		Custom
 	}
 
+	public enum EnemyLeavePattern
+	{
+		Stay = 0,
+		Custom
+	}
 
 }
 

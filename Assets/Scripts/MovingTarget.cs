@@ -10,6 +10,7 @@ public class MovingTarget : MonoBehaviour
 	
 	void Update () 
 	{
+		if (GameManager.Instance.isPause) return;
 		if (dirRight)
 			transform.Translate (Vector2.right * moveSpeed * Time.deltaTime);
 		else

@@ -32,6 +32,7 @@ public class UnitControl : PlayerBaseControl
 
 	void Update () 
 	{
+		if (GameManager.Instance.isPause) return;
 		if (!isMoving)
 		{
 			if (currentWeapon.GetFireRate() == 0f) 

@@ -38,6 +38,7 @@ public class BulletBase : MonoBehaviour
 
 	protected virtual void Update () 
 	{
+		if (GameManager.Instance.isPause) return;
 		if (isBulletInitialized)
 		{
 			Vector3 pos = transform.position;

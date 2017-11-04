@@ -14,6 +14,7 @@ public class StageManager : MonoSingleton<StageManager>
 
     void Update()
     {
+        if (GameManager.Instance.isPause) return;
         UpdateQueue(Time.deltaTime);
     }
 

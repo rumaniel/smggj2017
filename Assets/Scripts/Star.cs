@@ -8,6 +8,7 @@ public class Star : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		if (GameManager.Instance.isPause) return;
 		// Get the current position of the star.
 		Vector2 position = transform.position;
 		// Compute the stars new position.

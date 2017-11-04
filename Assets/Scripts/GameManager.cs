@@ -6,6 +6,7 @@ using DG.Tweening;
 
 public class GameManager : MonoSingleton<GameManager> 
 {
+	public bool isPause = false;
 	public GameObject unitBase;
 	public List<StageInfo> stageList;
 	public GameObject playButton;
@@ -104,6 +105,7 @@ public class GameManager : MonoSingleton<GameManager>
         SettingBtn.SetActive(false);
         RectTransform image1 = SettingDlg.GetComponent<RectTransform>();
         image1.DOLocalMove(new Vector3(0, 0, 0), 1.0f);
+		isPause = true;
     }
     public void OnSettingClose()
     {
@@ -111,7 +113,7 @@ public class GameManager : MonoSingleton<GameManager>
         image1.DOLocalMove(new Vector3(500, 0, 0), 1.0f);
 
         SettingBtn.SetActive(true);
-
+		isPause = false;
     }
 
     public void OnDrop(int idxPre, int idxPost)

@@ -17,6 +17,7 @@ public class PlayerControl : PlayerBaseControl
 	
 	void Update () 
 	{
+		if (GameManager.Instance.isPause) return;
 		MovePlayer();
 
 		if (isInitialize && Input.GetButton("Fire"))

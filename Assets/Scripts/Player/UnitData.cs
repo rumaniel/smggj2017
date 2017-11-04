@@ -15,6 +15,11 @@ public class UnitData : MonoBehaviour
         UpdateGauge();
     }
 
+    public int GetMaxHealth()
+    {
+        return (int)maxHealth;
+}
+
     public float AddHealth(float health)
     {
         this.health += health;

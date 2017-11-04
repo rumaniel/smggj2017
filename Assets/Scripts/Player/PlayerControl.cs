@@ -11,7 +11,7 @@ public class PlayerControl : PlayerBaseControl
 	public override void Init()
 	{
 		base.Init();
-		
+		PlayerData.Instance.SetPlayerControl(this);
 		unitData.SetHealth(this.shipInfo.health);
 		transform.position = new Vector2 (0, -2.5f);
 	}
@@ -55,8 +55,7 @@ public class PlayerControl : PlayerBaseControl
 			BulletBase bullet = col.transform.GetComponent<BulletBase>();
 			if (bullet != null)
 			{
-				unitData.AddHealth(-bullet.weaponInfo.damage);
-				Debug.Log(unitData.health);
+				PlayerData.Instance.AddHealth(-bullet.weaponInfo.damage);
 			}
 		}
 	}

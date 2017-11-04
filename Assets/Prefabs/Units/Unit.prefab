@@ -3808,6 +3808,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  maxHealth: 0
+  healthGauge: {fileID: 212404849481556886}
 --- !u!114 &114249375692941816
 MonoBehaviour:
   m_ObjectHideFlags: 1

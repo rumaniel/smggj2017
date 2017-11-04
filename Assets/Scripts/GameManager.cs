@@ -63,10 +63,10 @@ public class GameManager : MonoSingleton<GameManager>
 		case GameManagerState.InGame:
 			// Hide the cursor.
 			//Cursor.visible = false;
-			playButton.SetActive(false);
-			playerShip.GetComponent<PlayerControl>().Init();
+			//playButton.SetActive(false);
+			//playerShip.GetComponent<PlayerControl>().Init();
 
-			StageManager.Instance.StartStage(stageList[0]);
+			//StageManager.Instance.StartStage(stageList[0]);
 
 				break;
 		case GameManagerState.GameOver:
@@ -92,12 +92,18 @@ public class GameManager : MonoSingleton<GameManager>
 		UpdateGameManagerState ();
 	}
 	// Call this function when the "Play" button is pressed.
-	public void StartInGame()
+	public void StartInGame(int i)
 	{
         foreach (GameObject obj in GameStartBtns)
         {
             obj.SetActive(false);
         }
+
+
+        playButton.SetActive(false);
+        playerShip.GetComponent<PlayerControl>().Init();
+
+        StageManager.Instance.StartStage(stageList[i]);
 
 
         GMState = GameManagerState.InGame;

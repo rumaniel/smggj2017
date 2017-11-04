@@ -24,5 +24,20 @@ public class Defines
 		red
     }
 
+	public enum EnemyAppearPattern
+	{
+		Back = 0,
+		Side,
+		Custom
+	}
+
+	public enum EnemyMovingPattern
+	{
+		Idle = 0,
+		Horizontal,
+		ZigZagPass,
+		ComeToPlayer,
+		Custom
+	}
 }
 

@@ -20,6 +20,10 @@ public class GameManager : MonoSingleton<GameManager>
     public GameObject SettingDlg;
     public GameObject SettingBtn;
 
+    public GameObject[] GameStartBtns;
+
+
+
     public enum GameManagerState
 	{
 		Opening,
@@ -46,7 +50,7 @@ public class GameManager : MonoSingleton<GameManager>
 		{
 		case GameManagerState.Opening:
 			// Show the cursor.
-			Cursor.visible = true;
+			//Cursor.visible = true;
 			// Hide the game over text.
 			GameOver.SetActive(false);
 			// Hide the main HUD text.
@@ -58,7 +62,7 @@ public class GameManager : MonoSingleton<GameManager>
 				break;
 		case GameManagerState.InGame:
 			// Hide the cursor.
-			Cursor.visible = false;
+			//Cursor.visible = false;
 			playButton.SetActive(false);
 			playerShip.GetComponent<PlayerControl>().Init();
 
@@ -90,7 +94,13 @@ public class GameManager : MonoSingleton<GameManager>
 	// Call this function when the "Play" button is pressed.
 	public void StartInGame()
 	{
-		GMState = GameManagerState.InGame;
+        foreach (GameObject obj in GameStartBtns)
+        {
+            obj.SetActive(false);
+        }
+
+
+        GMState = GameManagerState.InGame;
 		UpdateGameManagerState ();
 	}
 	// This will reload the main scene.
@@ -102,6 +112,11 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void OnSettingOpen()
     {
+        foreach ( GameObject obj in GameStartBtns)
+        {
+            obj.SetActive(false);
+        }
+
         SettingBtn.SetActive(false);
         RectTransform image1 = SettingDlg.GetComponent<RectTransform>();
         image1.DOLocalMove(new Vector3(0, 0, 0), 1.0f);
@@ -114,6 +129,11 @@ public class GameManager : MonoSingleton<GameManager>
 
         SettingBtn.SetActive(true);
 		isPause = false;
+        if(GMState!= GameManagerState.InGame)
+            foreach (GameObject obj in GameStartBtns)
+            {
+                obj.SetActive(true);
+            }
     }
 
     public void OnDrop(int idxPre, int idxPost)

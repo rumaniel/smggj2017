@@ -16,7 +16,7 @@ public class UnitControl : PlayerBaseControl
 	{
 		if (isEnemy)
 		{
-			spriteBase.rotation *= Quaternion.Euler(0, 0, 180f);
+			spriteBase.rotation = Quaternion.Euler(0, 0, 180f);
 			gameObject.tag = "EnemyShip";
 		}
 		else
@@ -54,6 +54,8 @@ public class UnitControl : PlayerBaseControl
 
 	IEnumerator DoUnitPattern()
 	{
+		if (pattern == null) yield break;
+
 		isMoving = true;
 		// appear Process
 		switch (pattern.appearPattern)
@@ -113,10 +115,11 @@ public class UnitControl : PlayerBaseControl
 				yield return new WaitForSeconds(pattern.stayTime);
 				break;
 		}
-
+		
 		switch (pattern.leavePattern)
 		{
 			case Defines.EnemyLeavePattern.Custom:
+				isMoving = true;
 				for (int i = 0; i < pattern.leaveDirectionList.Count; ++i)
 				{
 					transform.DOMove(pattern.leaveDirectionList[i], 1f);

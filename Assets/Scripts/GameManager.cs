@@ -22,6 +22,8 @@ public class GameManager : MonoSingleton<GameManager>
 
     public GameObject[] GameStartBtns;
 
+
+
     public enum GameManagerState
 	{
 		Opening,
@@ -48,7 +50,7 @@ public class GameManager : MonoSingleton<GameManager>
 		{
 		case GameManagerState.Opening:
 			// Show the cursor.
-			Cursor.visible = true;
+			//Cursor.visible = true;
 			// Hide the game over text.
 			GameOver.SetActive(false);
 			// Hide the main HUD text.
@@ -60,7 +62,7 @@ public class GameManager : MonoSingleton<GameManager>
 				break;
 		case GameManagerState.InGame:
 			// Hide the cursor.
-			Cursor.visible = false;
+			//Cursor.visible = false;
 			playButton.SetActive(false);
 			playerShip.GetComponent<PlayerControl>().Init();
 
@@ -127,11 +129,11 @@ public class GameManager : MonoSingleton<GameManager>
 
         SettingBtn.SetActive(true);
 		isPause = false;
-
-        foreach (GameObject obj in GameStartBtns)
-        {
-            obj.SetActive(true);
-        }
+        if(GMState!= GameManagerState.InGame)
+            foreach (GameObject obj in GameStartBtns)
+            {
+                obj.SetActive(true);
+            }
     }
 
     public void OnDrop(int idxPre, int idxPost)

@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-enum SequenceState
+public enum SequenceState
 {
     Idle,
     Running,
@@ -20,7 +20,7 @@ public class StageSequencer
     public ShipInfo appearShip;
     public PatternInfo patternInfo;
 
-    SequenceState state = SequenceState.Idle;
+    public SequenceState state = SequenceState.Idle;
     private float accumulatedTime = 0f;
 
     public StageSequencer(StageSequencer sequencer)

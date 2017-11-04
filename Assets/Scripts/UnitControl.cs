@@ -119,6 +119,8 @@ public class UnitControl : PlayerBaseControl
 				break;			
 			case Defines.EnemyLeavePattern.Stay:
 			default:
+				while (true)
+					yield return null;
 				break;
 		}
 

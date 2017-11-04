@@ -36,10 +36,12 @@ public class StageManager : MonoSingleton<StageManager>
                 }
                 else if (stageQueue[i].NeedClear())
                 {
-                    for (int j = i-1; j < i; --j)
+                    for (int j = i-1; j >= 0; --j)
                     {
-                        if (stageQueue[i].IsLoop())
+                        if (stageQueue[j].IsLoop())
                         {
+                            stageQueue[j].isLoop = false;
+                            stageQueue[j].state = SequenceState.Done;
                             stageQueue.RemoveAt(j);
                         }
                     }

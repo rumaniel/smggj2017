@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyStandardBullet : MonoBehaviour {
+public class EnemyStandardBullet : BulletBase 
+{
 	
 	public float shotSpeed; // The bullets movement speed.
 	

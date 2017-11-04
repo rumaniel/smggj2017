@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 11477466}
   - component: {fileID: 114919975485568318}
   m_Layer: 0
-  m_Name: PlayerBulletBlue
+  m_Name: BulletBlue
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15682dc541c1b864380894b2aed879fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotSpeed: 6
+  weaponInfo: {fileID: 11400000, guid: 8a5593c4f6d204d46b6c898534036c37, type: 2}
   hitEffect: {fileID: 124238, guid: d2d22f3d334862c47a846f130924a9ee, type: 2}
 --- !u!212 &21298546
 SpriteRenderer:

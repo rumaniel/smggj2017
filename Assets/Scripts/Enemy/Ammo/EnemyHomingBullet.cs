@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyHomingBullet : MonoBehaviour {
-
+public class EnemyHomingBullet : BulletBase 
+{
 	public float moveSpeed; // The bullets movement speed.
 	Vector2 _direction; // The bullets direction.
 	bool isReady; // To know when the bullet direction is set.

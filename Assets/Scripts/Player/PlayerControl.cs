@@ -8,13 +8,10 @@ public class PlayerControl : PlayerBaseControl
 	public List<GameObject> followerList;
 	float timeToFire = 0f;
 
-	public AudioSource laserSound;
-
-	public void Init()
+	public override void Init()
 	{
-		// Activate the gameObject.
-		gameObject.SetActive (true);
-		// Set our starting position.
+		base.Init();
+		
 		transform.position = new Vector2 (0, -2.5f);
 	}
 	
@@ -22,7 +19,7 @@ public class PlayerControl : PlayerBaseControl
 	{
 		MovePlayer();
 
-		if (Input.GetButton("Fire"))
+		if (isInitialize && Input.GetButton("Fire"))
 		{
 			if (currentWeapon.GetFireRate() == 0f) 
 			{
@@ -38,8 +35,8 @@ public class PlayerControl : PlayerBaseControl
 
 	void MovePlayer()
 	{
-		float horizontalRatio = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
-		float verticalRatio   = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
+		float horizontalRatio = Input.GetAxis("Horizontal") * shipInfo.moveSpeed * Time.deltaTime;
+		float verticalRatio   = Input.GetAxis("Vertical") * shipInfo.moveSpeed * Time.deltaTime;
 
 		transform.position = new Vector3(transform.position.x + horizontalRatio, transform.position.y + verticalRatio, transform.position.z);
 	}

@@ -5,18 +5,20 @@ using System.Collections.Generic;
 
 public class PlayerBaseControl : MonoBehaviour 
 {
+	public ShipInfo shipInfo;
 	protected Weapon currentWeapon;
 
 	public List<Transform> firePointList;
     public GameObject explosionObject;
 
-	public float moveSpeed;
-
 	protected GameManager gameManger;
+	protected bool isInitialize = false;
 	public virtual void Init()
 	{
 		// Activate the gameObject.
 		gameObject.SetActive (true);
+		SetWeapon(shipInfo.weaponType);
+		isInitialize = true;
 	}
 	
 	protected void Awake()
@@ -27,11 +29,12 @@ public class PlayerBaseControl : MonoBehaviour
     public virtual void SetWeapon(Defines.WeaponType weaponType)
     {
         currentWeapon = WeaponManager.Instance.GetWeapon(weaponType);
+        currentWeapon.SetUpWeapon(firePointList);
     }
 
 	public virtual void FireWeapon()
 	{
-
+        currentWeapon.Fire();
 	}
 
 	public virtual void PlayExplosion()

@@ -13,13 +13,12 @@ public class WeaponManager : MonoSingleton<WeaponManager>
 		switch (weaponType)
 		{
 			case Defines.WeaponType.Normal:
-				// set up things
+				// todo?
 				break;
 			default:
 				break;
 				
 		}
-		// todo
 		return weapon;
 	}
 

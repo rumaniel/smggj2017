@@ -34,6 +34,7 @@ public class Defines
 	public enum EnemyMovingPattern
 	{
 		Idle = 0,
+		IdleAndRotate,
 		IdleAndFacePlayer,
 		// HorizontalTop,
 		HorizontalMiddle,

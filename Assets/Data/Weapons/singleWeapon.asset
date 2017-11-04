@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dde5e61284a6f40719e0c7de52436c56, type: 3}
-  m_Name: playerWeapon
+  m_Name: singleWeapon
   m_EditorClassIdentifier: 
   fireRate: 3
   damage: 5

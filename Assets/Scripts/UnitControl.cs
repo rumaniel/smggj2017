@@ -50,6 +50,21 @@ public class UnitControl : PlayerBaseControl
 		{
 			case Defines.EnemyMovingPattern.HorizontalMiddle:
 			case Defines.EnemyMovingPattern.Custom:
+			case Defines.EnemyMovingPattern.IdleAndRotate:
+				while (true)
+				{
+					GameObject go = GameObject.FindGameObjectWithTag ("MovingTarget");
+					Vector2 dir = go.transform.position - spriteBase.position;
+					dir.Normalize ();
+					
+					float zAngle = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg - 90;
+					
+					Quaternion desiredRot = Quaternion.Euler (0, 0, zAngle);
+					
+					spriteBase.rotation = Quaternion.RotateTowards (spriteBase.rotation, desiredRot, shipInfo.rotateSpeed * Time.deltaTime);
+					yield return null;					
+					
+				}
 			case Defines.EnemyMovingPattern.IdleAndFacePlayer:
 				while (true)
 				{
@@ -60,7 +75,7 @@ public class UnitControl : PlayerBaseControl
 					
 					Quaternion desiredRot = Quaternion.Euler (0, 0, zAngle);
 					
-					spriteBase.rotation = Quaternion.RotateTowards (spriteBase.rotation, desiredRot, shipInfo.moveSpeed * Time.deltaTime);
+					spriteBase.rotation = Quaternion.RotateTowards (spriteBase.rotation, desiredRot, shipInfo.rotateSpeed * Time.deltaTime);
 					yield return null;
 				}
 			break;

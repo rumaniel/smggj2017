@@ -15,5 +15,5 @@ MonoBehaviour:
   customAppearList:
   - {x: 1, y: 2}
   - {x: 0, y: 0}
-  movingPattern: 1
+  movingPattern: 2
   customMoveSpotList: []

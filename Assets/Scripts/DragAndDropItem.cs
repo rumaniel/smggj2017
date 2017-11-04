@@ -9,6 +9,7 @@ using System.Collections;
 [RequireComponent(typeof(Image))]
 public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    public ShipInfo shipInfo;
     static public DragAndDropItem draggedItem;                                      // Item that is dragged now
     static public GameObject icon;                                                  // Icon of dragged item
     static public DragAndDropCell sourceCell;                                       // From this cell dragged item is
@@ -16,6 +17,12 @@ public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     public delegate void DragEvent(DragAndDropItem item);
     static public event DragEvent OnItemDragStartEvent;                             // Drag start event
     static public event DragEvent OnItemDragEndEvent;                               // Drag end event
+
+    public void SetShipInfo(ShipInfo info)
+    {
+        shipInfo = info;
+        GetComponent<Image>().sprite = info.sprite;
+    }
 
     /// <summary>
     /// This item is dragged

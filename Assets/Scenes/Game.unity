@@ -55143,18 +55143,25 @@ MonoBehaviour:
 --- !u!114 &1579943841
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114661853603205788, guid: 8fb7bdab85ecd4ca88b5e0a5110cc3c2,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1579943839}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91cbb61a1fe164449bd6be984d4e8338, type: 3}
+  m_Script: {fileID: 11500000, guid: 666b5a14eec984474b38c526165d2000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comboText: {fileID: 1876482421}
-  comboUIText: {fileID: 618836394}
-  comboCount: 0
+  followerInfo:
+  - {fileID: 11400000, guid: fbe29d2a5a8bc4643b798d5b8baaeeb3, type: 2}
+  - {fileID: 11400000, guid: 1a560e31971af1f43a8d5ead8f6cd9ac, type: 2}
+  - {fileID: 11400000, guid: 56616c86194df594090e330ac1cfc837, type: 2}
+  - {fileID: 11400000, guid: 7ce8315bf6b034ad5a7f961a2fc0225e, type: 2}
+  - {fileID: 11400000, guid: e00a9c0fcdf775b47ab259e35d0dcec6, type: 2}
+  - {fileID: 11400000, guid: 416c36e611ae82946aaf5301da87bc5c, type: 2}
+  - {fileID: 11400000, guid: 77f38a84cde9242d88c0909449d4c491, type: 2}
+  - {fileID: 11400000, guid: 5fd14c1742afef14f8b56823f47c3cfa, type: 2}
+  playerControl: {fileID: 837647106}
+  health: 0
 --- !u!4 &1579943842
 Transform:
   m_ObjectHideFlags: 0
@@ -62868,8 +62875,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1765944828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 121.5, y: 216, z: 0}
-  m_LocalScale: {x: 0.675, y: 0.675, z: 0.675}
+  m_LocalPosition: {x: 113.5, y: 202, z: 0}
+  m_LocalScale: {x: 0.63125, y: 0.63125, z: 0.63125}
   m_Children:
   - {fileID: 667356565}
   - {fileID: 454283484}

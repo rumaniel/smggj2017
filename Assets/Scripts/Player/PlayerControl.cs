@@ -16,6 +16,11 @@ public class PlayerControl : PlayerBaseControl
 		transform.position = new Vector2 (0, -2.5f);
 	}
 	
+	public void PatchFollwerInfo()
+	{
+		
+	}
+
 	void Update () 
 	{
 		if (GameManager.Instance.isPause) return;

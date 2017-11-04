@@ -50,5 +50,12 @@ public class Defines
 		Custom
 	}
 
+	public enum FollwerType
+	{
+		Attacker = 0,
+		Tanker,
+		Util
+	}
+
 }
 

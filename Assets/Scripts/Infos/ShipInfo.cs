@@ -11,4 +11,10 @@ public class ShipInfo : ScriptableObject
     public WeaponInfo weaponInfo;
     public int bulletIndex;
     public float health;
+
+    public List<Sprite> portraitList;
+    public Defines.FollwerType follwerType;
+    public float follwerBuf;
+    public string Name;
+    public List<string> quoteList;
 }

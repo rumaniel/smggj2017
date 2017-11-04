@@ -15,7 +15,7 @@ public class UnitControl : PlayerBaseControl
 	{
 		if (isEnemy)
 		{
-			spriteBase.rotation *= Quaternion.Euler(0, 180f, 0);
+			spriteBase.rotation *= Quaternion.Euler(0, 0, 180f);
 		}
 		this.pattern = pattern;
 		this.shipInfo = ship;

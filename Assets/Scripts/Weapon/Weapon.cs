@@ -38,7 +38,8 @@ public class Weapon
             {
                 MonoPooledObject bullet = bulletPool.GetObject();
                 bullet.GetComponent<BulletBase>().Initialize(this.weaponInfo);
-                bullet.transform.position = firePositionList[i].position;                
+                bullet.transform.position = firePositionList[i].position; 
+                bullet.transform.rotation = firePositionList[i].rotation;               
             }
         }
     }

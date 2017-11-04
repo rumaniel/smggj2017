@@ -12,7 +12,7 @@ public class UnitData : MonoBehaviour
     {
         this.maxHealth = health;
         this.health = health;
-
+        UpdateGauge();
     }
 
     public float AddHealth(float health)
@@ -21,15 +21,17 @@ public class UnitData : MonoBehaviour
 
         if (healthGauge != null)
         {
-            float calc = this.health / maxHealth;
-            Debug.Log("ca " + calc);
-            healthGauge.size = new Vector2(Mathf.Max(0.02f,(0.32f) * calc),0.08f);
+            UpdateGauge();
         }
 
         return this.health;
     }
 
-
+    public void UpdateGauge()
+    {
+        float calc = this.health / maxHealth;
+        healthGauge.size = new Vector2(Mathf.Max(0.02f,(0.32f) * calc),0.08f);
+    }
 
 
     public bool IsDie()

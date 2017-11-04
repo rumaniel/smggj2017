@@ -53,6 +53,24 @@ public class UnitControl : PlayerBaseControl
 		}
 	}	
 
+	protected override void OnTriggerEnter2D(Collider2D col)
+	{
+		if ((col.tag == "PlayerBullet"))
+		{
+			BulletBase bullet = col.transform.GetComponent<BulletBase>();
+			if (bullet != null)
+			{
+				unitData.AddHealth(-bullet.weaponInfo.damage);
+				if (unitData.IsDie())
+				{
+					StopCoroutine("DoUnitPattern");
+					isMoving = true;
+					StartCoroutine("Die");
+				}
+			}
+		}
+	}
+
 	IEnumerator DoUnitPattern()
 	{
 		if (pattern == null) yield break;

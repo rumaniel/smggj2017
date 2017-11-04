@@ -51,11 +51,6 @@ public class PlayerBaseControl : MonoBehaviour
         currentWeapon.Fire();
 	}
 
-	public virtual void PlayExplosion()
-	{
-        explosionObject.SetActive(true);
-	}
-
 	protected virtual void OnTriggerEnter2D(Collider2D col)
 	{
 		if ((col.tag == "PlayerBullet"))
@@ -74,8 +69,9 @@ public class PlayerBaseControl : MonoBehaviour
 
 	IEnumerator Die()
 	{
-		PlayExplosion();
+		explosionObject.SetActive(true);
 		yield return new WaitForSeconds(1f);
+		explosionObject.SetActive(false);
 		GetComponent<MonoPooledObject>().ReturnToPool();
 	}
 

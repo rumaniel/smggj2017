@@ -18,6 +18,12 @@ public class FollowerControl : PlayerBaseControl
 		Init();
     }
 
+    public override void SetWeapon()
+    {
+        currentWeapon = WeaponManager.Instance.GetWeapon(0);
+        currentWeapon.SetUpWeapon(shipInfo.weaponInfo, firePointList);
+    }
+
 	public override void Init()
 	{
 		base.Init();

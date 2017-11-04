@@ -10,6 +10,7 @@ TagManager:
   - PlayerBullet
   - PlayerShip
   - Unit
+  - EnemyShip
   layers:
   - Default
   - TransparentFX

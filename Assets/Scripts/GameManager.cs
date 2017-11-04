@@ -19,6 +19,7 @@ public class GameManager : MonoSingleton<GameManager>
 	public GameObject GameOver;
     public GameObject SettingDlg;
     public GameObject SettingBtn;
+	public GridManager grid;
 
     public GameObject[] GameStartBtns;
 
@@ -127,6 +128,7 @@ public class GameManager : MonoSingleton<GameManager>
         RectTransform image1 = SettingDlg.GetComponent<RectTransform>();
         image1.DOLocalMove(new Vector3(0, 0, 0), 1.0f);
 		isPause = true;
+		grid.SetGrid(PlayerData.Instance.followerInfo);
     }
     public void OnSettingClose()
     {

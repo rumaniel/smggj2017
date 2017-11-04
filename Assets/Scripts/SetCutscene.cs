@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine;
@@ -6,6 +6,8 @@ using UnityEngine;
 public class SetCutscene : MonoBehaviour {
 
     public Text dialogText;
+    private string text;
+    public Image face;
     private bool isRunning = false;
     // Use this for initialization
     void Start () {
@@ -18,10 +20,15 @@ public class SetCutscene : MonoBehaviour {
 		
 	}
 
-    public void ShowCutscene()
+    public void ShowCutscene(ShipInfo info)
     {
         if(!isRunning)
-         StartCoroutine(StartCutscene());
+        {
+            face.sprite = info.portraitList[0];
+            text = info.quoteList[0];
+            StartCoroutine(StartCutscene());
+        }
+        
     }
 
     public IEnumerator StartCutscene()
@@ -43,7 +50,7 @@ public class SetCutscene : MonoBehaviour {
 
         yield return new WaitForSeconds(0.4f);
 
-        dialogText.DOText("인공지능도 사랑이라는 감정을 느낄 수 있을까요?", 1.5f);//.SetRelative().SetEase(Ease.Linear).SetAutoKill(false).Pause();
+        dialogText.DOText(text, 1.5f);//.SetRelative().SetEase(Ease.Linear).SetAutoKill(false).Pause();
 
         yield return new WaitForSeconds(2);
 

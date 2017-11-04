@@ -28,7 +28,7 @@ MonoBehaviour:
     isLoop: 0
     previousLoopClear: 0
     appearShip: {fileID: 11400000, guid: 7ce8315bf6b034ad5a7f961a2fc0225e, type: 2}
-    patternInfo: {fileID: 11400000, guid: 8de830aed903e416abbd18ae15abb211, type: 2}
+    patternInfo: {fileID: 11400000, guid: 6a32aee72a4e1714d9376da78dff3daa, type: 2}
     state: 0
   - wait: 7
     isLoop: 0
@@ -46,19 +46,19 @@ MonoBehaviour:
     isLoop: 0
     previousLoopClear: 0
     appearShip: {fileID: 11400000, guid: 77f38a84cde9242d88c0909449d4c491, type: 2}
-    patternInfo: {fileID: 11400000, guid: 8de830aed903e416abbd18ae15abb211, type: 2}
+    patternInfo: {fileID: 11400000, guid: 6a32aee72a4e1714d9376da78dff3daa, type: 2}
     state: 0
   - wait: 5
     isLoop: 0
     previousLoopClear: 0
     appearShip: {fileID: 11400000, guid: 7ce8315bf6b034ad5a7f961a2fc0225e, type: 2}
-    patternInfo: {fileID: 11400000, guid: 59d3f9228eb88444d87c5c4a3b80789e, type: 2}
+    patternInfo: {fileID: 11400000, guid: 86f6cffe6230511499daea8b67a9253b, type: 2}
     state: 0
   - wait: 2
     isLoop: 0
     previousLoopClear: 0
     appearShip: {fileID: 11400000, guid: 7ce8315bf6b034ad5a7f961a2fc0225e, type: 2}
-    patternInfo: {fileID: 11400000, guid: 86f6cffe6230511499daea8b67a9253b, type: 2}
+    patternInfo: {fileID: 11400000, guid: d81ff7cf221222d4a9d7518c384da63f, type: 2}
     state: 0
   - wait: 10
     isLoop: 0
@@ -88,7 +88,7 @@ MonoBehaviour:
     isLoop: 0
     previousLoopClear: 0
     appearShip: {fileID: 11400000, guid: 77f38a84cde9242d88c0909449d4c491, type: 2}
-    patternInfo: {fileID: 11400000, guid: 59d3f9228eb88444d87c5c4a3b80789e, type: 2}
+    patternInfo: {fileID: 11400000, guid: d81ff7cf221222d4a9d7518c384da63f, type: 2}
     state: 0
   - wait: 1
     isLoop: 0

@@ -11,8 +11,12 @@ public class UnitControl : PlayerBaseControl
     
 	float timeToFire = 0f;
 
-	public void SetUnitInfo(PatternInfo pattern, ShipInfo ship)
+	public void SetUnitInfo(PatternInfo pattern, ShipInfo ship, bool isEnemy)
 	{
+		if (isEnemy)
+		{
+			spriteBase.rotation *= Quaternion.Euler(0, 180f, 0);
+		}
 		this.pattern = pattern;
 		this.shipInfo = ship;
 		// sprite change
@@ -49,14 +53,14 @@ public class UnitControl : PlayerBaseControl
 			case Defines.EnemyMovingPattern.IdleAndFacePlayer:
 				while (true)
 				{
-					Vector2 dir = GameManager.Instance.playerShip.transform.position - transform.position;
+					Vector2 dir = GameManager.Instance.playerShip.transform.position - spriteBase.position;
 					dir.Normalize ();
 					
 					float zAngle = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg - 90;
 					
 					Quaternion desiredRot = Quaternion.Euler (0, 0, zAngle);
 					
-					spriteBase.rotation = Quaternion.RotateTowards (transform.rotation, desiredRot, shipInfo.moveSpeed * Time.deltaTime);
+					spriteBase.rotation = Quaternion.RotateTowards (spriteBase.rotation, desiredRot, shipInfo.moveSpeed * Time.deltaTime);
 					yield return null;
 				}
 			break;

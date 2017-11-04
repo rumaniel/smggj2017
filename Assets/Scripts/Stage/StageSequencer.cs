@@ -60,9 +60,8 @@ public class StageSequencer
         }
         // do ships
         UnitControl unit = UnitManager.Instance.GetUnit().GetComponent<UnitControl>();
-        unit.SetUnitInfo(patternInfo, appearShip);
+        unit.SetUnitInfo(patternInfo, appearShip, true);
         unit.Init();
-        unit.spriteBase.rotation *= Quaternion.Euler(0,180f,0);
 
         if (isLoop)
         {

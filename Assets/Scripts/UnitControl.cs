@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 
 public class UnitControl : PlayerBaseControl 
 {
@@ -19,32 +20,49 @@ public class UnitControl : PlayerBaseControl
 		}
 		this.pattern = pattern;
 		this.shipInfo = ship;
-		// sprite change
+		sprite.sprite = shipInfo.sprite;
 	}
 
 	public override void Init()
 	{
 		base.Init();
+		isMoving = false;
 		StartCoroutine("DoUnitPattern");
 	}
 
 	void Update () 
 	{
-		if (currentWeapon.GetFireRate() == 0f) 
+		if (!isMoving)
 		{
-			FireWeapon ();
-		} 
-		else if (Time.time > timeToFire)  
-		{
-			timeToFire = Time.time + 1f / currentWeapon.GetFireRate();
-			FireWeapon ();
+			if (currentWeapon.GetFireRate() == 0f) 
+			{
+				FireWeapon ();
+			} 
+			else if (Time.time > timeToFire)  
+			{
+				timeToFire = Time.time + 1f / currentWeapon.GetFireRate();
+				FireWeapon ();
+			}
 		}
 	}	
 
 	IEnumerator DoUnitPattern()
 	{
+		isMoving = true;
 		// appear Process
+		switch (pattern.appearPattern)
+		{
+			case Defines.EnemyAppearPattern.Custom:
+				transform.position = pattern.customAppearList[0];
+				for (int i = 1; i < pattern.customAppearList.Count; ++i)
+				{
+					transform.DOMove(pattern.customAppearList[i], 1f);
+					yield return new WaitForSeconds(1f);
+				}
+			break;
+		}
 
+		isMoving = false;
 		// moving Process
 		switch (pattern.movingPattern)
 		{

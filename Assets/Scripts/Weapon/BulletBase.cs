@@ -32,6 +32,7 @@ public class BulletBase : MonoBehaviour
 	public void Initialize(WeaponInfo weaponInfo)
 	{
 		this.weaponInfo = weaponInfo;
+		hitEffect.SetActive(false);
 		isBulletInitialized = true;
 	}
 
@@ -75,7 +76,7 @@ public class BulletBase : MonoBehaviour
 	// Function to instantiate a particle effect.
     public virtual void PlayHitEffect()
 	{
-		GameObject hitSpark = (GameObject)Instantiate (hitEffect);
-		hitSpark.transform.position = transform.position;
+		hitEffect.SetActive(true);
+		
 	}
 }

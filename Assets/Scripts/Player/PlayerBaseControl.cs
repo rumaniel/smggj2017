@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
-
+using DG.Tweening;
 public class PlayerBaseControl : MonoBehaviour 
 {
 	public ShipInfo shipInfo;
@@ -24,6 +24,7 @@ public class PlayerBaseControl : MonoBehaviour
 	protected void Awake()
 	{
 		gameManger = GameObject.Find("GameManager").GetComponent<GameManager>();
+		DOTween.Init(false, true, LogBehaviour.ErrorsOnly);
 	}
 
     public virtual void SetWeapon()

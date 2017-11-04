@@ -8,10 +8,8 @@ public class PlayerBullet : BulletBase
 		// Detect collision of the player bullet with an enemy ship or world hazard.
 		if ((col.tag == "EnemyShip") || (col.tag == "WorldHazard")) 
 		{
-			// Play the bullet spark effect.
 			PlayHitEffect ();
-			// Destroy the player bullet..
-			Destroy(gameObject);
+			ConsumeBullet();
 		}
 	}
 }

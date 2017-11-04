@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   appearPattern: 0
   customAppearList:
-  - {x: 1, y: 2}
-  - {x: 0, y: 0}
+  - {x: -1, y: 2}
+  - {x: -1, y: 0}
   movingPattern: 1
   customMoveSpotList: []

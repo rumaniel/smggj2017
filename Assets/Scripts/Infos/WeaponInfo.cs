@@ -8,4 +8,5 @@ public class WeaponInfo : ScriptableObject
     public float fireRate;
     public float damage;
     public float shotSpeed;
+    public List<bool> firePositionList;
 }

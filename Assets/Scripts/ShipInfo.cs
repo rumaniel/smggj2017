@@ -6,5 +6,6 @@ using UnityEngine;
 public class ShipInfo : ScriptableObject
 {
     public float moveSpeed;
-    public Defines.WeaponType weaponType;
+    public WeaponInfo weaponInfo;
+    public int bulletIndex;
 }

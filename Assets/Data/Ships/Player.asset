@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  weaponType: 0
+  weaponInfo: {fileID: 11400000, guid: 8a5593c4f6d204d46b6c898534036c37, type: 2}
+  bulletIndex: 0

@@ -13,13 +13,12 @@ public class Weapon
     public Weapon(MonoObjectPool bulletPool, bool isPlayer = true)
     {
         this.bulletPool = bulletPool;
-
-        MonoPooledObject bullet = bulletPool.GetObject(false);
-        this.weaponInfo = bullet.GetComponent<BulletBase>().weaponInfo;
     }
 
-    public virtual void SetUpWeapon(List<Transform> weaponPositionList)
+    public virtual void SetUpWeapon(WeaponInfo weaponInfo, List<Transform> weaponPositionList)
     {
+        this.weaponInfo = weaponInfo;
+
         for (int i = 0; i < weaponPositionList.Count; ++i)
         {
             this.firePositionList.Add(weaponPositionList[i]);
@@ -33,8 +32,15 @@ public class Weapon
 
     public virtual void Fire()
     {
-        MonoPooledObject bullet = bulletPool.GetObject();
-        bullet.transform.position = firePositionList[0].position;
+        for (int i = 0; i < weaponInfo.firePositionList.Count; ++i)
+        {
+            if (weaponInfo.firePositionList[i])
+            {
+                MonoPooledObject bullet = bulletPool.GetObject();
+                bullet.GetComponent<BulletBase>().Initialize(this.weaponInfo);
+                bullet.transform.position = firePositionList[i].position;                
+            }
+        }
     }
 }
 

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 21298546}
   - component: {fileID: 5079480}
   - component: {fileID: 6146292}
-  - component: {fileID: 11477466}
   - component: {fileID: 114930059350104400}
   - component: {fileID: 82414619064068508}
+  - component: {fileID: 114001414153179072}
   m_Layer: 0
   m_Name: BulletRed
   m_TagString: PlayerBullet
@@ -79,20 +79,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.14832425, y: 0.2821734}
   m_EdgeRadius: 0
---- !u!114 &11477466
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 106626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15682dc541c1b864380894b2aed879fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponInfo: {fileID: 11400000, guid: 8a5593c4f6d204d46b6c898534036c37, type: 2}
-  hitEffect: {fileID: 124238, guid: d2d22f3d334862c47a846f130924a9ee, type: 2}
-  sound: {fileID: 82414619064068508}
 --- !u!212 &21298546
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -232,6 +218,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114001414153179072
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 485477a5603e1462c9047a031d256296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponInfo: {fileID: 0}
+  hitEffect: {fileID: 0}
+  sound: {fileID: 0}
 --- !u!114 &114930059350104400
 MonoBehaviour:
   m_ObjectHideFlags: 1

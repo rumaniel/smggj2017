@@ -17,7 +17,7 @@ public class PlayerBaseControl : MonoBehaviour
 	{
 		// Activate the gameObject.
 		gameObject.SetActive (true);
-		SetWeapon(shipInfo.weaponType);
+		SetWeapon();
 		isInitialize = true;
 	}
 	
@@ -26,10 +26,10 @@ public class PlayerBaseControl : MonoBehaviour
 		gameManger = GameObject.Find("GameManager").GetComponent<GameManager>();
 	}
 
-    public virtual void SetWeapon(Defines.WeaponType weaponType)
+    public virtual void SetWeapon()
     {
-        currentWeapon = WeaponManager.Instance.GetWeapon(weaponType);
-        currentWeapon.SetUpWeapon(firePointList);
+        currentWeapon = WeaponManager.Instance.GetWeapon(shipInfo.bulletIndex);
+        currentWeapon.SetUpWeapon(shipInfo.weaponInfo, firePointList);
     }
 
 	public virtual void FireWeapon()

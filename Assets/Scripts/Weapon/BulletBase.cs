@@ -57,8 +57,6 @@ public class BulletBase : MonoBehaviour
         if ((transform.position.x < bulletBoundary.x) || (transform.position.x > bulletBoundary.y) ||
             (transform.position.y < bulletBoundary.z) || (transform.position.y > bulletBoundary.w)) {
             pooledObject.ReturnToPool();
-			Debug.Log(bulletBoundary);
-			Debug.Log("Check out of bound");
         }        
     }
 

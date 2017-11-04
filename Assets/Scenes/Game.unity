@@ -282,7 +282,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 837647109}
+  - {fileID: 837647104}
   - {fileID: 1041237497}
   - {fileID: 1222215863}
   m_Father: {fileID: 0}
@@ -759,7 +759,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1579943840}
-        m_MethodName: StartGamePlay
+        m_MethodName: StartInGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1708,9 +1708,9 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!224 &837647109 stripped
-RectTransform:
-  m_PrefabParentObject: {fileID: 224631171914758494, guid: 5253cf3d879bf9140837c27fdeb28fa8,
+--- !u!4 &837647104 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4468766954924746, guid: 5253cf3d879bf9140837c27fdeb28fa8,
     type: 2}
   m_PrefabInternal: {fileID: 2015826209}
 --- !u!1001 &915434193
@@ -3006,8 +3006,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1765944828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 389, y: 219, z: 0}
-  m_LocalScale: {x: 0.684375, y: 0.684375, z: 0.684375}
+  m_LocalPosition: {x: 118, y: 209.5, z: 0}
+  m_LocalScale: {x: 0.6546875, y: 0.6546875, z: 0.6546875}
   m_Children:
   - {fileID: 1347827051}
   - {fileID: 454283484}
@@ -3384,6 +3384,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2048736557}
+  - component: {fileID: 2048736558}
   m_Layer: 0
   m_Name: Pools
   m_TagString: Untagged
@@ -3408,6 +3409,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2048736558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2048736556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b39697c61344fe9bc73577e1051a71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletList:
+  - {fileID: 1802714459}
 --- !u!1001 &2093743497
 Prefab:
   m_ObjectHideFlags: 0

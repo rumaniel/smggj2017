@@ -69,7 +69,8 @@ public class UnitControl : PlayerBaseControl
 			case Defines.EnemyMovingPattern.HorizontalMiddle:
 			case Defines.EnemyMovingPattern.Custom:
 			case Defines.EnemyMovingPattern.IdleAndRotate:
-				while (true)
+				float rotateStayTime = 0f;
+				while (rotateStayTime < pattern.stayTime || pattern.leavePattern == Defines.EnemyLeavePattern.Stay)
 				{
 					GameObject go = GameObject.FindGameObjectWithTag ("MovingTarget");
 					Vector2 dir = go.transform.position - spriteBase.position;
@@ -81,10 +82,13 @@ public class UnitControl : PlayerBaseControl
 					
 					spriteBase.rotation = Quaternion.RotateTowards (spriteBase.rotation, desiredRot, shipInfo.rotateSpeed * Time.deltaTime);
 					yield return null;					
+					rotateStayTime += Time.deltaTime;
 					
 				}
+				break;
 			case Defines.EnemyMovingPattern.IdleAndFacePlayer:
-				while (true)
+				float accumulatedTime = 0f;	
+				while (accumulatedTime < pattern.stayTime || pattern.leavePattern == Defines.EnemyLeavePattern.Stay)
 				{
 					Vector2 dir = GameManager.Instance.playerShip.transform.position - spriteBase.position;
 					dir.Normalize ();
@@ -95,13 +99,30 @@ public class UnitControl : PlayerBaseControl
 					
 					spriteBase.rotation = Quaternion.RotateTowards (spriteBase.rotation, desiredRot, shipInfo.rotateSpeed * Time.deltaTime);
 					yield return null;
+					accumulatedTime += Time.deltaTime;
 				}
 			break;
 			case Defines.EnemyMovingPattern.Idle:
 			default:
+				yield return new WaitForSeconds(pattern.stayTime);
 				break;
 		}
 
+		switch (pattern.leavePattern)
+		{
+			case Defines.EnemyLeavePattern.Custom:
+				for (int i = 0; i < pattern.leaveDirectionList.Count; ++i)
+				{
+					transform.DOMove(pattern.leaveDirectionList[i], 1f);
+					yield return new WaitForSeconds(1f);
+				}
+				break;			
+			case Defines.EnemyLeavePattern.Stay:
+			default:
+				break;
+		}
+
+		GetComponent<MonoPooledObject>().ReturnToPool();
 		yield return null;
 	}
 

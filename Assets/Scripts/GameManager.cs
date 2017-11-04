@@ -116,7 +116,6 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void OnDrop(int idxPre, int idxPost)
     {
-
         Debug.Log(idxPre + " to " + idxPost);
     }
 

@@ -10,4 +10,7 @@ public class PatternInfo : ScriptableObject
     public List<Vector2> customAppearList;
     public Defines.EnemyMovingPattern movingPattern;
     public List<Vector2> customMoveSpotList;
+    public Defines.EnemyLeavePattern leavePattern;
+    public float stayTime;
+    public List<Vector2> leaveDirectionList;
 }

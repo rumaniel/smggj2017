@@ -17,4 +17,9 @@ public class ShipInfo : ScriptableObject
     public float follwerBuf;
     public string Name;
     public List<string> quoteList;
+
+    public override string ToString()
+    {
+        return Name + "\n" + follwerType.ToString() + " : " + follwerBuf + "\n\n" + quoteList[0] + "\n";
+    }
 }

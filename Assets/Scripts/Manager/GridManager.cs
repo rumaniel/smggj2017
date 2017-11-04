@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 public class GridManager : MonoSingleton<GridManager> 
 {
     public SetCutscene cutscene;
+    public Text text;
     List<ShipInfo> followerList = new List<ShipInfo>();
     List<DragAndDropItem> itemList = new List<DragAndDropItem>();
     
@@ -35,6 +37,7 @@ public class GridManager : MonoSingleton<GridManager>
         int index = 0;
         bool result = int.TryParse(obj.name, out index);
         cutscene.ShowCutscene(itemList[index].shipInfo);
+        text.text = itemList[index].shipInfo.ToString();
     }
 
 }

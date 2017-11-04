@@ -20,4 +20,16 @@ public class FollowerControl : PlayerBaseControl
 		base.Init();
 	}
 
+	protected override void OnTriggerEnter2D(Collider2D col)
+	{
+		// if ((col.tag == "EnemyBullet"))
+		// {
+		// 	BulletBase bullet = col.transform.GetComponent<BulletBase>();
+		// 	if (bullet != null)
+		// 	{
+		// 		PlayerData.Instance.AddHealth(-bullet.weaponInfo.damage);
+		// 	}
+		// }
+	}	
+
 }

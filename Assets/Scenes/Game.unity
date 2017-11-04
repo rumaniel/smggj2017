@@ -3689,7 +3689,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &43492265
 Transform:
   m_ObjectHideFlags: 0
@@ -3720,7 +3720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 0
-  healthGauge: {fileID: 0}
+  healthGauge: {fileID: 290020438}
 --- !u!114 &43492267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3734,10 +3734,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipInfo: {fileID: 0}
-  firePointList: []
-  explosionObject: {fileID: 0}
-  sprite: {fileID: 0}
-  spriteBase: {fileID: 0}
+  firePointList:
+  - {fileID: 479065659}
+  - {fileID: 199859623}
+  - {fileID: 1803642747}
+  - {fileID: 1391823215}
+  - {fileID: 1391823215}
+  explosionObject: {fileID: 138817891}
+  sprite: {fileID: 43492270}
+  spriteBase: {fileID: 1657643581}
 --- !u!61 &43492268
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22592,7 +22597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &423619238
 Transform:
   m_ObjectHideFlags: 0
@@ -22623,7 +22628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 0
-  healthGauge: {fileID: 0}
+  healthGauge: {fileID: 634028370}
 --- !u!114 &423619240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22637,10 +22642,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipInfo: {fileID: 0}
-  firePointList: []
-  explosionObject: {fileID: 0}
-  sprite: {fileID: 0}
-  spriteBase: {fileID: 0}
+  firePointList:
+  - {fileID: 743012076}
+  - {fileID: 424659245}
+  - {fileID: 412352239}
+  - {fileID: 1725599660}
+  - {fileID: 1435240418}
+  explosionObject: {fileID: 1365637700}
+  sprite: {fileID: 423619243}
+  spriteBase: {fileID: 517739295}
 --- !u!61 &423619241
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30692,7 +30702,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &611670132
 Transform:
   m_ObjectHideFlags: 0
@@ -30723,7 +30733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 0
-  healthGauge: {fileID: 0}
+  healthGauge: {fileID: 1171528435}
 --- !u!114 &611670134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30737,10 +30747,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipInfo: {fileID: 0}
-  firePointList: []
-  explosionObject: {fileID: 0}
-  sprite: {fileID: 0}
-  spriteBase: {fileID: 0}
+  firePointList:
+  - {fileID: 1286628561}
+  - {fileID: 556008287}
+  - {fileID: 427703707}
+  - {fileID: 1889403968}
+  - {fileID: 220990113}
+  explosionObject: {fileID: 108916376}
+  sprite: {fileID: 611670137}
+  spriteBase: {fileID: 1276063366}
 --- !u!61 &611670135
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31523,7 +31538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &708523328
 Transform:
   m_ObjectHideFlags: 0
@@ -31554,7 +31569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 0
-  healthGauge: {fileID: 0}
+  healthGauge: {fileID: 2134397459}
 --- !u!114 &708523330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31568,10 +31583,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipInfo: {fileID: 0}
-  firePointList: []
-  explosionObject: {fileID: 0}
-  sprite: {fileID: 0}
-  spriteBase: {fileID: 0}
+  firePointList:
+  - {fileID: 98269010}
+  - {fileID: 1166714421}
+  - {fileID: 1333447189}
+  - {fileID: 1395439916}
+  - {fileID: 1767192717}
+  explosionObject: {fileID: 857078761}
+  sprite: {fileID: 708523333}
+  spriteBase: {fileID: 856191777}
 --- !u!61 &708523331
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31823,7 +31843,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &767246524
 Transform:
   m_ObjectHideFlags: 0
@@ -31854,7 +31874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 0
-  healthGauge: {fileID: 0}
+  healthGauge: {fileID: 1653330625}
 --- !u!114 &767246526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31868,10 +31888,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipInfo: {fileID: 0}
-  firePointList: []
-  explosionObject: {fileID: 0}
-  sprite: {fileID: 0}
-  spriteBase: {fileID: 0}
+  firePointList:
+  - {fileID: 859518699}
+  - {fileID: 221654800}
+  - {fileID: 961249668}
+  - {fileID: 552298050}
+  - {fileID: 2103995241}
+  explosionObject: {fileID: 1991107221}
+  sprite: {fileID: 767246529}
+  spriteBase: {fileID: 1209632675}
 --- !u!61 &767246527
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40280,7 +40305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1184905582
 Transform:
   m_ObjectHideFlags: 0
@@ -40311,7 +40336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 0
-  healthGauge: {fileID: 0}
+  healthGauge: {fileID: 1264277718}
 --- !u!114 &1184905584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40325,10 +40350,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipInfo: {fileID: 0}
-  firePointList: []
-  explosionObject: {fileID: 0}
-  sprite: {fileID: 0}
-  spriteBase: {fileID: 0}
+  firePointList:
+  - {fileID: 1594504644}
+  - {fileID: 699531899}
+  - {fileID: 1697704145}
+  - {fileID: 1531183146}
+  - {fileID: 1038709988}
+  explosionObject: {fileID: 562297128}
+  sprite: {fileID: 1184905587}
+  spriteBase: {fileID: 615789380}
 --- !u!61 &1184905585
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -55309,7 +55339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1610739582
 Transform:
   m_ObjectHideFlags: 0
@@ -55340,7 +55370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 0
-  healthGauge: {fileID: 0}
+  healthGauge: {fileID: 974163276}
 --- !u!114 &1610739584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55354,10 +55384,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipInfo: {fileID: 0}
-  firePointList: []
-  explosionObject: {fileID: 0}
-  sprite: {fileID: 0}
-  spriteBase: {fileID: 0}
+  firePointList:
+  - {fileID: 362568853}
+  - {fileID: 1023926780}
+  - {fileID: 1015982664}
+  - {fileID: 646137572}
+  - {fileID: 1174251991}
+  explosionObject: {fileID: 1731180315}
+  sprite: {fileID: 1610739587}
+  spriteBase: {fileID: 697607323}
 --- !u!61 &1610739585
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -55470,7 +55505,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1636440613
 Transform:
   m_ObjectHideFlags: 0
@@ -55501,7 +55536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 0
-  healthGauge: {fileID: 0}
+  healthGauge: {fileID: 2120107529}
 --- !u!114 &1636440615
 MonoBehaviour:
   m_ObjectHideFlags: 0

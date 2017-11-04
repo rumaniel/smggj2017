@@ -10,9 +10,13 @@ public class FollowerControl : PlayerBaseControl
 
 	float timeToFire = 0f;
 
-    public void UpdateFollower()
+    public void UpdateFollower(ShipInfo ship)
     {
-
+		this.shipInfo = ship;
+		Debug.Log(shipInfo.Name);
+		sprite.sprite = shipInfo.sprite;
+		unitData.SetHealth(this.shipInfo.health);
+		Init();
     }
 
 	public override void Init()
@@ -22,14 +26,28 @@ public class FollowerControl : PlayerBaseControl
 
 	protected override void OnTriggerEnter2D(Collider2D col)
 	{
-		// if ((col.tag == "EnemyBullet"))
-		// {
-		// 	BulletBase bullet = col.transform.GetComponent<BulletBase>();
-		// 	if (bullet != null)
-		// 	{
-		// 		PlayerData.Instance.AddHealth(-bullet.weaponInfo.damage);
-		// 	}
-		// }
+		if ((col.tag == "EnemyBullet"))
+		{
+			BulletBase bullet = col.transform.GetComponent<BulletBase>();
+			if (bullet != null)
+			{
+				unitData.AddHealth(-bullet.weaponInfo.damage);
+				if (unitData.IsDie())
+				{
+					StartCoroutine("DieFollower");
+				}
+				// PlayerData.Instance.AddHealth(-bullet.weaponInfo.damage);
+			}
+		}
 	}	
+
+	IEnumerator DieFollower()
+	{
+        explosionObject.SetActive(true);
+		yield return new WaitForSeconds(0.3f);
+		explosionObject.SetActive(false);
+		gameObject.SetActive(false);
+
+    }	
 
 }

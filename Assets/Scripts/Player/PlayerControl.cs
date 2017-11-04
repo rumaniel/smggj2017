@@ -17,11 +17,15 @@ public class PlayerControl : PlayerBaseControl
 		PlayerData.Instance.SetPlayerControl(this);
 		unitData.SetHealth(this.shipInfo.health);
 		transform.position = new Vector2 (0, -2.5f);
+		PatchFollwerInfo();
 	}
 	
 	public void PatchFollwerInfo()
 	{
-		
+		for (int i = 0; i < followerList.Count; ++i)
+		{
+			followerList[i].UpdateFollower(PlayerData.Instance.followerInfo[i]);
+		}
 	}
 
 	void Update () 

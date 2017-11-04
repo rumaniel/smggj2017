@@ -198,7 +198,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 133288}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -220,7 +220,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: c7986559782344bbab95af45ab8dbb03, type: 2}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -255,6 +255,7 @@ MonoBehaviour:
   - {fileID: 4517741662528108}
   - {fileID: 4732133714912116}
   explosionObject: {fileID: 1004938675743848}
+  gameoverObject: {fileID: 0}
   followerList:
   - {fileID: 114438384864173268}
   - {fileID: 114575224838083494}
@@ -3746,7 +3747,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1025006601714046
 GameObject:
   m_ObjectHideFlags: 1
@@ -4145,7 +4146,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1305136793105002
 GameObject:
   m_ObjectHideFlags: 1
@@ -4211,7 +4212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1353293292010070
 GameObject:
   m_ObjectHideFlags: 1
@@ -4306,7 +4307,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1411778792703492
 GameObject:
   m_ObjectHideFlags: 1
@@ -4509,7 +4510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1502519630667850
 GameObject:
   m_ObjectHideFlags: 1
@@ -4667,7 +4668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1579139630162062
 GameObject:
   m_ObjectHideFlags: 1
@@ -4703,7 +4704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1628512549442458
 GameObject:
   m_ObjectHideFlags: 1
@@ -5033,7 +5034,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1886602904189056
 GameObject:
   m_ObjectHideFlags: 1
@@ -7875,7 +7876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 0
-  healthGauge: {fileID: 0}
+  healthGauge: {fileID: 212000164610917702}
 --- !u!114 &114249375692941816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7934,7 +7935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 0
-  healthGauge: {fileID: 0}
+  healthGauge: {fileID: 212337337649784088}
 --- !u!114 &114438384864173268
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7947,10 +7948,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipInfo: {fileID: 0}
-  firePointList: []
-  explosionObject: {fileID: 0}
-  sprite: {fileID: 0}
-  spriteBase: {fileID: 0}
+  firePointList:
+  - {fileID: 4590000619460568}
+  - {fileID: 4703598966668116}
+  - {fileID: 4730520577386962}
+  - {fileID: 4065402195965052}
+  - {fileID: 4222883681610810}
+  explosionObject: {fileID: 1413627509862806}
+  sprite: {fileID: 212743275307486550}
+  spriteBase: {fileID: 4989580999651552}
 --- !u!114 &114439240575221378
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7963,10 +7969,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipInfo: {fileID: 0}
-  firePointList: []
-  explosionObject: {fileID: 0}
-  sprite: {fileID: 0}
-  spriteBase: {fileID: 0}
+  firePointList:
+  - {fileID: 4098832282530134}
+  - {fileID: 4884997552256946}
+  - {fileID: 4272510336718958}
+  - {fileID: 4769313635143946}
+  - {fileID: 4529852628769450}
+  explosionObject: {fileID: 1628512549442458}
+  sprite: {fileID: 212642956009917214}
+  spriteBase: {fileID: 4560945869320818}
 --- !u!114 &114542448872330704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7991,7 +8002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 0
-  healthGauge: {fileID: 0}
+  healthGauge: {fileID: 212485848286812322}
 --- !u!114 &114558640356253446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8073,7 +8084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 0
-  healthGauge: {fileID: 0}
+  healthGauge: {fileID: 212604187801347332}
 --- !u!114 &114756683097960838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8086,10 +8097,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipInfo: {fileID: 0}
-  firePointList: []
-  explosionObject: {fileID: 0}
-  sprite: {fileID: 0}
-  spriteBase: {fileID: 0}
+  firePointList:
+  - {fileID: 4945147299599606}
+  - {fileID: 4441749400313524}
+  - {fileID: 4778984444263294}
+  - {fileID: 4088963398029714}
+  - {fileID: 4531329559197472}
+  explosionObject: {fileID: 1072310223934664}
+  sprite: {fileID: 212477375364975422}
+  spriteBase: {fileID: 4759177247714670}
 --- !u!114 &114762082141393468
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8103,7 +8119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 0
-  healthGauge: {fileID: 0}
+  healthGauge: {fileID: 212890127727335928}
 --- !u!114 &114770877769911478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8116,10 +8132,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipInfo: {fileID: 0}
-  firePointList: []
-  explosionObject: {fileID: 0}
-  sprite: {fileID: 0}
-  spriteBase: {fileID: 0}
+  firePointList:
+  - {fileID: 443958}
+  - {fileID: 490304}
+  - {fileID: 409618}
+  - {fileID: 426994}
+  - {fileID: 481332}
+  explosionObject: {fileID: 1471246108268788}
+  sprite: {fileID: 212683769515525190}
+  spriteBase: {fileID: 4424109569495062}
 --- !u!114 &114798144402936758
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8132,10 +8153,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipInfo: {fileID: 0}
-  firePointList: []
-  explosionObject: {fileID: 0}
-  sprite: {fileID: 0}
-  spriteBase: {fileID: 0}
+  firePointList:
+  - {fileID: 4178087715507124}
+  - {fileID: 4028134006906362}
+  - {fileID: 4007612374705018}
+  - {fileID: 4706546728443682}
+  - {fileID: 4706546728443682}
+  explosionObject: {fileID: 1476463901549926}
+  sprite: {fileID: 212369872965166460}
+  spriteBase: {fileID: 4878232667289690}
 --- !u!114 &114820277974471714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8160,7 +8186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 0
-  healthGauge: {fileID: 0}
+  healthGauge: {fileID: 212064554219027324}
 --- !u!114 &114881322025530606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8173,10 +8199,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipInfo: {fileID: 0}
-  firePointList: []
-  explosionObject: {fileID: 0}
-  sprite: {fileID: 0}
-  spriteBase: {fileID: 0}
+  firePointList:
+  - {fileID: 4433135034451386}
+  - {fileID: 4683935598335738}
+  - {fileID: 4670619710307014}
+  - {fileID: 4053608610509560}
+  - {fileID: 4716429331736516}
+  explosionObject: {fileID: 1198081690194186}
+  sprite: {fileID: 212637311042508822}
+  spriteBase: {fileID: 4188669809911092}
 --- !u!114 &114896081592673052
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8190,7 +8221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 0
-  healthGauge: {fileID: 0}
+  healthGauge: {fileID: 212427001156020256}
 --- !u!114 &114899287119853430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8204,7 +8235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 0
-  healthGauge: {fileID: 0}
+  healthGauge: {fileID: 212682358131765562}
 --- !u!114 &114936636802518564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8217,10 +8248,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipInfo: {fileID: 0}
-  firePointList: []
-  explosionObject: {fileID: 0}
-  sprite: {fileID: 0}
-  spriteBase: {fileID: 0}
+  firePointList:
+  - {fileID: 4977837950675482}
+  - {fileID: 4958635401785392}
+  - {fileID: 4638727888660822}
+  - {fileID: 4628960444952140}
+  - {fileID: 4873389375012854}
+  explosionObject: {fileID: 1183772327086702}
+  sprite: {fileID: 212148282414770820}
+  spriteBase: {fileID: 4893731002889874}
 --- !u!198 &198101726662094160
 ParticleSystem:
   m_ObjectHideFlags: 1

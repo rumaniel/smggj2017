@@ -42,10 +42,12 @@ public class GridManager : MonoSingleton<GridManager>
 
     public List<ShipInfo> GetOrderedItemList()
     {
-        List<ShipInfo> infoList = new List<ShipInfo>();
+        List<ShipInfo> infoList = new List<ShipInfo>(8);
         for (int i = 0 ; i < itemList.Count; ++i)
         {
-            infoList.Add(itemList[i].shipInfo);
+            ShipInfo obj = ScriptableObject.CreateInstance<ShipInfo>();
+            obj.Init(itemList[i].shipInfo.sprite, itemList[i].shipInfo.moveSpeed, itemList[i].shipInfo.rotateSpeed, itemList[i].shipInfo.weaponInfo, itemList[i].shipInfo.bulletIndex, itemList[i].shipInfo.health, itemList[i].shipInfo.portraitList, itemList[i].shipInfo.follwerType, itemList[i].shipInfo.follwerBuf, itemList[i].shipInfo.Name, itemList[i].shipInfo.quoteList);
+            infoList.Add(obj);
         }
 
         return infoList;

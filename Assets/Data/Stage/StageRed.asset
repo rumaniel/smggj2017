@@ -1,0 +1,206 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 587f8de9fc1f54a7ab729aeeb4b313a3, type: 3}
+  m_Name: StageRed
+  m_EditorClassIdentifier: 
+  sequenceList:
+  - wait: 3
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 416c36e611ae82946aaf5301da87bc5c, type: 2}
+    patternInfo: {fileID: 11400000, guid: df1adb74a9bd7314784832be7ce55f6f, type: 2}
+    state: 0
+  - wait: 0
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 416c36e611ae82946aaf5301da87bc5c, type: 2}
+    patternInfo: {fileID: 11400000, guid: 0bf75b9694a33f143a69ab93064c9cdd, type: 2}
+    state: 0
+  - wait: 0
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 416c36e611ae82946aaf5301da87bc5c, type: 2}
+    patternInfo: {fileID: 11400000, guid: d79814a8edad048869e4e39d24a31fae, type: 2}
+    state: 0
+  - wait: 0
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 416c36e611ae82946aaf5301da87bc5c, type: 2}
+    patternInfo: {fileID: 11400000, guid: 6a32aee72a4e1714d9376da78dff3daa, type: 2}
+    state: 0
+  - wait: 0
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 416c36e611ae82946aaf5301da87bc5c, type: 2}
+    patternInfo: {fileID: 11400000, guid: cb7b4089e6f6f43f0b257d6f1707941f, type: 2}
+    state: 0
+  - wait: 7
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 416c36e611ae82946aaf5301da87bc5c, type: 2}
+    patternInfo: {fileID: 11400000, guid: df1adb74a9bd7314784832be7ce55f6f, type: 2}
+    state: 0
+  - wait: 0
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 416c36e611ae82946aaf5301da87bc5c, type: 2}
+    patternInfo: {fileID: 11400000, guid: 0bf75b9694a33f143a69ab93064c9cdd, type: 2}
+    state: 0
+  - wait: 0
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 416c36e611ae82946aaf5301da87bc5c, type: 2}
+    patternInfo: {fileID: 11400000, guid: 6a32aee72a4e1714d9376da78dff3daa, type: 2}
+    state: 0
+  - wait: 0
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 56616c86194df594090e330ac1cfc837, type: 2}
+    patternInfo: {fileID: 11400000, guid: f103f08150d78694a8e08304673bdc90, type: 2}
+    state: 0
+  - wait: 0
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 56616c86194df594090e330ac1cfc837, type: 2}
+    patternInfo: {fileID: 11400000, guid: ac98f8fdc02b5024e9fedfddb97be458, type: 2}
+    state: 0
+  - wait: 7
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 56616c86194df594090e330ac1cfc837, type: 2}
+    patternInfo: {fileID: 11400000, guid: df1adb74a9bd7314784832be7ce55f6f, type: 2}
+    state: 0
+  - wait: 0
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 56616c86194df594090e330ac1cfc837, type: 2}
+    patternInfo: {fileID: 11400000, guid: 0bf75b9694a33f143a69ab93064c9cdd, type: 2}
+    state: 0
+  - wait: 0
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 56616c86194df594090e330ac1cfc837, type: 2}
+    patternInfo: {fileID: 11400000, guid: 6a32aee72a4e1714d9376da78dff3daa, type: 2}
+    state: 0
+  - wait: 2
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: afdcc482ab26ad845a82f5d083227a75, type: 2}
+    patternInfo: {fileID: 11400000, guid: 86f6cffe6230511499daea8b67a9253b, type: 2}
+    state: 0
+  - wait: 0
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: afdcc482ab26ad845a82f5d083227a75, type: 2}
+    patternInfo: {fileID: 11400000, guid: d81ff7cf221222d4a9d7518c384da63f, type: 2}
+    state: 0
+  - wait: 7
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 416c36e611ae82946aaf5301da87bc5c, type: 2}
+    patternInfo: {fileID: 11400000, guid: df1adb74a9bd7314784832be7ce55f6f, type: 2}
+    state: 0
+  - wait: 0
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 416c36e611ae82946aaf5301da87bc5c, type: 2}
+    patternInfo: {fileID: 11400000, guid: 3d7558b7be89a6b40aa17473300bb34c, type: 2}
+    state: 0
+  - wait: 0
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 416c36e611ae82946aaf5301da87bc5c, type: 2}
+    patternInfo: {fileID: 11400000, guid: a208a1c8726af3e47b81a3b1d6f9df5c, type: 2}
+    state: 0
+  - wait: 0
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 416c36e611ae82946aaf5301da87bc5c, type: 2}
+    patternInfo: {fileID: 11400000, guid: 0bf75b9694a33f143a69ab93064c9cdd, type: 2}
+    state: 0
+  - wait: 2
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: afdcc482ab26ad845a82f5d083227a75, type: 2}
+    patternInfo: {fileID: 11400000, guid: 0a45dbe52ba2b6f41ac58a0883c95148, type: 2}
+    state: 0
+  - wait: 0
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: afdcc482ab26ad845a82f5d083227a75, type: 2}
+    patternInfo: {fileID: 11400000, guid: f103f08150d78694a8e08304673bdc90, type: 2}
+    state: 0
+  - wait: 0
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: afdcc482ab26ad845a82f5d083227a75, type: 2}
+    patternInfo: {fileID: 11400000, guid: ac98f8fdc02b5024e9fedfddb97be458, type: 2}
+    state: 0
+  - wait: 7
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: afdcc482ab26ad845a82f5d083227a75, type: 2}
+    patternInfo: {fileID: 11400000, guid: 7bc3c7bb272419c46a37f9334f55c323, type: 2}
+    state: 0
+  - wait: 2
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: afdcc482ab26ad845a82f5d083227a75, type: 2}
+    patternInfo: {fileID: 11400000, guid: 86f6cffe6230511499daea8b67a9253b, type: 2}
+    state: 0
+  - wait: 2
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: afdcc482ab26ad845a82f5d083227a75, type: 2}
+    patternInfo: {fileID: 11400000, guid: d81ff7cf221222d4a9d7518c384da63f, type: 2}
+    state: 0
+  - wait: 2
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 416c36e611ae82946aaf5301da87bc5c, type: 2}
+    patternInfo: {fileID: 11400000, guid: df1adb74a9bd7314784832be7ce55f6f, type: 2}
+    state: 0
+  - wait: 0
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 416c36e611ae82946aaf5301da87bc5c, type: 2}
+    patternInfo: {fileID: 11400000, guid: 0bf75b9694a33f143a69ab93064c9cdd, type: 2}
+    state: 0
+  - wait: 0
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 416c36e611ae82946aaf5301da87bc5c, type: 2}
+    patternInfo: {fileID: 11400000, guid: 3d7558b7be89a6b40aa17473300bb34c, type: 2}
+    state: 0
+  - wait: 0
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 416c36e611ae82946aaf5301da87bc5c, type: 2}
+    patternInfo: {fileID: 11400000, guid: a208a1c8726af3e47b81a3b1d6f9df5c, type: 2}
+    state: 0
+  - wait: 2
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 56616c86194df594090e330ac1cfc837, type: 2}
+    patternInfo: {fileID: 11400000, guid: 0a45dbe52ba2b6f41ac58a0883c95148, type: 2}
+    state: 0
+  - wait: 0
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 56616c86194df594090e330ac1cfc837, type: 2}
+    patternInfo: {fileID: 11400000, guid: f103f08150d78694a8e08304673bdc90, type: 2}
+    state: 0
+  - wait: 0
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 56616c86194df594090e330ac1cfc837, type: 2}
+    patternInfo: {fileID: 11400000, guid: ac98f8fdc02b5024e9fedfddb97be458, type: 2}
+    state: 0

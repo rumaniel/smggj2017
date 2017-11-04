@@ -40,4 +40,15 @@ public class GridManager : MonoSingleton<GridManager>
         text.text = itemList[index].shipInfo.ToString();
     }
 
+    public List<ShipInfo> GetOrderedItemList()
+    {
+        List<ShipInfo> infoList = new List<ShipInfo>();
+        for (int i = 0 ; i < itemList.Count; ++i)
+        {
+            infoList.Add(itemList[i].shipInfo);
+        }
+
+        return infoList;
+    }
+
 }

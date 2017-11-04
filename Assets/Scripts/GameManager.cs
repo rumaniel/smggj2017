@@ -142,6 +142,9 @@ public class GameManager : MonoSingleton<GameManager>
             {
                 obj.SetActive(true);
             }
+
+		PlayerData.Instance.UpdatePlayerInfo(grid.GetOrderedItemList());
+		
     }
 
     public void OnDrop(int idxPre, int idxPost)

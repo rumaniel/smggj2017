@@ -27,9 +27,14 @@ public class PlayerData : MonoSingleton<PlayerData>
         }
     }
 
-    public void UpdatePlayerInfo()
+    public void UpdatePlayerInfo(List<ShipInfo> infoList)
     {
+        followerInfo.Clear();
         
+        for (int i = 0 ; i < infoList.Count; ++i)
+        {
+            followerInfo.Add(infoList[i]);
+        }
     }
 
 }

@@ -40561,11 +40561,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114895998258690236, guid: 6b11ded38fb26164dac87073758df57e,
-        type: 2}
-      propertyPath: m_Text
-      value: 000000
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b11ded38fb26164dac87073758df57e, type: 2}
   m_IsPrefabParent: 0
@@ -62959,8 +62954,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1765944828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 87, y: 155, z: 0}
-  m_LocalScale: {x: 0.484375, y: 0.484375, z: 0.484375}
+  m_LocalPosition: {x: 113.5, y: 202, z: 0}
+  m_LocalScale: {x: 0.63125, y: 0.63125, z: 0.63125}
   m_Children:
   - {fileID: 736508197}
   - {fileID: 667356565}

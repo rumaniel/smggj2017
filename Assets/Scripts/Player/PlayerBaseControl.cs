@@ -69,6 +69,8 @@ public class PlayerBaseControl : MonoBehaviour
 
 	IEnumerator Die()
 	{
+
+        GameObject obj = GameObject.Find("scoreText");
         obj.GetComponent<GameScore>().Score += unitData.GetMaxHealth();
 
         explosionObject.SetActive(true);
@@ -76,7 +78,6 @@ public class PlayerBaseControl : MonoBehaviour
 		explosionObject.SetActive(false);
 		GetComponent<MonoPooledObject>().ReturnToPool();
 
-        GameObject obj = GameObject.Find("scoreText");
     }
 
 }

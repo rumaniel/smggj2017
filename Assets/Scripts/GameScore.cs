@@ -22,7 +22,7 @@ public class GameScore : MonoBehaviour {
 	}
 
 	void UpdateScoreTextUI () {
-		string scoreStr = string.Format ("{0:0000000}", score);
+		string scoreStr = string.Format ("{0:000000}", score);
 		scoreTextUI.text = scoreStr;
 	}
 }

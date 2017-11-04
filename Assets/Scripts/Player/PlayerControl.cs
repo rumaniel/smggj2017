@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class PlayerControl : PlayerBaseControl 
 {
-	public List<UnitControl> followerList;
+	public List<FollowerControl> followerList;
 	float timeToFire = 0f;
 
 	public override void Init()

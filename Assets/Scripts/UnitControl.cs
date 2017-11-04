@@ -16,7 +16,7 @@ public class UnitControl : PlayerBaseControl
 	{
 		if (isEnemy)
 		{
-			spriteBase.rotation *= Quaternion.Euler(0, 0, 180f);
+			spriteBase.rotation = Quaternion.Euler(0, 0, 180f);
 			gameObject.tag = "EnemyShip";
 		}
 		else

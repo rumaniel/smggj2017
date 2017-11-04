@@ -55112,6 +55112,8 @@ MonoBehaviour:
   unitBase: {fileID: 0}
   stageList:
   - {fileID: 11400000, guid: 6eca19ddd0da64a769f6015297783ea6, type: 2}
+  - {fileID: 11400000, guid: d52fb36d75debcf4280fc2cd0ffef9d0, type: 2}
+  - {fileID: 11400000, guid: d9efa6d2af760a946b5cb0131f7573b6, type: 2}
   playButton: {fileID: 454283483}
   playerShip: {fileID: 837647102}
   hud: {fileID: 0}
@@ -62848,8 +62850,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1765944828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 109.5, y: 195, z: 0}
-  m_LocalScale: {x: 0.609375, y: 0.609375, z: 0.609375}
+  m_LocalPosition: {x: 128.5, y: 228.5, z: 0}
+  m_LocalScale: {x: 0.7140625, y: 0.7140625, z: 0.7140625}
   m_Children:
   - {fileID: 667356565}
   - {fileID: 454283484}

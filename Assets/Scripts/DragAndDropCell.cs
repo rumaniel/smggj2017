@@ -236,29 +236,43 @@ public class DragAndDropCell : MonoBehaviour, IDropHandler
     /// <param name="secondCell"> Cell </param>
     public void SwapItems(DragAndDropCell firstCell, DragAndDropCell secondCell)
     {
+        int first = -1;
+        int second = -1;
+
+        //Debug.Log("swap");
         if ((firstCell != null) && (secondCell != null))
         {
             DragAndDropItem firstItem = firstCell.GetItem();                // Get item from first cell
             DragAndDropItem secondItem = secondCell.GetItem();              // Get item from second cell
             if (firstItem != null)
             {
+                first = int.Parse(firstItem.transform.parent.name);
                 // Place first item into second cell
                 firstItem.transform.SetParent(secondCell.transform, false);
                 firstItem.transform.localPosition = Vector3.zero;
                 secondCell.SetBackgroundState(true);
+                if(secondItem == null)
+                    second = int.Parse(firstItem.transform.parent.name);
             }
+            
             if (secondItem != null)
             {
+                second = int.Parse(secondItem.transform.parent.name);
+
                 // Place second item into first cell
                 secondItem.transform.SetParent(firstCell.transform, false);
                 secondItem.transform.localPosition = Vector3.zero;
                 firstCell.SetBackgroundState(true);
             }
         }
+
+        GameObject.Find("GameManager").GetComponent<GameManager>().OnDrop(first, second);
     }
 
     private IEnumerator NotifyOnDragEnd(DropDescriptor desc)
     {
+        //Debug.Log("drag end");
+
         // Wait end of drag operation
         while (DragAndDropItem.draggedItem != null)
         {

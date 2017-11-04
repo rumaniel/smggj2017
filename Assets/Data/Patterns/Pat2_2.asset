@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ddc59b8353004bcdaa41830b136d32a, type: 3}
-  m_Name: DefaultPatterns3
+  m_Name: Pat2_2
   m_EditorClassIdentifier: 
   appearPattern: 0
   customAppearList:
@@ -17,7 +17,7 @@ MonoBehaviour:
   - {x: 0, y: 1}
   movingPattern: 0
   customMoveSpotList: []
-  leavePattern: 0
-  stayTime: 5
+  leavePattern: 1
+  stayTime: 7
   leaveDirectionList:
   - {x: 0, y: 3}

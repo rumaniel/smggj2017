@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83cf1c14b3951491da6185cc47f501c8, type: 3}
+  m_Name: UnitSquare_red
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 5211845cd4cc158418f6eff210b971a3, type: 3}
+  moveSpeed: 5
+  rotateSpeed: 50
+  weaponInfo: {fileID: 11400000, guid: 0baf5232ff6f849839866bb15f5ff18c, type: 2}
+  bulletIndex: 1
+  health: 0

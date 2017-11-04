@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 587f8de9fc1f54a7ab729aeeb4b313a3, type: 3}
+  m_Name: StageBlue
+  m_EditorClassIdentifier: 
+  sequenceList:
+  - wait: 3
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 7ce8315bf6b034ad5a7f961a2fc0225e, type: 2}
+    patternInfo: {fileID: 11400000, guid: d79814a8edad048869e4e39d24a31fae, type: 2}
+    state: 0
+  - wait: 2
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 7ce8315bf6b034ad5a7f961a2fc0225e, type: 2}
+    patternInfo: {fileID: 11400000, guid: cb7b4089e6f6f43f0b257d6f1707941f, type: 2}
+    state: 0
+  - wait: 2
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 7ce8315bf6b034ad5a7f961a2fc0225e, type: 2}
+    patternInfo: {fileID: 11400000, guid: 8de830aed903e416abbd18ae15abb211, type: 2}
+    state: 0
+  - wait: 7
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: fbe29d2a5a8bc4643b798d5b8baaeeb3, type: 2}
+    patternInfo: {fileID: 11400000, guid: ac98f8fdc02b5024e9fedfddb97be458, type: 2}
+    state: 0
+  - wait: 2
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: fbe29d2a5a8bc4643b798d5b8baaeeb3, type: 2}
+    patternInfo: {fileID: 11400000, guid: f103f08150d78694a8e08304673bdc90, type: 2}
+    state: 0
+  - wait: 2
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 77f38a84cde9242d88c0909449d4c491, type: 2}
+    patternInfo: {fileID: 11400000, guid: 8de830aed903e416abbd18ae15abb211, type: 2}
+    state: 0
+  - wait: 5
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 7ce8315bf6b034ad5a7f961a2fc0225e, type: 2}
+    patternInfo: {fileID: 11400000, guid: 59d3f9228eb88444d87c5c4a3b80789e, type: 2}
+    state: 0
+  - wait: 2
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 7ce8315bf6b034ad5a7f961a2fc0225e, type: 2}
+    patternInfo: {fileID: 11400000, guid: 86f6cffe6230511499daea8b67a9253b, type: 2}
+    state: 0
+  - wait: 10
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: fbe29d2a5a8bc4643b798d5b8baaeeb3, type: 2}
+    patternInfo: {fileID: 11400000, guid: f103f08150d78694a8e08304673bdc90, type: 2}
+    state: 0
+  - wait: 0
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: fbe29d2a5a8bc4643b798d5b8baaeeb3, type: 2}
+    patternInfo: {fileID: 11400000, guid: 0a45dbe52ba2b6f41ac58a0883c95148, type: 2}
+    state: 0
+  - wait: 0
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: fbe29d2a5a8bc4643b798d5b8baaeeb3, type: 2}
+    patternInfo: {fileID: 11400000, guid: ac98f8fdc02b5024e9fedfddb97be458, type: 2}
+    state: 0
+  - wait: 7
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 7ce8315bf6b034ad5a7f961a2fc0225e, type: 2}
+    patternInfo: {fileID: 11400000, guid: 7bc3c7bb272419c46a37f9334f55c323, type: 2}
+    state: 0
+  - wait: 1
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 77f38a84cde9242d88c0909449d4c491, type: 2}
+    patternInfo: {fileID: 11400000, guid: 59d3f9228eb88444d87c5c4a3b80789e, type: 2}
+    state: 0
+  - wait: 1
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 77f38a84cde9242d88c0909449d4c491, type: 2}
+    patternInfo: {fileID: 11400000, guid: 86f6cffe6230511499daea8b67a9253b, type: 2}
+    state: 0
+  - wait: 2
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 7ce8315bf6b034ad5a7f961a2fc0225e, type: 2}
+    patternInfo: {fileID: 11400000, guid: 6df210e675ba01d44a6af6abee64a0fa, type: 2}
+    state: 0
+  - wait: 2
+    isLoop: 0
+    previousLoopClear: 0
+    appearShip: {fileID: 11400000, guid: 7ce8315bf6b034ad5a7f961a2fc0225e, type: 2}
+    patternInfo: {fileID: 11400000, guid: c00b3d3db982d1a4ebe879c6ef567ab3, type: 2}
+    state: 0

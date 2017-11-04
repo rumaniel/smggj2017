@@ -17,7 +17,7 @@ MonoBehaviour:
   - {x: -1, y: 1}
   movingPattern: 2
   customMoveSpotList: []
-  leavePattern: 0
+  leavePattern: 1
   stayTime: 7
   leaveDirectionList:
   - {x: -1, y: 3}

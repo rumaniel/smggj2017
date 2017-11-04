@@ -9,11 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83cf1c14b3951491da6185cc47f501c8, type: 3}
-  m_Name: UnitTri
+  m_Name: UnitTri_red
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 3d4d5c549d3e01f40bcbeeb8b180e6e0, type: 3}
+  sprite: {fileID: 21300000, guid: ba7b29f4dcf3df542b3be2f3524c5a7e, type: 3}
   moveSpeed: 5
   rotateSpeed: 50
-  weaponInfo: {fileID: 11400000, guid: 8a5593c4f6d204d46b6c898534036c37, type: 2}
+  weaponInfo: {fileID: 11400000, guid: 4e6d96c6bfe322b4f920a75154790523, type: 2}
   bulletIndex: 1
   health: 0

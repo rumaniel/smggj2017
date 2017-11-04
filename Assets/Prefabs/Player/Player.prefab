@@ -7874,6 +7874,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  maxHealth: 0
+  healthGauge: {fileID: 0}
 --- !u!114 &114249375692941816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7931,6 +7933,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  maxHealth: 0
+  healthGauge: {fileID: 0}
 --- !u!114 &114438384864173268
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7986,6 +7990,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  maxHealth: 0
+  healthGauge: {fileID: 0}
 --- !u!114 &114558640356253446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8041,6 +8047,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  maxHealth: 0
+  healthGauge: {fileID: 212834132684018974}
 --- !u!114 &114652549209359634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8064,6 +8072,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  maxHealth: 0
+  healthGauge: {fileID: 0}
 --- !u!114 &114756683097960838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8092,6 +8102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  maxHealth: 0
+  healthGauge: {fileID: 0}
 --- !u!114 &114770877769911478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8147,6 +8159,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  maxHealth: 0
+  healthGauge: {fileID: 0}
 --- !u!114 &114881322025530606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8175,6 +8189,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  maxHealth: 0
+  healthGauge: {fileID: 0}
 --- !u!114 &114899287119853430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8187,6 +8203,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  maxHealth: 0
+  healthGauge: {fileID: 0}
 --- !u!114 &114936636802518564
 MonoBehaviour:
   m_ObjectHideFlags: 1

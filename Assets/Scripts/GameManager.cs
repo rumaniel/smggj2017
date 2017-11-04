@@ -20,6 +20,8 @@ public class GameManager : MonoSingleton<GameManager>
     public GameObject SettingDlg;
     public GameObject SettingBtn;
 
+    public GameObject[] GameStartBtns;
+
     public enum GameManagerState
 	{
 		Opening,
@@ -90,7 +92,13 @@ public class GameManager : MonoSingleton<GameManager>
 	// Call this function when the "Play" button is pressed.
 	public void StartInGame()
 	{
-		GMState = GameManagerState.InGame;
+        foreach (GameObject obj in GameStartBtns)
+        {
+            obj.SetActive(false);
+        }
+
+
+        GMState = GameManagerState.InGame;
 		UpdateGameManagerState ();
 	}
 	// This will reload the main scene.
@@ -102,6 +110,11 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void OnSettingOpen()
     {
+        foreach ( GameObject obj in GameStartBtns)
+        {
+            obj.SetActive(false);
+        }
+
         SettingBtn.SetActive(false);
         RectTransform image1 = SettingDlg.GetComponent<RectTransform>();
         image1.DOLocalMove(new Vector3(0, 0, 0), 1.0f);
@@ -114,6 +127,11 @@ public class GameManager : MonoSingleton<GameManager>
 
         SettingBtn.SetActive(true);
 		isPause = false;
+
+        foreach (GameObject obj in GameStartBtns)
+        {
+            obj.SetActive(true);
+        }
     }
 
     public void OnDrop(int idxPre, int idxPost)

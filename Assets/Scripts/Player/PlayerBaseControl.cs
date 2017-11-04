@@ -45,7 +45,7 @@ public class PlayerBaseControl : MonoBehaviour
 
 	protected virtual void OnTriggerEnter2D(Collider2D col)
 	{
-
+		// Debug.Log(col.transform.GetComponent<BulletBase>().weaponInfo);
 	}
 
 }

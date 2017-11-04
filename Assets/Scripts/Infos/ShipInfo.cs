@@ -9,4 +9,5 @@ public class ShipInfo : ScriptableObject
     public float moveSpeed;
     public WeaponInfo weaponInfo;
     public int bulletIndex;
+    public float health;
 }

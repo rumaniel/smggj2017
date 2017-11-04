@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Collections.Generic;
 
-public class GameManager : MonoBehaviour {
-
+public class GameManager : MonoSingleton<GameManager> 
+{
+	public List<StageInfo> stageList;
 	public GameObject playButton;
 	public GameObject playerShip;
 	public GameObject hud;
@@ -50,20 +52,11 @@ public class GameManager : MonoBehaviour {
 		case GameManagerState.InGame:
 			// Hide the cursor.
 			Cursor.visible = false;
-			// Hide the game titles.
-			// GameTitle.SetActive(false);
-			// Hide the "Play" button during InGame.
 			playButton.SetActive(false);
-			// Show the main HUD text.
-			//hud.SetActive(true);
-			// Set the player ship to be visible during InGame.
 			playerShip.GetComponent<PlayerControl>().Init();
-			// Start the enemy spawner.
-			//enemySpawner.GetComponent<EnemySpawner>().ScheduleEnemySpawner();
-			// Start the hazard spawner.
-			//hazardSpawner.GetComponent<HazardSpawner>().ScheduleHazardSpawner();
-			// Start the power up spawner.
-			//powerUpSpawner.GetComponent<PowerUpSpawner>().SchedulePowerUpSpawner();
+
+			StageManager.Instance.StartStage(stageList[0]);
+
 				break;
 		case GameManagerState.GameOver:
 			// Stop the timer.

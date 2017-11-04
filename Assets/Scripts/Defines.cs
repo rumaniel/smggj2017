@@ -26,16 +26,19 @@ public class Defines
 
 	public enum EnemyAppearPattern
 	{
-		Back = 0,
-		Side,
+		// Back = 0,
+		// Side,
 		Custom
 	}
 
 	public enum EnemyMovingPattern
 	{
 		Idle = 0,
-		Horizontal,
-		ZigZagPass,
+		IdleAndFacePlayer,
+		// HorizontalTop,
+		HorizontalMiddle,
+		// HorizontalBottom,
+		// ZigZagPass,
 		ComeToPlayer,
 		Custom
 	}

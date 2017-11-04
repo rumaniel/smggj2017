@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class StageManager : MonoSingleton<StageManager>
 {
-    List<StageSequencer> stageQueue;
+    List<StageSequencer> stageQueue = new List<StageSequencer>();
 
     public void StartStage(StageInfo stageInfo)
     {

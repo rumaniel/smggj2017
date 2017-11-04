@@ -16,7 +16,4 @@ MonoBehaviour:
     isLoop: 1
     previousLoopClear: 0
     appearShip: {fileID: 11400000, guid: fbe29d2a5a8bc4643b798d5b8baaeeb3, type: 2}
-  - wait: 0
-    isLoop: 0
-    previousLoopClear: 0
-    appearShip: {fileID: 0}
+    patternInfo: {fileID: 11400000, guid: cb7b4089e6f6f43f0b257d6f1707941f, type: 2}

@@ -4,14 +4,65 @@ using System.Collections.Generic;
 
 public class UnitControl : PlayerBaseControl 
 {
-    public bool isEnemy;
-    public List<ShipInfo> shipInfoList;
+    public bool isMoving;
+	public PatternInfo pattern;
     
 	float timeToFire = 0f;
+
+	public void SetUnitInfo(PatternInfo pattern, ShipInfo ship)
+	{
+		this.pattern = pattern;
+		this.shipInfo = ship;
+	}
 
 	public override void Init()
 	{
 		base.Init();
+		StartCoroutine("DoUnitPattern");
+	}
+
+	void Update () 
+	{
+		if (currentWeapon.GetFireRate() == 0f) 
+		{
+			FireWeapon ();
+		} 
+		else if (Time.time > timeToFire)  
+		{
+			timeToFire = Time.time + 1f / currentWeapon.GetFireRate();
+			FireWeapon ();
+		}
+	}	
+
+	IEnumerator DoUnitPattern()
+	{
+		// appear Process
+
+		// moving Process
+		switch (pattern.movingPattern)
+		{
+			case Defines.EnemyMovingPattern.HorizontalMiddle:
+			case Defines.EnemyMovingPattern.Custom:
+			case Defines.EnemyMovingPattern.IdleAndFacePlayer:
+				while (true)
+				{
+					Vector2 dir = GameManager.Instance.playerShip.transform.position - transform.position;
+					dir.Normalize ();
+					
+					float zAngle = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg - 90;
+					
+					Quaternion desiredRot = Quaternion.Euler (0, 0, zAngle);
+					
+					transform.rotation = Quaternion.RotateTowards (transform.rotation, desiredRot, shipInfo.moveSpeed * Time.deltaTime);
+					yield return null;
+				}
+			break;
+			case Defines.EnemyMovingPattern.Idle:
+			default:
+				break;
+		}
+
+		yield return null;
 	}
 
 }

@@ -18,7 +18,7 @@ public class StageSequencer
     public bool isLoop;
     public bool previousLoopClear;
     public ShipInfo appearShip;
-    public ParternInfo parternInfo;
+    public PatternInfo patternInfo;
 
     SequenceState state = SequenceState.Idle;
     private float accumulatedTime = 0f;
@@ -32,8 +32,8 @@ public class StageSequencer
             if (!IsLoop())
             {
                 state = SequenceState.Running;
-                return;
             }
+            return;
         }
 
         if (previousLoopClear)
@@ -49,6 +49,9 @@ public class StageSequencer
             }
         }
         // do ships
+        UnitControl unit = UnitManager.Instance.GetUnit().GetComponent<UnitControl>();
+        unit.SetUnitInfo(patternInfo, appearShip);
+        unit.Init();
 
         if (isLoop)
         {

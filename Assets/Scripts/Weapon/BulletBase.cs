@@ -34,10 +34,8 @@ public class BulletBase : MonoBehaviour
 		Vector3 velocity = new Vector3 (0, weaponInfo.shotSpeed * Time.deltaTime, 0);
 		pos += transform.rotation * velocity;
 		transform.position = pos;
-		Debug.Log(transform.position);
 		
         CheckOutofBound();
-        
 	}
 
 	protected virtual void OnTriggerEnter2D(Collider2D col)

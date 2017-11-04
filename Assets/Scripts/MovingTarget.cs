@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MovingTarget : MonoBehaviour {
-
+public class MovingTarget : MonoBehaviour 
+{
 	// This script attaches to an invisible game object below the 
 	// screen area and acts as a target for the enemy ships rather than the player.
 	private bool dirRight = true;

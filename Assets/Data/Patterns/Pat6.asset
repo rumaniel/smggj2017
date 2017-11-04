@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   appearPattern: 0
   customAppearList:
-  - {x: -0.5, y: 3}
-  - {x: -0.5, y: 1}
+  - {x: 0.5, y: 3}
+  - {x: 0.5, y: 1}
   movingPattern: 0
   customMoveSpotList: []
   leavePattern: 0

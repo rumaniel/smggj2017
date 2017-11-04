@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class PlayerData : MonoSingleton<PlayerData> 
 {
-    public List<UnitData> followerInfo;
+    public List<ShipInfo> followerInfo;
     public PlayerControl playerControl;
     public float health;
 

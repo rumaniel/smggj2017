@@ -28,6 +28,18 @@ public class PlayerControl : PlayerBaseControl
 		}
 	}
 
+	public override void FireWeapon()
+	{
+        currentWeapon.Fire();
+		for (int i = 0; i < followerList.Count; ++i)
+		{
+			if (followerList[i].gameObject.activeInHierarchy)
+			{
+				followerList[i].FireWeapon();
+			}
+		}
+	}
+
 	void Update () 
 	{
 		if (GameManager.Instance.isPause) return;

@@ -13,7 +13,6 @@ public class FollowerControl : PlayerBaseControl
     public void UpdateFollower(ShipInfo ship)
     {
 		this.shipInfo = ship;
-		Debug.Log(shipInfo.Name);
 		sprite.sprite = shipInfo.sprite;
 		unitData.SetHealth(this.shipInfo.health);
 		Init();

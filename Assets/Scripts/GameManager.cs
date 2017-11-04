@@ -2,6 +2,7 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 
 public class GameManager : MonoSingleton<GameManager> 
 {
@@ -15,8 +16,10 @@ public class GameManager : MonoSingleton<GameManager>
 	//public GameObject hazardSpawner;
 	//public GameObject powerUpSpawner;
 	public GameObject GameOver;
+    public GameObject SettingDlg;
+    public GameObject SettingBtn;
 
-	public enum GameManagerState
+    public enum GameManagerState
 	{
 		Opening,
 		InGame,
@@ -28,8 +31,9 @@ public class GameManager : MonoSingleton<GameManager>
 	
 	void Start () 
 	{
-		// Set the default state to 'Opening'.
-		GMState = GameManagerState.Opening;
+        DOTween.Init(false, true, LogBehaviour.ErrorsOnly);
+        // Set the default state to 'Opening'.
+        GMState = GameManagerState.Opening;
 		UpdateGameManagerState ();
 	}
 
@@ -93,4 +97,21 @@ public class GameManager : MonoSingleton<GameManager>
 		// Reset the scene.
 		SceneManager.LoadScene("Game");
 	}
+
+    public void OnSettingOpen()
+    {
+        SettingBtn.SetActive(false);
+        RectTransform image1 = SettingDlg.GetComponent<RectTransform>();
+        image1.DOLocalMove(new Vector3(0, 0, 0), 1.0f);
+    }
+    public void OnSettingClose()
+    {
+        RectTransform image1 = SettingDlg.GetComponent<RectTransform>();
+        image1.DOLocalMove(new Vector3(500, 0, 0), 1.0f);
+
+        SettingBtn.SetActive(true);
+
+    }
+
+
 }

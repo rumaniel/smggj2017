@@ -64,9 +64,19 @@ public class PlayerBaseControl : MonoBehaviour
 			if (bullet != null)
 			{
 				unitData.AddHealth(-bullet.weaponInfo.damage);
-				Debug.Log(unitData.health);
+				if (unitData.IsDie())
+				{
+					StartCoroutine("Die");
+				}
 			}
 		}
+	}
+
+	IEnumerator Die()
+	{
+		PlayExplosion();
+		yield return new WaitForSeconds(1f);
+		GetComponent<MonoPooledObject>().ReturnToPool();
 	}
 
 }

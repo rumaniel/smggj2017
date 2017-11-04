@@ -23,6 +23,16 @@ public class StageSequencer
     SequenceState state = SequenceState.Idle;
     private float accumulatedTime = 0f;
 
+    public StageSequencer(StageSequencer sequencer)
+    {
+        this.wait = sequencer.wait;
+        this.isLoop = sequencer.isLoop;
+        this.previousLoopClear = sequencer.previousLoopClear;
+        this.appearShip = sequencer.appearShip;
+        this.patternInfo = sequencer.patternInfo;
+        this.state = sequencer.state;
+        this.accumulatedTime = 0f;
+    }
 
     public void Update(float delta)
     {
@@ -52,6 +62,7 @@ public class StageSequencer
         UnitControl unit = UnitManager.Instance.GetUnit().GetComponent<UnitControl>();
         unit.SetUnitInfo(patternInfo, appearShip);
         unit.Init();
+        unit.spriteBase.rotation *= Quaternion.Euler(0,180f,0);
 
         if (isLoop)
         {

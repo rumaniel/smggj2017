@@ -9,7 +9,7 @@ public class StageManager : MonoSingleton<StageManager>
     public void StartStage(StageInfo stageInfo)
     {
         stageQueue.Clear();
-        stageQueue = stageInfo.sequenceList;
+        stageQueue = stageInfo.sequenceList.ConvertAll(item => new StageSequencer(item));
     }
 
     void Update()

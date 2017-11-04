@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class UnitControl : PlayerBaseControl 
 {
+	public SpriteRenderer sprite;
+	public Transform spriteBase;
     public bool isMoving;
 	public PatternInfo pattern;
     
@@ -13,6 +15,7 @@ public class UnitControl : PlayerBaseControl
 	{
 		this.pattern = pattern;
 		this.shipInfo = ship;
+		// sprite change
 	}
 
 	public override void Init()
@@ -53,7 +56,7 @@ public class UnitControl : PlayerBaseControl
 					
 					Quaternion desiredRot = Quaternion.Euler (0, 0, zAngle);
 					
-					transform.rotation = Quaternion.RotateTowards (transform.rotation, desiredRot, shipInfo.moveSpeed * Time.deltaTime);
+					spriteBase.rotation = Quaternion.RotateTowards (transform.rotation, desiredRot, shipInfo.moveSpeed * Time.deltaTime);
 					yield return null;
 				}
 			break;

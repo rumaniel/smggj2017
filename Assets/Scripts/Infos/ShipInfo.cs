@@ -7,6 +7,7 @@ public class ShipInfo : ScriptableObject
 {
     public Sprite sprite;
     public float moveSpeed;
+    public float rotateSpeed = 5f;
     public WeaponInfo weaponInfo;
     public int bulletIndex;
     public float health;

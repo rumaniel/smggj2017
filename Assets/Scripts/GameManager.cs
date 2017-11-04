@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class GameManager : MonoSingleton<GameManager> 
 {
+	public GameObject unitBase;
 	public List<StageInfo> stageList;
 	public GameObject playButton;
 	public GameObject playerShip;

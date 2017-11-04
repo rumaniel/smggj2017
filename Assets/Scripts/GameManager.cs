@@ -8,9 +8,9 @@ public class GameManager : MonoBehaviour {
 	public GameObject playerShip;
 	public GameObject hud;
 	public GameObject timerText;
-	public GameObject enemySpawner;
-	public GameObject hazardSpawner;
-	public GameObject powerUpSpawner;
+	//public GameObject enemySpawner;
+	//public GameObject hazardSpawner;
+	//public GameObject powerUpSpawner;
 	public GameObject GameOver;
 
 	public enum GameManagerState
@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour {
 			// Hide the game over text.
 			GameOver.SetActive(false);
 			// Hide the main HUD text.
-			hud.SetActive(false);
+			//hud.SetActive(false);
 			// Display the game title.
 			// GameTitle.SetActive(true);
 			// Show the 'Play' button.
@@ -55,25 +55,25 @@ public class GameManager : MonoBehaviour {
 			// Hide the "Play" button during InGame.
 			playButton.SetActive(false);
 			// Show the main HUD text.
-			hud.SetActive(true);
+			//hud.SetActive(true);
 			// Set the player ship to be visible during InGame.
 			playerShip.GetComponent<PlayerControl>().Init();
 			// Start the enemy spawner.
-			enemySpawner.GetComponent<EnemySpawner>().ScheduleEnemySpawner();
+			//enemySpawner.GetComponent<EnemySpawner>().ScheduleEnemySpawner();
 			// Start the hazard spawner.
-			hazardSpawner.GetComponent<HazardSpawner>().ScheduleHazardSpawner();
+			//hazardSpawner.GetComponent<HazardSpawner>().ScheduleHazardSpawner();
 			// Start the power up spawner.
-			powerUpSpawner.GetComponent<PowerUpSpawner>().SchedulePowerUpSpawner();
+			//powerUpSpawner.GetComponent<PowerUpSpawner>().SchedulePowerUpSpawner();
 				break;
 		case GameManagerState.GameOver:
 			// Stop the timer.
-			timerText.GetComponent<TimeCounter>().StopTimeCounter();
+			//timerText.GetComponent<TimeCounter>().StopTimeCounter();
 			// Stop the enemy spawner.
-			enemySpawner.GetComponent<EnemySpawner>().UnscheduleEnemySpawner();
+			//enemySpawner.GetComponent<EnemySpawner>().UnscheduleEnemySpawner();
 			// Stop the hazard spawner.
-			hazardSpawner.GetComponent<HazardSpawner>().UnscheduleHazardSpawner();
+			//hazardSpawner.GetComponent<HazardSpawner>().UnscheduleHazardSpawner();
 			// Stop the power up spawner.
-			powerUpSpawner.GetComponent<PowerUpSpawner>().UnschedulePowerUpSpawner();
+			//powerUpSpawner.GetComponent<PowerUpSpawner>().UnschedulePowerUpSpawner();
 			// Display the game over text.
 			GameOver.SetActive (true);
 			// Change the game state to 'Opening' after 5 seconds.

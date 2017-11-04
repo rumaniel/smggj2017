@@ -17,7 +17,7 @@ public class PlayerHealth : MonoBehaviour {
 		// Set our curHealth to equal our set maxHealth value.
 		curHealth = maxHealth;
 		// Update the UI Text.
-		healthUIText.text = curHealth.ToString ();
+		//healthUIText.text = curHealth.ToString ();
 	}
 
 	void Update () {

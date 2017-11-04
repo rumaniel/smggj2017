@@ -23,7 +23,7 @@ public class UnitData : MonoBehaviour
         {
             float calc = this.health / maxHealth;
             Debug.Log("ca " + calc);
-            healthGauge.size = new Vector2((0.32f) * calc,0.08f);
+            healthGauge.size = new Vector2(Mathf.Max(0.02f,(0.32f) * calc),0.08f);
         }
 
         return this.health;

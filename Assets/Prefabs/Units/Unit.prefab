@@ -3962,26 +3962,13 @@ MonoBehaviour:
   explosionObject: {fileID: 1471246108268788}
   isEnemy: 1
   shipInfoList:
+  - {fileID: 11400000, guid: fbe29d2a5a8bc4643b798d5b8baaeeb3, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  spriteList:
-  - {fileID: 21300000, guid: 45b1ac652c31a8c4d84193f77b18d92b, type: 3}
-  - {fileID: 21300000, guid: 00b43117ceb072c4ca95c9bf08f0e676, type: 3}
-  - {fileID: 21300000, guid: 3d4d5c549d3e01f40bcbeeb8b180e6e0, type: 3}
-  - {fileID: 21300000, guid: b1a5815b03da8884e915a280a0d60925, type: 3}
-  - {fileID: 21300000, guid: 8765207044f9ae943bb67bd364872e89, type: 3}
-  - {fileID: 21300000, guid: de828caca2fd07d49bae8fa7fb322be7, type: 3}
-  - {fileID: 21300000, guid: b55c04a0c8bfb8242bc1b485cd62f4c5, type: 3}
-  - {fileID: 21300000, guid: 5211845cd4cc158418f6eff210b971a3, type: 3}
-  - {fileID: 21300000, guid: ba7b29f4dcf3df542b3be2f3524c5a7e, type: 3}
-  weaponList:
   - {fileID: 0}
   - {fileID: 0}
 --- !u!198 &198715516233966260

@@ -17,9 +17,11 @@ public class Defines
 		BOTTOMRIGHT
 	}
  
-    public enum WeaponType
+    public enum colorType
     {
-        Normal = 0
+        blue = 0,
+		green,
+		red
     }
 
 }

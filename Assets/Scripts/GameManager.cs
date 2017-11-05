@@ -152,5 +152,8 @@ public class GameManager : MonoSingleton<GameManager>
         Debug.Log(idxPre + " to " + idxPost);
     }
 
-
+    public void OnEnding()
+    {
+        SceneManager.LoadScene("Ending");
+    }
 }

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: playerWeapon
   m_EditorClassIdentifier: 
   fireRate: 10
-  damage: 10
+  damage: 5
   shotSpeed: 5
   firePositionList: 0100000000

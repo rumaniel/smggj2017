@@ -16,7 +16,7 @@ MonoBehaviour:
   rotateSpeed: 5
   weaponInfo: {fileID: 11400000, guid: 4e941af7c5b141a4ab44a30086a22693, type: 2}
   bulletIndex: 0
-  health: 500
+  health: 250
   portraitList: []
   follwerType: 0
   follwerBuf: 0

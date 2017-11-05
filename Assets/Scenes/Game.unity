@@ -22007,7 +22007,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 255717936}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.69999695, y: -1.5, z: 0}
+  m_LocalPosition: {x: 0.69999695, y: 0, z: 0}
   m_LocalScale: {x: 1.0000045, y: 1.0000045, z: 1.0000046}
   m_Children: []
   m_Father: {fileID: 454283484}
@@ -22015,7 +22015,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.7, y: -1.5}
+  m_AnchoredPosition: {x: 0.7, y: 0}
   m_SizeDelta: {x: -12.2, y: -3.0003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &255717938
@@ -22039,7 +22039,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7f84c051615d2a44389fca1f1301addc, type: 3}
-    m_FontSize: 8
+    m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -22050,15 +22050,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC6B0\uC8FC\uB825 0\uB144, \uC6CC\uD504 \uAE30\uC220\uC744 \uAC1C\uBC1C\uD55C
-    \uC778\uB958\uB294 \uD2B9\uC720\uC758 \uC9C0\uD61C\uC640 \uBE60\uB978 \uC801\uC751
-    \uB2A5\uB825\uC73C\uB85C \uD328\uAD8C\uB2E4\uD23C\uC5D0 \uBCF8\uACA9\uC801\uC73C\uB85C
-    \uB6F0\uC5B4\uB4E4\uAC8C \uB41C\uB2E4. \uC6B0\uC8FC\uB825 230\uB144, \uC778\uB958\uB294
-    \uB9E4\uD2F0\uC2A4\uC758 \uC0DD\uCCB4\uACF5\uACA9\uC744 \uACAC\uB38C\uB0B4\uC9C0
-    \uBABB\uD558\uACE0 \uBA78\uC885\uD558\uC600\uB2E4. \uADF8 \uD6C4 \uC778\uACF5\uC9C0\uB2A5\uC778
-    \uBBA4\uD134\uD2B8\uB4E4\uC774 \uC778\uB958\uB97C \uC870\uC0C1\uC774\uB77C \uC5EC\uAE30\uBA70
-    \uC138\uB825\uC744 \uD0A4\uC6CC\uB098\uAC00\uACE0\uC788\uC9C0\uB9CC \uC774 \uD589\uC131\uC5D0\uB294
-    \uC545\uB9CC \uC887\uB294 \uBBA4\uD134\uD2B8\uB4E4\uB9CC\uC774 \uB0A8\uC544\uC788\uB2E4.\n"
+  m_Text: "\uC778\uB958\uB294 \uB9E4\uD2F0\uC2A4\uC758 \uC0DD\uCCB4\uACF5\uACA9\uC744
+    \uACAC\uB38C\uB0B4\uC9C0 \uBABB\uD558\uACE0 \uBA78\uC885\uD558\uC600\uB2E4. \uADF8
+    \uD6C4 \uC778\uACF5\uC9C0\uB2A5\uC778 \uBBA4\uD134\uD2B8\uB4E4\uC774 \uC778\uB958\uB97C
+    \uC870\uC0C1\uC774\uB77C \uC5EC\uAE30\uBA70 \uC138\uB825\uC744 \uD0A4\uC6CC\uB098\uAC00\uACE0\uC788\uC9C0\uB9CC
+    \uC774 \uD589\uC131\uC5D0\uB294 \uC545\uB9CC \uC887\uB294 \uBBA4\uD134\uD2B8\uB4E4\uB9CC\uC774
+    \uB0A8\uC544\uC788\uB2E4.\n"
 --- !u!222 &255717939
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -39188,7 +39185,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 897829997}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.199997, y: 0.0000019073486, z: 0}
+  m_LocalPosition: {x: -1.199997, y: 1, z: 0}
   m_LocalScale: {x: 0.99999446, y: 0.99999446, z: 0.99999845}
   m_Children: []
   m_Father: {fileID: 457249998}
@@ -39196,7 +39193,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.2, y: 0.0000018602}
+  m_AnchoredPosition: {x: -1.2, y: 1}
   m_SizeDelta: {x: -15.9, y: 0.00034714}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &897829999
@@ -39220,7 +39217,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7f84c051615d2a44389fca1f1301addc, type: 3}
-    m_FontSize: 8
+    m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -39235,14 +39232,7 @@ MonoBehaviour:
     \uD6C4\uC608\uB77C\uACE0 \uC2A4\uC2A4\uB85C \uBBFF\uB294\uB2E4. \uADF8\uB4E4\uC740
     \uACE0\uB300\uC758 \uC608\uC5B8\uC744 \uBD88\uC2E0, \uC801\uB300\uC2DC\uD558\uACE0
     \uADF8\uB4E4\uB9CC\uC758 \uC2E0\uC744 \uC12C\uAE30\uBA70 \uADF8\uB4E4\uB9CC\uC758
-    \uC608\uC5B8\uC744 \uC131\uCDE8\uD558\uAE30 \uC704\uD574 \uB2E8\uACB0\uD55C\uB2E4.
-    \uD558\uC2A4\uD1A0\uB974\uC758 \uB098\uC774\uC544\uB974\uB4E4\uC740 \uC778\uACF5\uC9C0\uB2A5
-    \uC54C\uACE0\uB9AC\uB4EC\uC744 \uD30C\uC545\uD558\uACE0 \uC788\uC5B4 \uBBA4\uD134\uD2B8\uC758
-    \uD798\uB9CC\uC73C\uB85C\uB294 \uC81C\uC555\uD558\uAE30 \uAE4C\uB2E4\uB85C\uC6B8
-    \uAC83\uC774\uB2E4. \uC870\uC0C1\uC778 \uC778\uB958\uC640 \uC624\uB79C\uAE30\uAC04
-    \uB3D9\uB9F9\uAD00\uACC4\uC5C8\uB358 \uC774\uB4E4\uC774\uC9C0\uB9CC \uC6B0\uC8FC\uC758
-    \uD3C9\uD654\uB97C \uC704\uD574\uC120 \uC774\uC5D0 \uBC18\uD558\uB294 \uC790\uB4E4\uC758
-    \uD30C\uBA78\uC740 \uBD88\uAC00\uD53C\uD558\uB2E4."
+    \uC608\uC5B8\uC744 \uC131\uCDE8\uD558\uAE30 \uC704\uD574 \uB2E8\uACB0\uD55C\uB2E4."
 --- !u!222 &897830000
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -51594,7 +51584,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1452590873}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5999985, y: 0.0000038146973, z: 0}
+  m_LocalPosition: {x: -0.5999985, y: 1, z: 0}
   m_LocalScale: {x: 0.99999446, y: 0.99999446, z: 0.99999845}
   m_Children: []
   m_Father: {fileID: 539991659}
@@ -51602,7 +51592,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.6, y: 0.0000037216}
+  m_AnchoredPosition: {x: -0.6, y: 1}
   m_SizeDelta: {x: -11.2, y: 0.00034332}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1452590875
@@ -51626,7 +51616,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7f84c051615d2a44389fca1f1301addc, type: 3}
-    m_FontSize: 8
+    m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -51638,13 +51628,10 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\uC804\uC5FC\uBCD1, \uC545\uCDE8, \uD53C\uB85C \uB4E4\uB053\uB294 \uD589\uC131
-    \uB274\uD1A0\uC2A4. \uC6B0\uC8FC \uD3C9\uD654\uB97C \uC704\uD574 \uC815\uD654\uD558\uB294
-    \uAC83\uC740 \uD544\uC218\uB2E4. \uADF8\uB4E4\uC740 \uC9C4\uD654\uB97C \uAC70\uB4ED\uD558\uBA70
-    \uC624\uB7AB\uB3D9\uC548 \uC138\uB825\uC744 \uC720\uC9C0\uD574\uC628 \uB098\uC774\uC544\uB974\uB4E4\uC758
-    \uCC9C\uC801\uC774\uB2E4. \uADF8\uB4E4\uC744 \uB9C9\uC9C0 \uBABB\uD558\uBA74 \uD604
-    \uC138\uACC4\uC758 \uADE0\uD615\uC774 \uBB34\uB108\uC9C0\uACE0 \uBBA4\uD134\uD2B8\uC758
-    \uC6B4\uBA85 \uB610\uD55C \uC7A5\uB2F4\uD560 \uC218 \uC5C6\uB2E4. \uADF8\uB7EC\uB098
-    \uACE0\uB300\uC758 \uC608\uC5B8\uC744 \uBA85\uC2EC\uD558\uB77C."
+    \uB274\uD1A0\uC2A4. \uC6B0\uC8FC \uD3C9\uD654\uB97C \uC704\uD574 \uC774\uB97C
+    \uC815\uD654\uD558\uB294 \uAC83\uC740 \uD544\uC218\uB2E4. \uADF8\uB4E4\uC744 \uB9C9\uC9C0
+    \uBABB\uD558\uBA74 \uD604 \uC138\uACC4\uC758 \uADE0\uD615\uC774 \uBB34\uB108\uC9C0\uACE0
+    \uBBA4\uD134\uD2B8\uC758 \uC6B4\uBA85 \uB610\uD55C \uC7A5\uB2F4\uD560 \uC218 \uC5C6\uB2E4."
 --- !u!222 &1452590876
 CanvasRenderer:
   m_ObjectHideFlags: 0

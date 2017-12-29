@@ -43,9 +43,37 @@ public class PlayerControl : PlayerBaseControl
 	void Update () 
 	{
 		if (GameManager.Instance.isPause) return;
-		MovePlayer();
+#if UNITY_EDITOR
+		// control only for keyboard
+		// MovePlayer();
 
-		if (isInitialize && Input.GetButton("Fire"))
+		// if (isInitialize && Input.GetButton("Fire"))
+		// {
+		// 	if (currentWeapon.GetFireRate() == 0f) 
+		// 	{
+		// 		FireWeapon ();
+		// 	} 
+		// 	else if (Time.time > timeToFire)  
+		// 	{
+		// 		timeToFire = Time.time + 1f / currentWeapon.GetFireRate();
+		// 		FireWeapon ();
+		// 	}
+		// }
+
+		var pos = Input.mousePosition;
+		pos.z = transform.position.z - Camera.main.transform.position.z;
+		pos = Camera.main.ScreenToWorldPoint(pos);
+		transform.position = Vector3.Lerp(transform.position, pos, shipInfo.moveSpeed * Time.deltaTime);
+		
+#else 
+		// These are the touchScreen controls.
+		if(Input.touchCount > 0) 
+		{
+			Vector2  touchDeltaPosition =  Input.GetTouch(0).deltaPosition/30;
+			transform.Translate (touchDeltaPosition.x * shipInfo.moveSpeed * Time.deltaTime, touchDeltaPosition.y * shipInfo.moveSpeed * Time.deltaTime, 0);
+		}
+#endif	
+		if (isInitialize)
 		{
 			if (currentWeapon.GetFireRate() == 0f) 
 			{
@@ -56,7 +84,7 @@ public class PlayerControl : PlayerBaseControl
 				timeToFire = Time.time + 1f / currentWeapon.GetFireRate();
 				FireWeapon ();
 			}
-		}
+		}	
 	}
 
 	void MovePlayer()

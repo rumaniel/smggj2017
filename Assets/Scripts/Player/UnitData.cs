@@ -1,12 +1,14 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+
 
 public class UnitData : MonoBehaviour 
 {
     public float health;
     public float maxHealth;
-    public SpriteRenderer healthGauge;
+    public Image healthGauge;
 
     public void SetHealth(float health)
     {
@@ -35,7 +37,7 @@ public class UnitData : MonoBehaviour
     public void UpdateGauge()
     {
         float calc = this.health / maxHealth;
-        healthGauge.size = new Vector2(Mathf.Max(0.02f,(0.32f) * calc),0.08f);
+        healthGauge.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(Mathf.Max(2, 32f * calc), 8f);
     }
 
 

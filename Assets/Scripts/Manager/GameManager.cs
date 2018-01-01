@@ -7,7 +7,6 @@ using DG.Tweening;
 public class GameManager : MonoSingleton<GameManager> 
 {
 	public bool isPause = false;
-	public GameObject unitBase;
 	public List<StageInfo> stageList;
 	public GameObject playButton;
 	public GameObject playerShip;
@@ -16,14 +15,12 @@ public class GameManager : MonoSingleton<GameManager>
 	//public GameObject enemySpawner;
 	//public GameObject hazardSpawner;
 	//public GameObject powerUpSpawner;
-	public GameObject GameOver;
     public GameObject SettingDlg;
     public GameObject SettingBtn;
 	public GridManager grid;
+	public Transform unitRootObject;
 
     public GameObject[] GameStartBtns;
-
-
 
     public enum GameManagerState
 	{
@@ -42,6 +39,10 @@ public class GameManager : MonoSingleton<GameManager>
         // Set the default state to 'Opening'.
         GMState = GameManagerState.Opening;
 		UpdateGameManagerState ();
+		
+		// Init UI
+		OnSettingClose(true);
+		grid.cutscene.CloseCutScene();
 	}
 
 	// Function to switch the current game state.
@@ -53,7 +54,6 @@ public class GameManager : MonoSingleton<GameManager>
 			// Show the cursor.
 			//Cursor.visible = true;
 			// Hide the game over text.
-			GameOver.SetActive(false);
 			// Hide the main HUD text.
 			//hud.SetActive(false);
 			// Display the game title.
@@ -66,7 +66,6 @@ public class GameManager : MonoSingleton<GameManager>
 			//Cursor.visible = false;
 			//playButton.SetActive(false);
 			//playerShip.GetComponent<PlayerControl>().Init();
-
 			//StageManager.Instance.StartStage(stageList[0]);
 
 				break;
@@ -80,7 +79,6 @@ public class GameManager : MonoSingleton<GameManager>
 			// Stop the power up spawner.
 			//powerUpSpawner.GetComponent<PowerUpSpawner>().UnschedulePowerUpSpawner();
 			// Display the game over text.
-			GameOver.SetActive (true);
 			// Change the game state to 'Opening' after 5 seconds.
 			Invoke("RestartInGame", 5f);
 			break;
@@ -130,10 +128,17 @@ public class GameManager : MonoSingleton<GameManager>
 		isPause = true;
 		grid.SetGrid(PlayerData.Instance.followerInfo);
     }
-    public void OnSettingClose()
+    public void OnSettingClose(bool isImediattely = false)
     {
         RectTransform image1 = SettingDlg.GetComponent<RectTransform>();
-        image1.DOLocalMove(new Vector3(500, 0, 0), 1.0f);
+		if (isImediattely) 
+		{
+			image1.localPosition = new Vector3(Screen.width, 0, 0);
+		}
+		else
+		{
+			image1.DOLocalMove(new Vector3(Screen.width, 0, 0), 1.0f);
+		}
 
         SettingBtn.SetActive(true);
 		isPause = false;

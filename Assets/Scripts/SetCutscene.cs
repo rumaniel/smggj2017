@@ -63,12 +63,17 @@ public class SetCutscene : MonoBehaviour {
         yield return new WaitForSeconds(2);
 
         //RectTransform rect = this.GetComponent<RectTransform>();
-        Tween myTween = rect.DOLocalMove(new Vector3(-393, 0, 0), 0.5f);
+        Tween myTween = rect.DOLocalMove(new Vector3(0, 0, 0), 0.5f);
         yield return myTween.WaitForCompletion();
-        rect.DOLocalMove(new Vector3(393, 0, 0), 0);
+        rect.DOLocalMove(new Vector3(Screen.width, 0, 0), 0);
         isRunning = false;
     }
 
+    public void CloseCutScene()
+    {
+        RectTransform rect = this.GetComponent<RectTransform>();
+        rect.DOLocalMove(new Vector3(Screen.width, 0, 0), 0);
+    }
 
 
 }

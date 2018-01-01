@@ -37,6 +37,7 @@ public class Weapon
             if (weaponInfo.firePositionList[i])
             {
                 MonoPooledObject bullet = bulletPool.GetObject();
+                bullet.transform.parent = GameManager.Instance.unitRootObject;
                 bullet.GetComponent<BulletBase>().Initialize(this.weaponInfo);
                 bullet.transform.position = firePositionList[i].position; 
                 bullet.transform.rotation = firePositionList[i].rotation;               

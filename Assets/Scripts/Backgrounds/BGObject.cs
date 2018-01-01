@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BGObject : MonoBehaviour {
+public class BGObject : MonoBehaviour 
+{
 
 	public float moveSpeed; // The speed of the object.
 	public bool isMoving; // Flag the object if it is moving.
@@ -19,9 +20,9 @@ public class BGObject : MonoBehaviour {
 		max = Camera.main.ViewportToWorldPoint (new Vector2 (1, 1));
 
 		// Add the planet sprite half height to max y.
-		max.y = max.y + GetComponent<SpriteRenderer> ().sprite.bounds.extents.y;
+		max.y = max.y + GetComponent<UnityEngine.UI.Image> ().sprite.bounds.extents.y;
 		// Subtract the planet sprite half height to min y.
-		min.y = min.y - GetComponent<SpriteRenderer> ().sprite.bounds.extents.y;
+		min.y = min.y - GetComponent<UnityEngine.UI.Image> ().sprite.bounds.extents.y;
 	}
 	// Update is called once per frame
 	void Update () 

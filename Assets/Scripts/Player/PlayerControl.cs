@@ -22,10 +22,10 @@ public class PlayerControl : PlayerBaseControl
 	
 	public void PatchFollwerInfo()
 	{
-		for (int i = 0; i < followerList.Count; ++i)
-		{
-			followerList[i].UpdateFollower(PlayerData.Instance.followerInfo[i]);
-		}
+		// for (int i = 0; i < followerList.Count; ++i)
+		// {
+		// 	followerList[i].UpdateFollower(PlayerData.Instance.followerInfo[i]);
+		// }
 	}
 
 	public override void FireWeapon()
@@ -61,8 +61,6 @@ public class PlayerControl : PlayerBaseControl
 		// }
 
 		var pos = Input.mousePosition;
-		pos.z = transform.position.z - Camera.main.transform.position.z;
-		pos = Camera.main.ScreenToWorldPoint(pos);
 		transform.position = Vector3.Lerp(transform.position, pos, shipInfo.moveSpeed * Time.deltaTime);
 		
 #else 

@@ -8,6 +8,8 @@ public class UnitManager : MonoSingleton<UnitManager>
 
 	public MonoPooledObject GetUnit()
 	{
-		return unitPool.GetObject();
+		var pooledObject = unitPool.GetObject();
+		pooledObject.transform.parent = GameManager.Instance.unitRootObject;
+		return pooledObject;
 	}
 }

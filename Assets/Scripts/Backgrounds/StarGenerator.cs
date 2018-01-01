@@ -34,9 +34,9 @@ public class StarGenerator : MonoBehaviour
 			MonoPooledObject star = FGStars[UnityEngine.Random.Range(0, FGStars.Length)].GetObject();
 
 			if (onlyWhiteStars == true) {
-				star.GetComponent<SpriteRenderer>().color = Color.white;
+				star.GetComponent<UnityEngine.UI.Image>().color = Color.white;
 			} else {
-				star.GetComponent<SpriteRenderer>().color = starColors[i % starColors.Length];
+				star.GetComponent<UnityEngine.UI.Image>().color = starColors[i % starColors.Length];
 			}
 			// Set the position of the star (random x and random y).
 			star.transform.position = new Vector2(Random.Range (min.x, max.x), Random.Range(min.y, max.y));
@@ -65,7 +65,7 @@ public class StarGenerator : MonoBehaviour
 			MonoPooledObject bgStar = BGStars[UnityEngine.Random.Range(0, BGStars.Length)].GetObject();
 
 			// Set the color.
-			bgStar.GetComponent<SpriteRenderer>().color = Color.white;
+			bgStar.GetComponent<UnityEngine.UI.Image>().color = Color.white;
 			// Set the position of the star (random x and random y).
 			bgStar.transform.position = new Vector2(Random.Range (min.x, max.x), Random.Range(min.y, max.y));
 			// Set a random speed for the star.

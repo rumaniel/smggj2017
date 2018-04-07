@@ -5,6 +5,14 @@ using System.Collections.Generic;
 
 public class Defines
 {
+	public enum GameState
+	{
+		Opening,
+		Menu,
+		InGame,
+		GameOver
+	}
+	
  	public enum FollowerPosition 
 	{
 		TOPLEFT = 0,

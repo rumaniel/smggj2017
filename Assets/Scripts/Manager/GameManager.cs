@@ -17,31 +17,40 @@ public class GameManager : MonoSingleton<GameManager>
 
     public GameObject[] GameStartBtns;
 
-    public enum GameManagerState
+	Defines.GameState GMState;
+	
+	void Awake()
 	{
-		Opening,
-		InGame,
-		GameOver,
-		InterMission
+		EventManager.Subscribe<SceneChangeEvent>(SceneChange);
 	}
 
-	GameManagerState GMState;
-	
 	void Start () 
 	{
 		Time.timeScale = .8f;
         DOTween.Init(false, true, LogBehaviour.ErrorsOnly);
         // Set the default state to 'Opening'.
-        GMState = GameManagerState.Opening;
+        GMState = Defines.GameState.Opening;
 		
 		// Init UI
 		OnSettingClose(true);
 		grid.cutscene.CloseCutScene();
 	}
 
+	protected override void OnDestroy()
+	{
+		base.OnDestroy();
+
+		EventManager.UnSubscribe<SceneChangeEvent>(SceneChange);
+	}
+
+
+	private void SceneChange(SceneChangeEvent evt)
+	{
+
+	}
 
 	// This function sets the game state and updates it.
-	public void SetGameManagerState(GameManagerState state)
+	public void SetGameState(Defines.GameState state)
 	{
 		GMState = state;
 	}
@@ -58,7 +67,7 @@ public class GameManager : MonoSingleton<GameManager>
         StageManager.Instance.StartStage(stageList[i]);
 
 
-        GMState = GameManagerState.InGame;
+        GMState = Defines.GameState.InGame;
 	}
 	// This will reload the main scene.
 	public void RestartInGame()
@@ -94,7 +103,7 @@ public class GameManager : MonoSingleton<GameManager>
 
         SettingBtn.SetActive(true);
 		isPause = false;
-        if(GMState!= GameManagerState.InGame)
+        if(GMState!= Defines.GameState.InGame)
             foreach (GameObject obj in GameStartBtns)
             {
                 obj.SetActive(true);

@@ -17,7 +17,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     public GameObject[] GameStartBtns;
 
-	Defines.GameState GMState;
+	Defines.GameState currentState;
 	
 	void Awake()
 	{
@@ -29,7 +29,7 @@ public class GameManager : MonoSingleton<GameManager>
 		Time.timeScale = .8f;
         DOTween.Init(false, true, LogBehaviour.ErrorsOnly);
         // Set the default state to 'Opening'.
-        GMState = Defines.GameState.Opening;
+        currentState = Defines.GameState.Opening;
 		
 		// Init UI
 		OnSettingClose(true);
@@ -46,13 +46,13 @@ public class GameManager : MonoSingleton<GameManager>
 
 	private void SceneChange(SceneChangeEvent evt)
 	{
-
+		currentState = evt.toState;
 	}
 
 	// This function sets the game state and updates it.
 	public void SetGameState(Defines.GameState state)
 	{
-		GMState = state;
+		currentState = state;
 	}
 	// Call this function when the "Play" button is pressed.
 	public void StartInGame(int i)
@@ -67,7 +67,7 @@ public class GameManager : MonoSingleton<GameManager>
         StageManager.Instance.StartStage(stageList[i]);
 
 
-        GMState = Defines.GameState.InGame;
+        currentState = Defines.GameState.InGame;
 	}
 	// This will reload the main scene.
 	public void RestartInGame()
@@ -103,7 +103,7 @@ public class GameManager : MonoSingleton<GameManager>
 
         SettingBtn.SetActive(true);
 		isPause = false;
-        if(GMState!= Defines.GameState.InGame)
+        if(currentState!= Defines.GameState.InGame)
             foreach (GameObject obj in GameStartBtns)
             {
                 obj.SetActive(true);

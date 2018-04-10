@@ -5,7 +5,8 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
 
-public class Intro : MonoBehaviour {
+public class Intro : MonoBehaviour 
+{
     public ScrollRect scrollRect;
 
     private void Awake()
@@ -22,11 +23,6 @@ public class Intro : MonoBehaviour {
         //slider.DOValue(0.48f, 0f).SetEase(Ease.InOutQuad).SetLoops(-1, LoopType.Yoyo).Pause();
     }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     public void OnStart()
     {
         DOTween.Kill(gameObject);

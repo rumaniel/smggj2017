@@ -28,8 +28,7 @@ public class GameManager : MonoSingleton<GameManager>
 	{
 		Time.timeScale = .8f;
         DOTween.Init(false, true, LogBehaviour.ErrorsOnly);
-        // Set the default state to 'Opening'.
-        currentState = Defines.GameState.Opening;
+        currentState = Defines.GameState.Menu;
 		
 		// Init UI
 		OnSettingClose(true);
@@ -41,12 +40,6 @@ public class GameManager : MonoSingleton<GameManager>
 		base.OnDestroy();
 
 		EventManager.UnSubscribe<SceneChangeEvent>(SceneChange);
-	}
-
-
-	private void SceneChange(SceneChangeEvent evt)
-	{
-		currentState = evt.toState;
 	}
 
 	// This function sets the game state and updates it.
@@ -122,4 +115,53 @@ public class GameManager : MonoSingleton<GameManager>
     {
         SceneManager.LoadScene("Ending");
     }
+
+#region EventManager Functions.
+	private void SceneChange(SceneChangeEvent evt)
+	{
+		gameObject.SendMessage("Leave" + currentState.ToString(), SendMessageOptions.DontRequireReceiver);
+		currentState = evt.toState;
+		gameObject.SendMessage("Enter" + evt.toState.ToString(), SendMessageOptions.DontRequireReceiver);
+	}
+
+#endregion
+
+#region fsm state Enter/Leave.
+	private void EnterOpening()
+	{
+
+	}
+	
+	private void LeaveOpening()
+	{
+		
+	}
+	private void EnterMenu()
+	{
+
+	}
+	
+	private void LeaveMenu()
+	{
+		
+	}
+	private void EnterInGame()
+	{
+
+	}
+	
+	private void LeaveInGame()
+	{
+		
+	}
+	private void EnterGameOver()
+	{
+
+	}
+	
+	private void LeaveGameOver()
+	{
+		
+	}
+#endregion
 }

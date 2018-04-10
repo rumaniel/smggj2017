@@ -7,7 +7,6 @@ public class Defines
 {
 	public enum GameState
 	{
-		Opening,
 		Menu,
 		InGame,
 		GameOver

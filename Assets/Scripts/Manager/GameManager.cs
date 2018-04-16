@@ -28,11 +28,9 @@ public class GameManager : MonoSingleton<GameManager>
 	{
 		Time.timeScale = .8f;
         DOTween.Init(false, true, LogBehaviour.ErrorsOnly);
-        currentState = Defines.GameState.Menu;
+        currentState = Defines.GameState.Intro;
 		
-		// Init UI
-		OnSettingClose(true);
-		grid.cutscene.CloseCutScene();
+		InitializeUI();	
 	}
 
 	protected override void OnDestroy()
@@ -42,11 +40,12 @@ public class GameManager : MonoSingleton<GameManager>
 		EventManager.UnSubscribe<SceneChangeEvent>(SceneChange);
 	}
 
-	// This function sets the game state and updates it.
-	public void SetGameState(Defines.GameState state)
+	private void InitializeUI()
 	{
-		currentState = state;
+		OnSettingClose(true);
+		grid.cutscene.CloseCutScene();
 	}
+
 	// Call this function when the "Play" button is pressed.
 	public void StartInGame(int i)
 	{
@@ -61,12 +60,6 @@ public class GameManager : MonoSingleton<GameManager>
 
 
         currentState = Defines.GameState.InGame;
-	}
-	// This will reload the main scene.
-	public void RestartInGame()
-	{
-		// Reset the scene.
-		SceneManager.LoadScene("Game");
 	}
 
     public void OnSettingOpen()
@@ -127,18 +120,9 @@ public class GameManager : MonoSingleton<GameManager>
 #endregion
 
 #region fsm state Enter/Leave.
-	private void EnterOpening()
-	{
-
-	}
-	
-	private void LeaveOpening()
-	{
-		
-	}
 	private void EnterMenu()
 	{
-
+		SceneManager.LoadScene("Game");
 	}
 	
 	private void LeaveMenu()
@@ -147,7 +131,7 @@ public class GameManager : MonoSingleton<GameManager>
 	}
 	private void EnterInGame()
 	{
-
+		// SceneManager.LoadScene("Game");
 	}
 	
 	private void LeaveInGame()

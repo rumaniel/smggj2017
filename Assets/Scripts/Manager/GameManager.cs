@@ -12,7 +12,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     public GameObject SettingDlg;
     public GameObject SettingBtn;
-	public GridManager grid;
+
 	public Transform unitRootObject;
 
     public GameObject[] GameStartBtns;
@@ -43,7 +43,6 @@ public class GameManager : MonoSingleton<GameManager>
 	private void InitializeUI()
 	{
 		OnSettingClose(true);
-		grid.cutscene.CloseCutScene();
 	}
 
 	// Call this function when the "Play" button is pressed.
@@ -73,7 +72,7 @@ public class GameManager : MonoSingleton<GameManager>
         RectTransform image1 = SettingDlg.GetComponent<RectTransform>();
         image1.DOLocalMove(new Vector3(0, 0, 0), 1.0f);
 		isPause = true;
-		grid.SetGrid(PlayerData.Instance.followerInfo);
+		// grid.SetGrid(PlayerData.Instance.followerInfo);
     }
     public void OnSettingClose(bool isImediattely = false)
     {
@@ -95,7 +94,7 @@ public class GameManager : MonoSingleton<GameManager>
                 obj.SetActive(true);
             }
 
-		PlayerData.Instance.UpdatePlayerInfo(grid.GetOrderedItemList());
+		// PlayerData.Instance.UpdatePlayerInfo(grid.GetOrderedItemList());
 		
     }
 

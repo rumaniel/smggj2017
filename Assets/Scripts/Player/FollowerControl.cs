@@ -48,7 +48,7 @@ public class FollowerControl : PlayerBaseControl
 
 	IEnumerator DieFollower()
 	{
-		GameManager.Instance.grid.cutscene.ShowCutscene(shipInfo, true);
+		// GameManager.Instance.grid.cutscene.ShowCutscene(shipInfo, true);
         explosionObject.SetActive(true);
 		yield return new WaitForSeconds(0.3f);
 		explosionObject.SetActive(false);

@@ -1,4 +1,4 @@
-﻿    using System.Collections;
+﻿using System.Collections;
 using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine;
@@ -9,16 +9,13 @@ public class SetCutscene : MonoBehaviour {
     private string text;
     public Image face;
     private bool isRunning = false;
-    // Use this for initialization
-    void Start () {
-        //test
 
+
+    void Start () 
+    {
+        CloseCutScene();
     }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void ShowCutscene(ShipInfo info, bool isBoom = false)
     {

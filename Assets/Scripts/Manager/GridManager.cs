@@ -10,7 +10,17 @@ public class GridManager : MonoSingleton<GridManager>
     public Text text;
     List<ShipInfo> followerList = new List<ShipInfo>();
     List<DragAndDropItem> itemList = new List<DragAndDropItem>();
-    
+
+    void Awake()
+    {
+        // EventManager.Subscribe<>
+    }
+
+	protected override void OnDestroy()
+	{
+		base.OnDestroy();
+	}
+
     public void SetGrid(List<ShipInfo> followerInfo)
     {
         this.followerList = followerInfo;

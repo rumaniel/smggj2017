@@ -1,6 +1,5 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 
@@ -8,16 +7,14 @@ public class GameManager : MonoSingleton<GameManager>
 {
 	public bool isPause = false;
 	public List<StageInfo> stageList;
-	public GameObject playerShip;
+    // public GameObject playerShip;
+    public Transform unitRootObject;
+    // public GameObject SettingDlg;
+    // public GameObject SettingBtn;
 
-    public GameObject SettingDlg;
-    public GameObject SettingBtn;
+    // public GameObject[] GameStartBtns;
 
-	public Transform unitRootObject;
-
-    public GameObject[] GameStartBtns;
-
-	Defines.GameState currentState;
+    Defines.GameState currentState;
 	
 	void Awake()
 	{
@@ -45,54 +42,53 @@ public class GameManager : MonoSingleton<GameManager>
 		OnSettingClose(true);
 	}
 
-	// Call this function when the "Play" button is pressed.
 	public void StartInGame(int i)
 	{
-        foreach (GameObject obj in GameStartBtns)
-        {
-            obj.SetActive(false);
-        }
+//        foreach (GameObject obj in GameStartBtns)
+  //      {
+   //         obj.SetActive(false);
+    //    }
 
-        playerShip.GetComponent<PlayerControl>().Init();
+      //  playerShip.GetComponent<PlayerControl>().Init();
 
         StageManager.Instance.StartStage(stageList[i]);
-
 
         currentState = Defines.GameState.InGame;
 	}
 
     public void OnSettingOpen()
     {
-        foreach ( GameObject obj in GameStartBtns)
-        {
-            obj.SetActive(false);
-        }
+      //  foreach ( GameObject obj in GameStartBtns)
+        //{
+          //  obj.SetActive(false);
+        //}
 
-        SettingBtn.SetActive(false);
-        RectTransform image1 = SettingDlg.GetComponent<RectTransform>();
-        image1.DOLocalMove(new Vector3(0, 0, 0), 1.0f);
+ //     SettingBtn.SetActive(false);
+ //     RectTransform image1 = SettingDlg.GetComponent<RectTransform>();
+ //     image1.DOLocalMove(new Vector3(0, 0, 0), 1.0f);
 		isPause = true;
 		// grid.SetGrid(PlayerData.Instance.followerInfo);
     }
+
     public void OnSettingClose(bool isImediattely = false)
     {
-        RectTransform image1 = SettingDlg.GetComponent<RectTransform>();
-		if (isImediattely) 
-		{
-			image1.localPosition = new Vector3(Screen.width, 0, 0);
-		}
-		else
-		{
-			image1.DOLocalMove(new Vector3(Screen.width, 0, 0), 1.0f);
-		}
+        // RectTransform image1 = SettingDlg.GetComponent<RectTransform>();
+		// if (isImediattely) 
+		// {
+			// image1.localPosition = new Vector3(Screen.width, 0, 0);
+		// }
+		// else
+		// {
+		//	image1.DOLocalMove(new Vector3(Screen.width, 0, 0), 1.0f);
+		// }
 
-        SettingBtn.SetActive(true);
+        // SettingBtn.SetActive(true);
 		isPause = false;
-        if(currentState!= Defines.GameState.InGame)
-            foreach (GameObject obj in GameStartBtns)
-            {
-                obj.SetActive(true);
-            }
+        //if(currentState!= Defines.GameState.InGame)
+          //  foreach (GameObject obj in GameStartBtns)
+            //{
+              //  obj.SetActive(true);
+            //}
 
 		// PlayerData.Instance.UpdatePlayerInfo(grid.GetOrderedItemList());
 		

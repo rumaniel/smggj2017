@@ -123,14 +123,14 @@ public class UnitControl : PlayerBaseControl
 				float accumulatedTime = 0f;	
 				while (accumulatedTime < pattern.stayTime || pattern.leavePattern == Defines.EnemyLeavePattern.Stay)
 				{
-					Vector2 dir = GameManager.Instance.playerShip.transform.position - spriteBase.position;
-					dir.Normalize ();
+					//Vector2 dir = GameManager.Instance.playerShip.transform.position - spriteBase.position;
+					//dir.Normalize ();
 					
-					float zAngle = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg - 90;
+					//float zAngle = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg - 90;
 					
-					Quaternion desiredRot = Quaternion.Euler (0, 0, zAngle);
+					//Quaternion desiredRot = Quaternion.Euler (0, 0, zAngle);
 					
-					spriteBase.rotation = Quaternion.RotateTowards (spriteBase.rotation, desiredRot, shipInfo.rotateSpeed * Time.deltaTime);
+					//spriteBase.rotation = Quaternion.RotateTowards (spriteBase.rotation, desiredRot, shipInfo.rotateSpeed * Time.deltaTime);
 					yield return null;
 					accumulatedTime += Time.deltaTime;
 				}

@@ -3,34 +3,45 @@ using System.Collections.Generic;
 
 public class BackgroundController : MonoBehaviour
 {
-
+    public float bgDeltaTime;
 	public GameObject[] BGObjects;
 
 	Queue<GameObject> availableObjects = new Queue<GameObject>();
 
-	void Start () 
+	private void Start() 
 	{
         foreach (var bgObject in BGObjects)
         {
             availableObjects.Enqueue(bgObject);
         }
-
-		InvokeRepeating("MoveObjectDown", 0, 20f);	
 	}
 
-	void MoveObjectDown()
+    private float accumulatedTime = 0f;
+
+    private void Update()
+    {
+        accumulatedTime += Time.deltaTime;
+
+        if (accumulatedTime > bgDeltaTime)
+        {
+            accumulatedTime = 0f;
+            MoveObjectDown();
+        }
+    }
+
+    private void MoveObjectDown()
 	{
 		EnqueueObjects();
 
     	if (availableObjects.Count == 0) return;
 
-		GameObject aPlanet = availableObjects.Dequeue();
-		aPlanet.GetComponent<BGObject>().isMoving = true;
+		var planet = availableObjects.Dequeue();
+		planet.GetComponent<BGObject>().isMoving = true;
 	}
 
-	void EnqueueObjects()
+	private void EnqueueObjects()
 	{
-		foreach (GameObject bgObject in BGObjects) 
+		foreach (var bgObject in BGObjects) 
 		{
 			if (bgObject.transform.position.y < 0
             && !bgObject.GetComponent<BGObject>().isMoving)

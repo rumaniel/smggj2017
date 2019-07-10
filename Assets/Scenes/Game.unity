@@ -15192,7 +15192,7 @@ GameObject:
   - component: {fileID: 175850714}
   - component: {fileID: 175850715}
   m_Layer: 0
-  m_Name: BackgroundController
+  m_Name: Nebulas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15232,6 +15232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81609009f5580d84c9ed2fd90c816dac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgDeltaTime: 20
   BGObjects:
   - {fileID: 2093743499}
   - {fileID: 915434195}
@@ -54901,7 +54902,7 @@ GameObject:
   - component: {fileID: 1178991874}
   - component: {fileID: 1178991875}
   m_Layer: 0
-  m_Name: PlanetController
+  m_Name: Planets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54941,6 +54942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81609009f5580d84c9ed2fd90c816dac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgDeltaTime: 20
   BGObjects:
   - {fileID: 317319838}
   - {fileID: 300632600}
@@ -55457,7 +55459,7 @@ PrefabInstance:
     - target: {fileID: 224494966914386110, guid: 5db552c2bf5d948ed95f1d49654ae92f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224494966914386110, guid: 5db552c2bf5d948ed95f1d49654ae92f,
         type: 3}

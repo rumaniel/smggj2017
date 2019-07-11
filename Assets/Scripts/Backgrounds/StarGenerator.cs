@@ -40,7 +40,7 @@ public class StarGenerator : MonoBehaviour
 			// Set the position of the star (random x and random y).
 			star.transform.position = new Vector2(Random.Range (min.x, max.x), Random.Range(min.y, max.y));
 			// Set a random speed for the star.
-			star.GetComponent<Star> ().moveSpeed = -(4.5f * Random.value + 0.5f);
+			star.GetComponent<BaseBGObject> ().moveSpeed = -(4.5f * Random.value + 0.5f);
 			// Make the star a child of the star generator.
 			star.transform.parent = transform;
 		}
@@ -68,7 +68,7 @@ public class StarGenerator : MonoBehaviour
 			// Set the position of the star (random x and random y).
 			bgStar.transform.position = new Vector2(Random.Range (min.x, max.x), Random.Range(min.y, max.y));
 			// Set a random speed for the star.
-			bgStar.GetComponent<Star> ().moveSpeed = -(0.1f * Random.value + 0.2f);
+			bgStar.GetComponent<BaseBGObject> ().moveSpeed = -(0.1f * Random.value + 0.2f);
 			// Make the star a child of the star generator.
 			bgStar.transform.parent = transform;
 		}

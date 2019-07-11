@@ -4,10 +4,10 @@ using System.Collections.Generic;
 public class BackgroundController : MonoBehaviour
 {
     public float bgDeltaTime;
-	public BGObject[] BGObjects;
+	public BaseBGObject[] BGObjects;
 
     // TODO: Random pop
-	Queue<BGObject> availableObjects = new Queue<BGObject>();
+	Queue<BaseBGObject> availableObjects = new Queue<BaseBGObject>();
 
 	private void Start() 
 	{
@@ -33,11 +33,11 @@ public class BackgroundController : MonoBehaviour
 	{
     	if (availableObjects.Count == 0) return;
 
-		var planet = availableObjects.Dequeue();
+		var planet = availableObjects.Dequeue() as ManagedBGObject;
         planet.InitializeObject(EnqueueObjects);
 	}
 
-    private void EnqueueObjects(BGObject bgObject)
+    private void EnqueueObjects(BaseBGObject bgObject)
 	{
         availableObjects.Enqueue(bgObject);
 	}

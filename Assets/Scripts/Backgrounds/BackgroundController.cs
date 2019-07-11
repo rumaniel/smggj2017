@@ -4,9 +4,10 @@ using System.Collections.Generic;
 public class BackgroundController : MonoBehaviour
 {
     public float bgDeltaTime;
-	public GameObject[] BGObjects;
+	public BGObject[] BGObjects;
 
-	Queue<GameObject> availableObjects = new Queue<GameObject>();
+    // TODO: Random pop
+	Queue<BGObject> availableObjects = new Queue<BGObject>();
 
 	private void Start() 
 	{
@@ -17,7 +18,6 @@ public class BackgroundController : MonoBehaviour
 	}
 
     private float accumulatedTime = 0f;
-
     private void Update()
     {
         accumulatedTime += Time.deltaTime;
@@ -31,25 +31,14 @@ public class BackgroundController : MonoBehaviour
 
     private void MoveObjectDown()
 	{
-		EnqueueObjects();
-
     	if (availableObjects.Count == 0) return;
 
 		var planet = availableObjects.Dequeue();
-		planet.GetComponent<BGObject>().isMoving = true;
+        planet.InitializeObject(EnqueueObjects);
 	}
 
-    // todo : Refactroing with event system
-	private void EnqueueObjects()
+    private void EnqueueObjects(BGObject bgObject)
 	{
-		foreach (var bgObject in BGObjects) 
-		{
-			if (bgObject.transform.position.y < 0
-            && !bgObject.GetComponent<BGObject>().isMoving)
-			{
-				bgObject.GetComponent<BGObject>().ResetPosition();
-				availableObjects.Enqueue(bgObject);
-			}
-		}
+        availableObjects.Enqueue(bgObject);
 	}
 }

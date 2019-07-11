@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class BGObject : MonoBehaviour 
+public class BGObject : UnitBase
 {
 
-	public float moveSpeed; // The speed of the object.
-	public bool isMoving; // Flag the object if it is moving.
+	public float moveSpeed;
+	public bool isMoving;
 
-	Vector2 min; // This is the bottom-left point of the screen.
-	Vector2 max; // This is the top-right point of the screen.
+	Vector2 min;
+	Vector2 max;
 
 	void Awake()
 	{
@@ -24,11 +24,11 @@ public class BGObject : MonoBehaviour
 		min.y = min.y - GetComponent<UnityEngine.UI.Image> ().sprite.bounds.extents.y;
 	}
 	// Update is called once per frame
-	void Update () 
+	protected override void Update () 
 	{
-		if (GameManager.Instance.isPause) return;
-		if (!isMoving)
-			return;
+        base.Update();
+		
+		if (!isMoving) return;
 
 		// Get the current position of the object.
 		Vector2 position = transform.position;

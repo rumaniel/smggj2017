@@ -1,7 +1,6 @@
 using UnityEngine;
-using System.Collections;
 
-public class BulletBase : MonoBehaviour 
+public class BulletBase : UnitBase
 {
 	public WeaponInfo weaponInfo;
 	public GameObject hitEffect;
@@ -20,7 +19,7 @@ public class BulletBase : MonoBehaviour
     }
 	protected bool isBulletInitialized = false;
     Vector4 bulletBoundary;
-	
+
 	protected virtual void OnEnable()
     {
 		Vector2 min = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
@@ -36,16 +35,17 @@ public class BulletBase : MonoBehaviour
 		isBulletInitialized = true;
 	}
 
-	protected virtual void Update () 
+	protected override void Update ()
 	{
-		if (GameManager.Instance.isPause) return;
+		base.Update();
+
 		if (isBulletInitialized)
 		{
 			Vector3 pos = transform.position;
 			Vector3 velocity = new Vector3 (0, weaponInfo.shotSpeed * Time.deltaTime, 0);
 			pos += transform.rotation * velocity;
 			transform.position = pos;
-			
+
 			CheckOutofBound();
 		}
 	}
@@ -53,7 +53,7 @@ public class BulletBase : MonoBehaviour
 	protected virtual void OnTriggerEnter2D(Collider2D col)
 	{
 		// Detect collision of the player bullet with an enemy ship or world hazard.
-		if ((col.tag == "WorldHazard") || (col.tag == "PlayerShip")) 
+		if ((col.tag == "WorldHazard") || (col.tag == "PlayerShip"))
 		{
 			PlayHitEffect();
 			ConsumeBullet();
@@ -65,7 +65,7 @@ public class BulletBase : MonoBehaviour
         if ((transform.position.x < bulletBoundary.x) || (transform.position.x > bulletBoundary.y) ||
             (transform.position.y < bulletBoundary.z) || (transform.position.y > bulletBoundary.w)) {
 			ConsumeBullet();
-        }        
+        }
     }
 
 	protected void ConsumeBullet()
@@ -78,6 +78,6 @@ public class BulletBase : MonoBehaviour
     public virtual void PlayHitEffect()
 	{
 		hitEffect.SetActive(true);
-		
+
 	}
 }

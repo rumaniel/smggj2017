@@ -39,6 +39,7 @@ public class BackgroundController : MonoBehaviour
 		planet.GetComponent<BGObject>().isMoving = true;
 	}
 
+    // todo : Refactroing with event system
 	private void EnqueueObjects()
 	{
 		foreach (var bgObject in BGObjects) 

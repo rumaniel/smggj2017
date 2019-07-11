@@ -1,14 +1,15 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
-public class Star : MonoBehaviour {
+public class Star : UnitBase
+{
 
 	public float moveSpeed; // The speed of the star.
 
 	// Update is called once per frame
-	void Update () 
+	protected override void Update ()
 	{
-		if (GameManager.Instance.isPause) return;
+		base.Update();
 		// Get the current position of the star.
 		Vector2 position = transform.position;
 		// Compute the stars new position.
@@ -23,7 +24,7 @@ public class Star : MonoBehaviour {
 		// If the star leaves the screen area on the bottom, then position it
 		// at the top edge of the screen and randomly between the left and right
 		// side of the screen area.
-		if (transform.position.y < min.y) 
+		if (transform.position.y < min.y)
 		{
 			transform.position = new Vector2(Random.Range(min.x, max.x), max.y);
 		}

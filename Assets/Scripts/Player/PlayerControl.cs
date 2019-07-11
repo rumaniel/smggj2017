@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
-public class PlayerControl : PlayerBaseControl 
+public class PlayerControl : PlayerBaseControl
 {
     public GameObject gameoverObject;
 
@@ -19,7 +19,7 @@ public class PlayerControl : PlayerBaseControl
 		transform.position = new Vector2 (0, -2.5f);
 		PatchFollwerInfo();
 	}
-	
+
 	public void PatchFollwerInfo()
 	{
 		// for (int i = 0; i < followerList.Count; ++i)
@@ -40,20 +40,20 @@ public class PlayerControl : PlayerBaseControl
 		}
 	}
 
-	void Update () 
+	protected override void Update ()
 	{
-		if (GameManager.Instance.isPause) return;
+		base.Update();
 #if UNITY_EDITOR
 		// control only for keyboard
 		// MovePlayer();
 
 		// if (isInitialize && Input.GetButton("Fire"))
 		// {
-		// 	if (currentWeapon.GetFireRate() == 0f) 
+		// 	if (currentWeapon.GetFireRate() == 0f)
 		// 	{
 		// 		FireWeapon ();
-		// 	} 
-		// 	else if (Time.time > timeToFire)  
+		// 	}
+		// 	else if (Time.time > timeToFire)
 		// 	{
 		// 		timeToFire = Time.time + 1f / currentWeapon.GetFireRate();
 		// 		FireWeapon ();
@@ -62,27 +62,27 @@ public class PlayerControl : PlayerBaseControl
 
 		var pos = Input.mousePosition;
 		transform.position = Vector3.Lerp(transform.position, pos, shipInfo.moveSpeed * Time.deltaTime);
-		
-#else 
+
+#else
 		// These are the touchScreen controls.
-		if(Input.touchCount > 0) 
+		if(Input.touchCount > 0)
 		{
 			Vector2  touchDeltaPosition =  Input.GetTouch(0).deltaPosition/30;
 			transform.Translate (touchDeltaPosition.x * shipInfo.moveSpeed * Time.deltaTime, touchDeltaPosition.y * shipInfo.moveSpeed * Time.deltaTime, 0);
 		}
-#endif	
+#endif
 		if (isInitialize)
 		{
-			if (currentWeapon.GetFireRate() == 0f) 
+			if (currentWeapon.GetFireRate() == 0f)
 			{
 				FireWeapon ();
-			} 
-			else if (Time.time > timeToFire)  
+			}
+			else if (Time.time > timeToFire)
 			{
 				timeToFire = Time.time + 1f / currentWeapon.GetFireRate();
 				FireWeapon ();
 			}
-		}	
+		}
 	}
 
 	void MovePlayer()

@@ -4,13 +4,13 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 
-public class UnitControl : PlayerBaseControl 
+public class UnitControl : PlayerBaseControl
 {
 	public Image sprite;
 	public Transform spriteBase;
     public bool isMoving;
 	public PatternInfo pattern;
-    
+
 	float timeToFire = 0f;
 
 	public void SetUnitInfo(PatternInfo pattern, ShipInfo ship, bool isEnemy)
@@ -37,22 +37,22 @@ public class UnitControl : PlayerBaseControl
 		StartCoroutine("DoUnitPattern");
 	}
 
-	void Update () 
+	protected override void Update ()
 	{
-		if (GameManager.Instance.isPause) return;
+		base.Update();
 		if (!isMoving)
 		{
-			if (currentWeapon.GetFireRate() == 0f) 
+			if (currentWeapon.GetFireRate() == 0f)
 			{
 				FireWeapon ();
-			} 
-			else if (Time.time > timeToFire)  
+			}
+			else if (Time.time > timeToFire)
 			{
 				timeToFire = Time.time + 1f / currentWeapon.GetFireRate();
 				FireWeapon ();
 			}
 		}
-	}	
+	}
 
 	protected override void OnTriggerEnter2D(Collider2D col)
 	{
@@ -108,28 +108,28 @@ public class UnitControl : PlayerBaseControl
 					GameObject go = GameObject.FindGameObjectWithTag ("MovingTarget");
 					Vector2 dir = go.transform.position - spriteBase.position;
 					dir.Normalize ();
-					
+
 					float zAngle = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg - 90;
-					
+
 					Quaternion desiredRot = Quaternion.Euler (0, 0, zAngle);
-					
+
 					spriteBase.rotation = Quaternion.RotateTowards (spriteBase.rotation, desiredRot, shipInfo.rotateSpeed * Time.deltaTime);
-					yield return null;					
+					yield return null;
 					rotateStayTime += Time.deltaTime;
-					
+
 				}
 				break;
 			case Defines.EnemyMovingPattern.IdleAndFacePlayer:
-				float accumulatedTime = 0f;	
+				float accumulatedTime = 0f;
 				while (accumulatedTime < pattern.stayTime || pattern.leavePattern == Defines.EnemyLeavePattern.Stay)
 				{
 					//Vector2 dir = GameManager.Instance.playerShip.transform.position - spriteBase.position;
 					//dir.Normalize ();
-					
+
 					//float zAngle = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg - 90;
-					
+
 					//Quaternion desiredRot = Quaternion.Euler (0, 0, zAngle);
-					
+
 					//spriteBase.rotation = Quaternion.RotateTowards (spriteBase.rotation, desiredRot, shipInfo.rotateSpeed * Time.deltaTime);
 					yield return null;
 					accumulatedTime += Time.deltaTime;
@@ -140,7 +140,7 @@ public class UnitControl : PlayerBaseControl
 				yield return new WaitForSeconds(pattern.stayTime);
 				break;
 		}
-		
+
 		switch (pattern.leavePattern)
 		{
 			case Defines.EnemyLeavePattern.Custom:
@@ -150,7 +150,7 @@ public class UnitControl : PlayerBaseControl
 					transform.DOMove(pattern.leaveDirectionList[i], 1f);
 					yield return new WaitForSeconds(1f);
 				}
-				break;			
+				break;
 			case Defines.EnemyLeavePattern.Stay:
 			default:
 				while (true)
@@ -168,8 +168,8 @@ public class UnitControl : PlayerBaseControl
 		float deltax = toPosition.x - transform.position.x > 0 ? 1 : -1;
 		float deltay = toPosition.y - transform.position.y > 0 ? -1 : 1;
 
-		transform.position = new Vector3(transform.position.x + deltax * shipInfo.moveSpeed * Time.deltaTime, 
-										 transform.position.y + deltay * shipInfo.moveSpeed * Time.deltaTime, 
+		transform.position = new Vector3(transform.position.x + deltax * shipInfo.moveSpeed * Time.deltaTime,
+										 transform.position.y + deltay * shipInfo.moveSpeed * Time.deltaTime,
 										 transform.position.z);
 	}
 

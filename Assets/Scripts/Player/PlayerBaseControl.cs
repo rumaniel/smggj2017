@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
-public class PlayerBaseControl : MonoBehaviour 
+public class PlayerBaseControl : UnitBase
 {
 	private UnitData _unitData;
 	public UnitData unitData
@@ -32,11 +32,11 @@ public class PlayerBaseControl : MonoBehaviour
 		SetWeapon();
 		isInitialize = true;
 	}
-	
+
 	protected void Awake()
 	{
 		gameManger = GameObject.Find("GameManager").GetComponent<GameManager>();
-		
+
 		DOTween.Init(false, true, LogBehaviour.ErrorsOnly);
 	}
 

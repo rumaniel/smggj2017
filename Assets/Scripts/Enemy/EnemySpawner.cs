@@ -2,22 +2,22 @@
 using System.Collections;
 
 public class EnemySpawner : MonoBehaviour {
-	
+
 	public GameObject[] enemyShips;
 
 	float maxSpawnRateInSeconds = 5f;
-	
+
 	void SpawnRandomEnemy()
 	{
 		// This is the bottom left most point of the screen.
 		Vector2 min = Camera.main.ViewportToWorldPoint (new Vector2 (0,0));
 		// This is the bottom right most point of the screen.
 		Vector2 max = Camera.main.ViewportToWorldPoint (new Vector2 (1,1));
-		
+
 		// Create an enemy as a new gameObject from the available gameObjects in the array.
 		GameObject anEnemy = Instantiate (enemyShips [UnityEngine.Random.Range (0, enemyShips.Length)]);
 		anEnemy.transform.position = new Vector2 (Random.Range (min.x, max.x), max.y);
-		
+
 		// Schedule when to spawn the next enemy.
 		ScheduleNextEnemySpawn ();
 	}

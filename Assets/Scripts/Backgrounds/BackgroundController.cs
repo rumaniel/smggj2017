@@ -9,7 +9,7 @@ public class BackgroundController : MonoBehaviour
     // TODO: Random pop
 	Queue<BaseBGObject> availableObjects = new Queue<BaseBGObject>();
 
-	private void Start() 
+	private void Start()
 	{
         foreach (var bgObject in BGObjects)
         {

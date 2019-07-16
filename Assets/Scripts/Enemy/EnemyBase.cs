@@ -5,7 +5,7 @@ public class EnemyBase : MonoBehaviour {
 
 	GameObject gameManager; // Reference to the gameManager gameObject.
 	GameObject scoreUIText; // Reference to the scoreText gameObject.
-	
+
 	int maxHealth = 100;
 	public int curHealth;
 	public int pointsValue;
@@ -15,7 +15,7 @@ public class EnemyBase : MonoBehaviour {
 	private SpriteRenderer spriteRenderer; // This is our spriteRenderer.
 
 	// Use this for initialization
-	void Start () 
+	void Start ()
 	{
 		// Set the current health to be equal to maxHealth on game start.
 		curHealth = maxHealth;
@@ -26,15 +26,15 @@ public class EnemyBase : MonoBehaviour {
 		// Find the spriteRenderer component.
 		spriteRenderer = GetComponent<SpriteRenderer>();
 	}
-	
+
 	// Update is called once per frame
-	void Update () 
+	void Update ()
 	{
 		//This is the bottom left most point of the screen.
 		Vector2 min = Camera.main.ViewportToWorldPoint (new Vector2 (0,0));
 
 		// If the enemy is outside the screen area, destroy it.
-		if (transform.position.y < min.y) 
+		if (transform.position.y < min.y)
 		{
 			Destroy(gameObject);
 		}
@@ -43,16 +43,16 @@ public class EnemyBase : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		// Detect collision of the enemy ship with the player ship OR player bullet.
-		if ((col.tag == "PlayerShip") || (col.tag == "PlayerBullet")) 
+		if ((col.tag == "PlayerShip") || (col.tag == "PlayerBullet"))
 		{
 			// Flash sprite on trigger activate.
 			StartCoroutine (FlashSprite ());
 			// Remove health.
 			curHealth -= 35;
 
-			if (curHealth > 0) { 
+			if (curHealth > 0) {
 				return;
-			} 
+			}
 			// If the enemy is out of health.
 			else if (curHealth <= 0) {
 				// Explode if the enemy is out of health.

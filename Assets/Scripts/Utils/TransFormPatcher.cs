@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class TransFormPatcher : MonoBehaviour 
+public class TransFormPatcher : MonoBehaviour
 {
 
     [ContextMenu ("Change Transform To Rect")]
@@ -14,7 +14,7 @@ public class TransFormPatcher : MonoBehaviour
         foreach (Transform childTransform in childrenTransform)
         {
             childTransform.gameObject.AddComponent<RectTransform>();
-        }   
+        }
     }
 
     [ContextMenu ("Sprite Renderer to Image")]
@@ -31,7 +31,7 @@ public class TransFormPatcher : MonoBehaviour
                 newImage.type = Image.Type.Simple;
 
                 RectTransform rt = childTransform.gameObject.GetComponent<RectTransform>();
-                rt.sizeDelta = new Vector2(childTransform.sprite.rect.width, childTransform.sprite.rect.height);                
+                rt.sizeDelta = new Vector2(childTransform.sprite.rect.width, childTransform.sprite.rect.height);
             }
             DestroyImmediate(childTransform);
         }

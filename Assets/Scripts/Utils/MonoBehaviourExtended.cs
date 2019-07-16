@@ -1,6 +1,6 @@
 using UnityEngine;
 
-static public class MethodExtensionForMonoBehaviourTransform 
+static public class MethodExtensionForMonoBehaviourTransform
 {
 	/// <summary>
 	/// Gets or add a component. Usage example:

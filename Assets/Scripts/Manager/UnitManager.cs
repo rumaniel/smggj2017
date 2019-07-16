@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitManager : MonoSingleton<UnitManager> 
+public class UnitManager : MonoSingleton<UnitManager>
 {
-	public MonoObjectPool unitPool; 
+	public MonoObjectPool unitPool;
 
 	public MonoPooledObject GetUnit()
 	{

@@ -25,7 +25,7 @@ public class EnemyOrbWeapon : MonoBehaviour {
 	{
 		cooldownTimer -= Time.deltaTime;
 
-		if (cooldownTimer <= 0) 
+		if (cooldownTimer <= 0)
 		{
 			// Fire!
 			cooldownTimer = fireDelay;
@@ -41,7 +41,7 @@ public class EnemyOrbWeapon : MonoBehaviour {
 		GameObject playerShip = GameObject.FindWithTag ("PlayerShip");
 
 		// Check the player isn't dead.
-		if (playerShip != null) 
+		if (playerShip != null)
 		{
 			// Spawn bullet objects at each firing position/rotation.
 			Instantiate(enemyBullet, enemyFirePoint01.position, enemyFirePoint01.rotation);

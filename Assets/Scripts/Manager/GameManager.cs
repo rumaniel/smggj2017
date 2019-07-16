@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using DG.Tweening;
 
-public class GameManager : MonoSingleton<GameManager> 
+public class GameManager : MonoSingleton<GameManager>
 {
 	public bool isPause = false;
 	public List<StageInfo> stageList;
@@ -15,19 +15,19 @@ public class GameManager : MonoSingleton<GameManager>
     // public GameObject[] GameStartBtns;
 
     Defines.GameState currentState;
-	
+
 	void Awake()
 	{
 		EventManager.Subscribe<SceneChangeEvent>(SceneChange);
 	}
 
-	void Start () 
+	void Start ()
 	{
 		Time.timeScale = .8f;
         DOTween.Init(false, true, LogBehaviour.ErrorsOnly);
         currentState = Defines.GameState.Intro;
-		
-		InitializeUI();	
+
+		InitializeUI();
 	}
 
 	protected override void OnDestroy()
@@ -73,7 +73,7 @@ public class GameManager : MonoSingleton<GameManager>
     public void OnSettingClose(bool isImediattely = false)
     {
         // RectTransform image1 = SettingDlg.GetComponent<RectTransform>();
-		// if (isImediattely) 
+		// if (isImediattely)
 		// {
 			// image1.localPosition = new Vector3(Screen.width, 0, 0);
 		// }
@@ -91,7 +91,7 @@ public class GameManager : MonoSingleton<GameManager>
             //}
 
 		// PlayerData.Instance.UpdatePlayerInfo(grid.GetOrderedItemList());
-		
+
     }
 
     public void OnDrop(int idxPre, int idxPost)
@@ -119,28 +119,28 @@ public class GameManager : MonoSingleton<GameManager>
 	{
 		SceneManager.LoadScene("Game");
 	}
-	
+
 	private void LeaveMenu()
 	{
-		
+
 	}
 	private void EnterInGame()
 	{
 		// SceneManager.LoadScene("Game");
 	}
-	
+
 	private void LeaveInGame()
 	{
-		
+
 	}
 	private void EnterGameOver()
 	{
 
 	}
-	
+
 	private void LeaveGameOver()
 	{
-		
+
 	}
 #endregion
 }

@@ -11,11 +11,11 @@ public class SetCutscene : MonoBehaviour {
     private bool isRunning = false;
 
 
-    void Start () 
+    void Start ()
     {
         CloseCutScene();
     }
-	
+
 
     public void ShowCutscene(ShipInfo info, bool isBoom = false)
     {
@@ -24,7 +24,7 @@ public class SetCutscene : MonoBehaviour {
             if (isBoom)
             {
                 face.sprite = info.portraitList[1];
-                text = info.quoteList[2];                
+                text = info.quoteList[2];
             }
             else
             {
@@ -33,7 +33,7 @@ public class SetCutscene : MonoBehaviour {
             }
             StartCoroutine(StartCutscene());
         }
-        
+
     }
 
     public IEnumerator StartCutscene()

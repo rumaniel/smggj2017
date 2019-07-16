@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HazardBase : MonoBehaviour 
+public class HazardBase : MonoBehaviour
 {
 	GameObject player;
 	GameObject gameManager;
 	GameObject scoreUIText;
-	
+
 	public int maxHealth = 100;
 	public int curHealth;
 	int damageAmount;
@@ -54,7 +54,7 @@ public class HazardBase : MonoBehaviour
 			Destroy (gameObject);
 		}
 		// If the enemy is outside the screen area, destroy it.
-		if (transform.position.y < min.y) 
+		if (transform.position.y < min.y)
 		{
 			Destroy(gameObject);
 		}
@@ -65,7 +65,7 @@ public class HazardBase : MonoBehaviour
 	{
 		// Detect collision of the hazard with the player bullet.
 		if ((col.tag == "PlayerBullet")) {
-			
+
 			// Flash sprite on trigger activate.
 			StartCoroutine (FlashSprite ());
 

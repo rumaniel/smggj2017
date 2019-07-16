@@ -12,8 +12,8 @@ public class Defines
 		InGame,
 		GameOver
 	}
-	
- 	public enum FollowerPosition 
+
+ 	public enum FollowerPosition
 	{
 		TOPLEFT = 0,
 		TOP,
@@ -24,7 +24,7 @@ public class Defines
 		BOTTOM,
 		BOTTOMRIGHT
 	}
- 
+
     public enum colorType
     {
         blue = 0,

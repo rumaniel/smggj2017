@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
-public class GridManager : MonoSingleton<GridManager> 
+public class GridManager : MonoSingleton<GridManager>
 {
     public SetCutscene cutscene;
     public Text text;
@@ -28,12 +28,12 @@ public class GridManager : MonoSingleton<GridManager>
 
         for (int i = 0; i < transform.childCount; ++i)
         {
-            
+
             Transform child = transform.GetChild(i);
             int index = 0;
             bool result = int.TryParse(child.name, out index);
             Debug.Log(index);
-            if (result) 
+            if (result)
             {
                 DragAndDropItem item = child.GetChild(0).GetComponent<DragAndDropItem>();
                 item.SetShipInfo(followerList[index]);

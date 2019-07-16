@@ -10,7 +10,7 @@ public class ComboText : MonoBehaviour {
 	public int comboCount;
 	float comboTimer;
 
-	void Update () 
+	void Update ()
 	{
 		// This controls the combo timer.
 		if (comboTimer > 0f) {
@@ -30,7 +30,7 @@ public class ComboText : MonoBehaviour {
 		// Update the combo count UI Text.
 		comboUIText.text = comboCount.ToString ();
 	}
-	
+
 	void ComboTimerStart ()
 	{
 		// Start the timer.
@@ -40,7 +40,7 @@ public class ComboText : MonoBehaviour {
 		// Increase the combo count.
 		PlayerPrefs.SetInt ("Combo_Counter", comboCount);
 	}
-	
+
 	void ComboTimerStop ()
 	{
 		// Stop the timer and reset UI elements.

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 
-public class FollowerControl : PlayerBaseControl 
+public class FollowerControl : PlayerBaseControl
 {
 	public SpriteRenderer sprite;
 	public Transform spriteBase;
@@ -44,7 +44,7 @@ public class FollowerControl : PlayerBaseControl
 				// PlayerData.Instance.AddHealth(-bullet.weaponInfo.damage);
 			}
 		}
-	}	
+	}
 
 	IEnumerator DieFollower()
 	{
@@ -54,6 +54,6 @@ public class FollowerControl : PlayerBaseControl
 		explosionObject.SetActive(false);
 		gameObject.SetActive(false);
 
-    }	
+    }
 
 }

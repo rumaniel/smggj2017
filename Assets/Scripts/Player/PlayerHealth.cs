@@ -24,7 +24,7 @@ public class PlayerHealth : MonoBehaviour {
 		// If we ever go over our maxHealth value, cap it at our original maxHealth value.
 		if (curHealth > maxHealth) {
 			curHealth = maxHealth;
-		} 
+		}
 		// If we go under our minHealth value.
 		else if (curHealth < 0) {
 			curHealth = 0;

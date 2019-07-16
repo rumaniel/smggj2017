@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyHomingBullet : BulletBase 
+public class EnemyHomingBullet : BulletBase
 {
 	public float moveSpeed; // The bullets movement speed.
 	Vector2 _direction; // The bullets direction.
@@ -11,18 +11,18 @@ public class EnemyHomingBullet : BulletBase
 	{
 		isReady = false;
 	}
-	
+
 	public void SetDirection(Vector2 direction)
 	{
 		_direction = direction.normalized;
 
 		isReady = true;
 	}
-	
+
 	// Update is called once per frame
-	void Update () 
+	void Update ()
 	{
-		if (isReady) 
+		if (isReady)
 		{
 			// Get the bullets current position.
 			Vector2 position = transform.position;
@@ -46,7 +46,7 @@ public class EnemyHomingBullet : BulletBase
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		// Detect collision of the enemy bullet with the player ship.
-		if (col.tag == "PlayerShip") 
+		if (col.tag == "PlayerShip")
 		{
 			// Destroy the bullet.
 			Destroy(gameObject);

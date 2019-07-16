@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class EnemyWeapon : MonoBehaviour {
-	
+
 	public bool isHomingWeapon; // Check this if you want to use the HomingBullet ammo prefabs.
 	public GameObject enemyBullet; // Homing or Standard ammo prefab goes here.
 
@@ -14,14 +14,14 @@ public class EnemyWeapon : MonoBehaviour {
 	public int bulletCount = 1;
 	public Vector3 bulletOffset = new Vector3(0,0.25f,0);
 	public Vector3 bullet2Offset = new Vector3(0,0.25f,0);
-	
+
 	float cooldownTimer = 0;
-	
+
 	void Update()
 	{
 		cooldownTimer -= Time.deltaTime;
-		
-		if (cooldownTimer <= 0) 
+
+		if (cooldownTimer <= 0)
 		{
 			// Fire!
 			cooldownTimer = attackRate;
@@ -33,7 +33,7 @@ public class EnemyWeapon : MonoBehaviour {
 				StandardFire();
 		}
 	}
-	
+
 	void StandardFire ()
 	{
 		if (bulletCount == 1)
@@ -62,9 +62,9 @@ public class EnemyWeapon : MonoBehaviour {
 	{
 		// Get a reference to the player ship.
 		GameObject playerShip = GameObject.FindWithTag ("PlayerShip");
-		
+
 		// If the player is NOT dead.
-		if (playerShip != null) 
+		if (playerShip != null)
 		{
 			// Get the offset.
 			Vector3 offset = transform.rotation * bulletOffset;

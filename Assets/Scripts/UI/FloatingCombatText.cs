@@ -8,8 +8,8 @@ public class FloatingCombatText : MonoBehaviour {
 	public TextMesh CBTPrefab; // This is the 'Floating Combat Text' prefab.
 
 	int displayValue;
-	
-	void Start () 
+
+	void Start ()
 	{
 		// Check if we are a hazard or an enemy ship and access the script accordingly.
 		if (isHazard == false) {
@@ -18,7 +18,7 @@ public class FloatingCombatText : MonoBehaviour {
 			displayValue = GetComponent<HazardBase> ().pointsValue;
 	}
 
-	public void ShowCombatText () 
+	public void ShowCombatText ()
 	{
 		/*Debug.Log ("Combat Text: " + displayValue + " !");*/
 

@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
-public class PlayerData : MonoSingleton<PlayerData> 
+public class PlayerData : MonoSingleton<PlayerData>
 {
     public List<ShipInfo> followerInfo;
     public PlayerControl playerControl;
@@ -30,7 +30,7 @@ public class PlayerData : MonoSingleton<PlayerData>
     public void UpdatePlayerInfo(List<ShipInfo> infoList)
     {
         followerInfo.Clear();
-        
+
         for (int i = 0 ; i < infoList.Count; ++i)
         {
             followerInfo.Add(infoList[i]);

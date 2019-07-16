@@ -70,7 +70,7 @@ public class StageSequencer
         }
         else
         {
-            state = SequenceState.Done;   
+            state = SequenceState.Done;
         }
     }
 
@@ -82,8 +82,8 @@ public class StageSequencer
     public bool IsDone()
     {
         return state == SequenceState.Done;
-    }    
-    
+    }
+
     public bool IsRunning()
     {
         return state == SequenceState.Running;

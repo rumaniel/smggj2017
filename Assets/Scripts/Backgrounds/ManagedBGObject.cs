@@ -6,7 +6,7 @@ public class ManagedBGObject : BaseBGObject
     private bool isMoving;
 
     private System.Action<BaseBGObject> endAction = null;
-    
+
     protected override void Awake()
 	{
         base.Awake();
@@ -17,7 +17,7 @@ public class ManagedBGObject : BaseBGObject
 		min.y = min.y - GetComponent<UnityEngine.UI.Image>().sprite.bounds.extents.y;
 	}
 
-	protected override void Update () 
+	protected override void Update ()
 	{
         if (!isMoving) return;
 

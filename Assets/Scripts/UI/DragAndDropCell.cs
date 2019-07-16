@@ -254,7 +254,7 @@ public class DragAndDropCell : MonoBehaviour, IDropHandler
                 if(secondItem == null)
                     second = int.Parse(firstItem.transform.parent.name);
             }
-            
+
             if (secondItem != null)
             {
                 second = int.Parse(secondItem.transform.parent.name);

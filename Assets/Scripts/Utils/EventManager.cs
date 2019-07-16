@@ -41,7 +41,7 @@ public class EventManager : MonoSingleton<EventManager>
     public static void UnSubscribe<T>(EventDelegate<T> del) where T : GameEvent
     {
         if (Instance == null) return;
-        
+
         EventDelegate internalDelegate;
         if (Instance.delegateLookup.TryGetValue(del, out internalDelegate))
         {
@@ -87,7 +87,7 @@ public class EventManager : MonoSingleton<EventManager>
         {
             GameEvent e = Instance.eventQueue[0];
             TriggerEvent(e);
-            
+
             Instance.eventQueue.RemoveAt(0);
         }
     }

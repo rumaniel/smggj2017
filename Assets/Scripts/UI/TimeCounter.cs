@@ -14,7 +14,7 @@ public class TimeCounter : MonoBehaviour {
 	int seconds;
 
 	// Use this for initialization
-	void Start () 
+	void Start ()
 	{
 		// Get the Text UI component from this gameObject.
 		timeUI = GetComponent<Text> ();
@@ -28,11 +28,11 @@ public class TimeCounter : MonoBehaviour {
 	{
 		startCounter = false;
 	}
-	
+
 	// Update is called once per frame
-	void Update () 
+	void Update ()
 	{
-		if (startCounter) 
+		if (startCounter)
 		{
 			// Compute the elapsed time
 			elapsedTime = Time.time - startTime;

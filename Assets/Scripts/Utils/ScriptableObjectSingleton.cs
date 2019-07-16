@@ -1,14 +1,14 @@
 using UnityEngine;
 using System.Collections;
 
-public class ScriptableObjectSingleton<T> : ScriptableObject where T : ScriptableObject 
+public class ScriptableObjectSingleton<T> : ScriptableObject where T : ScriptableObject
 {
 	private static T _instance;
 	private static object _mutex = new object();
 
 	public static T Instance
 	{
-		get 
+		get
 		{
 			lock(_mutex)
 			{

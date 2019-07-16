@@ -16,7 +16,7 @@ public class EnemyMovement : MonoBehaviour {
 		moveSpeed += Random.Range (0.1f, 0.9f);
 	}
 
-	void Update () 
+	void Update ()
 	{
 		if (chasePlayer == true) {
 			if (player == null) {
@@ -30,12 +30,12 @@ public class EnemyMovement : MonoBehaviour {
 			// At this point we've either found the player or they don't exist.
 			if (player == null)
 				return;
-		} 
+		}
 		else if (chasePlayer == false) {
 			if (movingTarget == null) {
 				// Find the moving target using its tag.
 				GameObject go = GameObject.FindGameObjectWithTag ("MovingTarget");
-				
+
 				if (go != null) {
 					movingTarget = go.transform;
 				}
@@ -58,11 +58,11 @@ public class EnemyMovement : MonoBehaviour {
 		// Turn to face the player.
 		Vector2 dir = player.position - transform.position;
 		dir.Normalize ();
-		
+
 		float zAngle = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg - 90;
-		
+
 		Quaternion desiredRot = Quaternion.Euler (0, 0, zAngle);
-		
+
 		transform.rotation = Quaternion.RotateTowards (transform.rotation, desiredRot, turnSpeed * Time.deltaTime);
 	}
 
@@ -72,25 +72,25 @@ public class EnemyMovement : MonoBehaviour {
 		// Turn to face the target.
 		Vector2 dir = movingTarget.position - transform.position;
 		dir.Normalize ();
-		
+
 		float zAngle = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg - 90;
-		
+
 		Quaternion desiredRot = Quaternion.Euler (0, 0, zAngle);
-		
+
 		transform.rotation = Quaternion.RotateTowards (transform.rotation, desiredRot, turnSpeed * Time.deltaTime);
 	}
-	
+
 	// Function for the enemy ships to start chasing the player.
 	void StartChasingPlayer()
 	{
 		FacePlayer();
-		
+
 		// Move toward the target.
 		Vector3 pos = transform.position;
-		
+
 		Vector3 velocity = new Vector3 (0, 1 * moveSpeed * Time.deltaTime, 0);
 		pos += transform.rotation * velocity;
-		
+
 		transform.position = pos;
 	}
 
@@ -101,10 +101,10 @@ public class EnemyMovement : MonoBehaviour {
 
 		// Move toward the target.
 		Vector3 pos = transform.position;
-		
+
 		Vector3 velocity = new Vector3 (0, 1 * moveSpeed * Time.deltaTime, 0);
 		pos += transform.rotation * velocity;
-		
+
 		transform.position = pos;
 	}
 }

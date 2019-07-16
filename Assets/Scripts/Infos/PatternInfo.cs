@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 [CreateAssetMenu(fileName="PatternInfo", menuName="ScriptableObject/PatternInfo")]
-public class PatternInfo : ScriptableObject 
+public class PatternInfo : ScriptableObject
 {
     public Defines.EnemyAppearPattern appearPattern;
     public List<Vector2> customAppearList;

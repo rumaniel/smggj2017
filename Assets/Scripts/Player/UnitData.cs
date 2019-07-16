@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-public class UnitData : MonoBehaviour 
+public class UnitData : MonoBehaviour
 {
     public float health;
     public float maxHealth;

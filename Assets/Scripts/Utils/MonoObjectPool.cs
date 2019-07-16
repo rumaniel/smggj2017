@@ -20,7 +20,7 @@ public class MonoObjectPool : MonoBehaviour
 	{
 		if (prefab == null)
 			return;
-			
+
 		while (availiableObjects.Count < poolSize)
 		{
 			AddObject( CreateObject() );
@@ -46,7 +46,7 @@ public class MonoObjectPool : MonoBehaviour
 			po = availiableObjects[lastAvailiableIndex];
 			availiableObjects.RemoveAt(lastAvailiableIndex);
 		}
-		else 
+		else
 		{
 			po = CreateObject();
 		}

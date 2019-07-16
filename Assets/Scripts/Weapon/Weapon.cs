@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class Weapon
 {
     MonoObjectPool bulletPool;
-    
+
     public List<Transform> firePositionList = new List<Transform>();
     public WeaponInfo weaponInfo;
 
@@ -39,8 +39,8 @@ public class Weapon
                 MonoPooledObject bullet = bulletPool.GetObject();
                 bullet.transform.parent = GameManager.Instance.unitRootObject;
                 bullet.GetComponent<BulletBase>().Initialize(this.weaponInfo);
-                bullet.transform.position = firePositionList[i].position; 
-                bullet.transform.rotation = firePositionList[i].rotation;               
+                bullet.transform.position = firePositionList[i].position;
+                bullet.transform.rotation = firePositionList[i].rotation;
             }
         }
     }

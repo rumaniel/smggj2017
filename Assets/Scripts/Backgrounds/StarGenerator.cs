@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class StarGenerator : MonoBehaviour 
+public class StarGenerator : MonoBehaviour
 {
 	public bool enableBackgroundStars; // Enable this to show layered stars.
 	public MonoObjectPool[] FGStars; // These are your stars which will be more visible in the foreground.
@@ -20,7 +20,7 @@ public class StarGenerator : MonoBehaviour
 	};
 
 	// Use this for initialization
-	void Start () 
+	void Start ()
 	{
 		// This is the bottom left most part of the screen.
 		Vector2 min = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
@@ -28,7 +28,7 @@ public class StarGenerator : MonoBehaviour
 		Vector2 max = Camera.main.ViewportToWorldPoint (new Vector2 (1, 1));
 
 		// Loop to create the star field.
-		for (int i = 0; i < maxFGStars; ++i) 
+		for (int i = 0; i < maxFGStars; ++i)
 		{
 			MonoPooledObject star = FGStars[UnityEngine.Random.Range(0, FGStars.Length)].GetObject();
 
@@ -59,7 +59,7 @@ public class StarGenerator : MonoBehaviour
 		Vector2 max = Camera.main.ViewportToWorldPoint (new Vector2 (1, 1));
 
 		// Loop to create the star field.
-		for (int i = 0; i < maxBGStars; ++i) 
+		for (int i = 0; i < maxBGStars; ++i)
 		{
 			MonoPooledObject bgStar = BGStars[UnityEngine.Random.Range(0, BGStars.Length)].GetObject();
 

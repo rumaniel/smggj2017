@@ -6,19 +6,19 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 	private static T _instance;
 	private static object _mutex = new object();
 	private static bool applicationIsQuitting = false;
-	
+
 	public static T Instance
 	{
-		get 
+		get
 		{
 			if (applicationIsQuitting)
 			{
-				Debug.LogWarning("[Singleton] Instance '" + typeof(T) + 
-					"' already destroyed on application quit." + 
+				Debug.LogWarning("[Singleton] Instance '" + typeof(T) +
+					"' already destroyed on application quit." +
 					" Won't create again - returning null.");
-				return null; 
+				return null;
 			}
-			
+
 			lock(_mutex)
 			{
 				if (_instance == null)
@@ -26,7 +26,7 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 					var founds = FindObjectsOfType(typeof(T));
 					if (founds.Length > 1)
 					{
-						Debug.LogError("[Singleton] Singlton '" + typeof(T) + 
+						Debug.LogError("[Singleton] Singlton '" + typeof(T) +
 							"' should never be more than 1!");
 						return null;
 					}
@@ -36,30 +36,30 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 
 						DontDestroyOnLoad(_instance.gameObject);
 
-						Debug.Log("[Singleton] Singleton '" + typeof(T) + 
+						Debug.Log("[Singleton] Singleton '" + typeof(T) +
 							"' already created in this scene!");
 					}
-					else 
+					else
 					{
 						GameObject singleton = new GameObject();
 						_instance = singleton.AddComponent<T>();
 						singleton.name = "(Singleton) " + typeof(T).ToString();
-						
+
 						DontDestroyOnLoad(singleton);
-						
-						Debug.Log("[Singleton] An instance of " + typeof(T) + 
-							" is needed in the scene, so '" + singleton + 
+
+						Debug.Log("[Singleton] An instance of " + typeof(T) +
+							" is needed in the scene, so '" + singleton +
 							"' was created with DontDestroyOnLoad.");
 					}
 				}
-				
+
 				return _instance;
 			}
 		}
 	}
-	
+
 	protected virtual void OnDestroy()
 	{
-		applicationIsQuitting = true;	
+		applicationIsQuitting = true;
 	}
 }

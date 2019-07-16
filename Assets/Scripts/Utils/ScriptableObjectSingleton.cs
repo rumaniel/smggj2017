@@ -12,7 +12,7 @@ public class ScriptableObjectSingleton<T> : ScriptableObject where T : Scriptabl
 		{
 			lock(_mutex)
 			{
-				if (_instance == null)
+				if (!_instance)
 				{
 					_instance = Resources.Load(typeof(T).Name) as T;
 				}

@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 public class ScriptableObjectSingleton<T> : ScriptableObject where T : ScriptableObject
 {
@@ -12,7 +11,7 @@ public class ScriptableObjectSingleton<T> : ScriptableObject where T : Scriptabl
 		{
 			lock(_mutex)
 			{
-				if (!_instance)
+				if (_instance.IsNull())
 				{
 					_instance = Resources.Load(typeof(T).Name) as T;
 				}

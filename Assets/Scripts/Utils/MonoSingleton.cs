@@ -21,7 +21,7 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 
 			lock(_mutex)
 			{
-				if (!_instance)
+				if (_instance.IsNull())
 				{
 					var founds = FindObjectsOfType(typeof(T));
 					if (founds.Length > 1)

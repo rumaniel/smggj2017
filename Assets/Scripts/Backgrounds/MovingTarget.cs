@@ -1,27 +1,19 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class MovingTarget : UnitBase
 {
-	// This script attaches to an invisible game object below the
-	// screen area and acts as a target for the enemy ships rather than the player.
-	private bool dirRight = true;
+	private int dirRight = 1;
 	public float moveSpeed = 2.5f;
 
 	protected override void Update ()
 	{
 		base.Update();
 
-		if (dirRight)
-			transform.Translate (Vector2.right * moveSpeed * Time.deltaTime);
-		else
-			transform.Translate (-Vector2.right * moveSpeed * Time.deltaTime);
+        transform.Translate (dirRight * Vector2.right * moveSpeed * Time.deltaTime);
 
-		if (transform.position.x >= 3.0f) {
-			dirRight = false;
-		}
-		if (transform.position.x <= -3) {
-			dirRight = true;
-		}
+		if (transform.position.x >= 3.0f)
+			dirRight = -1;
+		else if (transform.position.x <= -3)
+			dirRight = 1;
 	}
 }

@@ -2,32 +2,31 @@ using UnityEngine;
 
 public class StarGenerator : MonoBehaviour
 {
-	public bool enableBackgroundStars; // Enable this to show layered stars.
-	public MonoObjectPool[] FGStars; // These are your stars which will be more visible in the foreground.
-	public MonoObjectPool[] BGStars; // These are your stars which will be visible in the background.
-	public int maxFGStars; // This is the max number of stars visible of the screen.
-	public int maxBGStars; // This is the max number of stars visible of the screen.
-	public bool onlyWhiteStars; // Tick this in the inspector to limit all stars to 'White'.
+	public bool enableBackgroundStars;
+	public MonoObjectPool[] FGStars;
+	public MonoObjectPool[] BGStars;
+	public int maxFGStars;
+	public int maxBGStars;
+	public bool onlyWhiteStars;
 
-	// Colour Array
-	Color[] starColors = {
-		// You can set as many or as little variants of star colors as you want here.
-		new Color (0.5f, 0.5f, 1f), // Blue
-		new Color (0, 1f, 1f), // Green
-		/*new Color (1f, 1f, 0), // Yellow
-		new Color (1f, 0, 0), // Red*/
-		new Color (1f,1f,1f), // White
+    [SerializeField]
+	private Color[] starColors =
+    {
+		new Color (0.5f, 0.5f, 1f),
+		new Color (0, 1f, 1f),
+		new Color (1f, 1f, 0),
+		new Color (1f, 0, 0),
+		new Color (1f, 1f, 1f),
 	};
 
-	// Use this for initialization
+    private Vector2 min;
+    private Vector2 max;
+
 	void Start ()
 	{
-		// This is the bottom left most part of the screen.
-		Vector2 min = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
-		// This is the top right most part of the screen.
-		Vector2 max = Camera.main.ViewportToWorldPoint (new Vector2 (1, 1));
+		min = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
+		max = Camera.main.ViewportToWorldPoint (new Vector2 (1, 1));
 
-		// Loop to create the star field.
 		for (int i = 0; i < maxFGStars; ++i)
 		{
 			MonoPooledObject star = FGStars[UnityEngine.Random.Range(0, FGStars.Length)].GetObject();
@@ -40,24 +39,21 @@ public class StarGenerator : MonoBehaviour
 			// Set the position of the star (random x and random y).
 			star.transform.position = new Vector2(Random.Range (min.x, max.x), Random.Range(min.y, max.y));
 			// Set a random speed for the star.
-			star.GetComponent<BaseBGObject> ().moveSpeed = -(4.5f * Random.value + 0.5f);
+			star.GetComponent<BaseBGObject>().moveSpeed = -(4.5f * Random.value + 0.5f);
 			// Make the star a child of the star generator.
 			star.transform.parent = transform;
 		}
 
-		if (enableBackgroundStars == true) {
+		if (enableBackgroundStars == true)
+        {
 			BackgroundStarField ();
-		} else
+		}
+        else
 			return;
 	}
 
 	void BackgroundStarField ()
 	{
-		// This is the bottom left most part of the screen.
-		Vector2 min = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
-		// This is the top right most part of the screen.
-		Vector2 max = Camera.main.ViewportToWorldPoint (new Vector2 (1, 1));
-
 		// Loop to create the star field.
 		for (int i = 0; i < maxBGStars; ++i)
 		{

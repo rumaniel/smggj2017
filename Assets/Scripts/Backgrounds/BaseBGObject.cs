@@ -18,8 +18,14 @@ public class BaseBGObject : UnitBase
 	{
 		base.Update();
 
-        if (transform.position.y < min.y) ResetPosition();
-        else UpdatePosition();
+        if (transform.position.y < min.y)
+        {
+            ResetPosition();
+        }
+        else
+        {
+            UpdatePosition();
+        }
 	}
 
     protected void UpdatePosition()

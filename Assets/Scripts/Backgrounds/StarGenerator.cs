@@ -61,4 +61,10 @@ public class StarGenerator : MonoBehaviour
 			bgStar.transform.parent = transform;
 		}
 	}
+
+    [ContextMenu("SetupStars")]
+    public void SetupStars()
+    {
+
+    }
 }

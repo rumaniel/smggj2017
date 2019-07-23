@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BaseBGObject : UnitBase
 {
@@ -7,6 +8,8 @@ public class BaseBGObject : UnitBase
 
     [SerializeField]
     private bool isMoving;
+
+    public UnityEvent onBGObjectInit;
 
     protected Vector2 min;
     protected Vector2 max;
@@ -40,6 +43,8 @@ public class BaseBGObject : UnitBase
     public virtual void InitializeObject(System.Action<BaseBGObject> endAction)
     {
         this.endAction = endAction;
+
+        onBGObjectInit.Invoke();
 
         isMoving = true;
     }

@@ -8,6 +8,8 @@ public class BaseBGObject : UnitBase
     protected Vector2 min;
     protected Vector2 max;
 
+    protected System.Action<BaseBGObject> endAction = null;
+
     protected virtual void Awake()
     {
         min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
@@ -28,6 +30,11 @@ public class BaseBGObject : UnitBase
         }
 	}
 
+    public virtual void InitializeObject(System.Action<BaseBGObject> endAction)
+    {
+        this.endAction = endAction;
+    }
+
     protected void UpdatePosition()
     {
         Vector2 position = new Vector2(transform.position.x, transform.position.y + moveSpeed * Time.deltaTime);
@@ -38,5 +45,11 @@ public class BaseBGObject : UnitBase
     protected virtual void ResetPosition()
     {
         transform.position = new Vector2(Random.Range(min.x, max.x), max.y);
+
+        if (endAction != null)
+        {
+            endAction(this);
+            endAction = null;
+        }
     }
 }

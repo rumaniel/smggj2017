@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 public class MonoObjectPool : MonoBehaviour
@@ -36,6 +35,11 @@ public class MonoObjectPool : MonoBehaviour
 		}
 		availiableObjects.Clear();
 	}
+
+    public int GetAvailiableObjectCount()
+    {
+        return availiableObjects.Count;
+    }
 
 	public virtual MonoPooledObject GetObject(bool isActive = true)
 	{

@@ -33,7 +33,7 @@ public class BackgroundController : MonoBehaviour
 	{
     	if (availableObjects.Count == 0) return;
 
-		var planet = availableObjects.Dequeue() as BaseBGObject;
+		var planet = availableObjects.Dequeue();
         planet.InitializeObject(EnqueueObjects);
 	}
 

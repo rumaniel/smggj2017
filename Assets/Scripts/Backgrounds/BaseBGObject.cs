@@ -42,6 +42,8 @@ public class BaseBGObject : UnitBase
 
     public virtual void InitializeObject(System.Action<BaseBGObject> endAction)
     {
+        ResetPosition();
+
         this.endAction = endAction;
 
         onBGObjectInit.Invoke();

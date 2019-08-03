@@ -18,7 +18,7 @@ public class StarGenerator : MonoBehaviour
 		new Color (1f, 1f, 1f),
 	};
 
-
+// TODO: Design model. Decide to restrict the stars in the scene
 	private void Start ()
 	{
 		for (int i = 0; i < maxFGStars; ++i)

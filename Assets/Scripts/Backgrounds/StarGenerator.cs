@@ -26,8 +26,12 @@ public class StarGenerator : MonoBehaviour
 			MonoPooledObject star = FGStars[UnityEngine.Random.Range(0, FGStars.Length)].GetObject();
 
 			star.GetComponent<UnityEngine.UI.Image>().color = starColors[i % starColors.Length];
-			star.GetComponent<BaseBGObject>().moveSpeed = -(4.5f * Random.value + 0.5f);
+			var bgObject = star.GetComponent<BaseBGObject>();
+            bgObject.moveSpeed = -(4.5f * Random.value + 0.5f);
+            bgObject.InitializeObject(FGStarEndAction);
+
 			star.transform.parent = transform;
+
 		}
 
 		for (int i = 0; i < maxBGStars; ++i)
@@ -40,10 +44,15 @@ public class StarGenerator : MonoBehaviour
 		}
 	}
 
-	void BackgroundStarField ()
-	{
+    private void FGStarEndAction(BaseBGObject bgObject)
+    {
 
-	}
+    }
+
+    private void BGStarEndAction(BaseBGObject bgObject)
+    {
+
+    }
 
     [ContextMenu("SetupStars")]
     public void SetupStars()

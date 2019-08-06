@@ -41,6 +41,11 @@ public class MonoObjectPool : MonoBehaviour
         return availiableObjects.Count;
     }
 
+    public int GetActiveObjectCount()
+    {
+        return poolSize - availiableObjects.Count;
+    }
+
 	public virtual MonoPooledObject GetObject(bool isActive = true)
 	{
 		MonoPooledObject po;

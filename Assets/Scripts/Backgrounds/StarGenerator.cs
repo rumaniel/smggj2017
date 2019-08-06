@@ -21,42 +21,56 @@ public class StarGenerator : MonoBehaviour
 // TODO: Design model. Decide to restrict the stars in the scene
 	private void Start ()
 	{
-		for (int i = 0; i < maxFGStars; ++i)
-		{
-			MonoPooledObject star = FGStars[UnityEngine.Random.Range(0, FGStars.Length)].GetObject();
+        // TODO: Redefines with class or struct
+        MakeStars(maxFGStars, FGStars, starColors, FGStarEndAction);
+        MakeStars(maxBGStars, BGStars, new[] { new Color(1f, 1f, 1f) }, BGStarEndAction);
+	}
 
-			star.GetComponent<UnityEngine.UI.Image>().color = starColors[i % starColors.Length];
+    private void MakeStars(int starCount, MonoObjectPool[] poolList, Color[] starColor, System.Action<BaseBGObject> action)
+    {
+        for (int i = 0; i < starCount; ++i)
+        {
+            var star = poolList[UnityEngine.Random.Range(0, poolList.Length)].GetObject();
+
+			star.GetComponent<UnityEngine.UI.Image>().color = starColor[i % starColor.Length];
+
 			var bgObject = star.GetComponent<BaseBGObject>();
             bgObject.moveSpeed = -(4.5f * Random.value + 0.5f);
-            bgObject.InitializeObject(FGStarEndAction);
+            bgObject.InitializeObject(action);
 
 			star.transform.parent = transform;
-
-		}
-
-		for (int i = 0; i < maxBGStars; ++i)
-		{
-			MonoPooledObject bgStar = BGStars[UnityEngine.Random.Range(0, BGStars.Length)].GetObject();
-
-			bgStar.GetComponent<UnityEngine.UI.Image>().color = Color.white;
-			bgStar.GetComponent<BaseBGObject>().moveSpeed = -(0.1f * Random.value + 0.2f);
-			bgStar.transform.parent = transform;
-		}
-	}
+        }
+    }
 
     private void FGStarEndAction(BaseBGObject bgObject)
     {
+        // TODO: to lamda func
+        int totalActiveCount = 0;
+        foreach (var monoPooledObject in FGStars)
+        {
+            totalActiveCount += monoPooledObject.GetActiveObjectCount();
+        }
+
+        for (int i = 0; i < maxFGStars - totalActiveCount; ++i)
+        {
+            MakeStars(maxFGStars, FGStars, starColors, FGStarEndAction);
+        }
 
     }
 
+    // TODO: merge duplicated function
     private void BGStarEndAction(BaseBGObject bgObject)
     {
+        // TODO: to lamda func
+        int totalActiveCount = 0;
+        foreach (var monoPooledObject in BGStars)
+        {
+            totalActiveCount += monoPooledObject.GetActiveObjectCount();
+        }
 
-    }
-
-    [ContextMenu("SetupStars")]
-    public void SetupStars()
-    {
-
+        for (int i = 0; i < maxBGStars - totalActiveCount; ++i)
+        {
+            MakeStars(maxBGStars, BGStars, new[] { new Color(1f, 1f, 1f) }, BGStarEndAction);
+        }
     }
 }

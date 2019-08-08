@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Linq;
 
 public class StarGenerator : MonoBehaviour
 {
@@ -44,12 +45,7 @@ public class StarGenerator : MonoBehaviour
 
     private void FGStarEndAction(BaseBGObject bgObject)
     {
-        // TODO: to lamda func
-        int totalActiveCount = 0;
-        foreach (var monoPooledObject in FGStars)
-        {
-            totalActiveCount += monoPooledObject.GetActiveObjectCount();
-        }
+        int totalActiveCount = FGStars.Sum(x => x.GetActiveObjectCount());
 
         for (int i = 0; i < maxFGStars - totalActiveCount; ++i)
         {
@@ -61,12 +57,7 @@ public class StarGenerator : MonoBehaviour
     // TODO: merge duplicated function
     private void BGStarEndAction(BaseBGObject bgObject)
     {
-        // TODO: to lamda func
-        int totalActiveCount = 0;
-        foreach (var monoPooledObject in BGStars)
-        {
-            totalActiveCount += monoPooledObject.GetActiveObjectCount();
-        }
+        var totalActiveCount = BGStars.Sum(x => x.GetActiveObjectCount());
 
         for (int i = 0; i < maxBGStars - totalActiveCount; ++i)
         {

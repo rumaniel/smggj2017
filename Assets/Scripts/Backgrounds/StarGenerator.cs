@@ -1,67 +1,70 @@
 using UnityEngine;
+using UnityEngine.Events;
 using System.Linq;
+
+[System.Serializable]
+public class BaseBGObjectEvent : UnityEvent<BaseBGObject> {}
+
+[System.Serializable]
+public class StarInformation
+{
+	public MonoObjectPool[] starPoolList;
+    public int maxStarCount;
+    public Color[] starColorList;
+    public BaseBGObjectEvent callback;
+}
 
 public class StarGenerator : MonoBehaviour
 {
+    public float minStarSpeed = 0.5f;
+    public float averageStarSpeed = 4.5f;
 	public bool enableBackgroundStars;
-	public MonoObjectPool[] FGStars;
-	public MonoObjectPool[] BGStars;
-	public int maxFGStars;
-	public int maxBGStars;
+    public StarInformation fgStarInfo;
+    public StarInformation bgStarInfo;
 
-    [SerializeField]
-	private Color[] starColors =
-    {
-		new Color (0.5f, 0.5f, 1f),
-		new Color (0, 1f, 1f),
-		new Color (1f, 1f, 0),
-		new Color (1f, 0, 0),
-		new Color (1f, 1f, 1f),
-	};
 
 // TODO: Design model. Decide to restrict the stars in the scene
 	private void Start ()
 	{
-        // TODO: Redefines with class or struct
-        MakeStars(maxFGStars, FGStars, starColors, FGStarEndAction);
-        MakeStars(maxBGStars, BGStars, new[] { new Color(1f, 1f, 1f) }, BGStarEndAction);
+        MakeStars(fgStarInfo);
+        MakeStars(bgStarInfo);
 	}
 
-    private void MakeStars(int starCount, MonoObjectPool[] poolList, Color[] starColor, System.Action<BaseBGObject> action)
+    private void MakeStars(StarInformation starInfo)
     {
-        for (int i = 0; i < starCount; ++i)
+        for (int i = 0; i < starInfo.maxStarCount; ++i)
         {
-            var star = poolList[UnityEngine.Random.Range(0, poolList.Length)].GetObject();
+            var star = starInfo.starPoolList[UnityEngine.Random.Range(0, starInfo.starPoolList.Length)].GetObject();
 
-			star.GetComponent<UnityEngine.UI.Image>().color = starColor[i % starColor.Length];
+			star.GetComponent<UnityEngine.UI.Image>().color = starInfo.starColorList[i % starInfo.starColorList.Length];
 
 			var bgObject = star.GetComponent<BaseBGObject>();
-            bgObject.moveSpeed = -(4.5f * Random.value + 0.5f);
-            bgObject.InitializeObject(action);
+            bgObject.moveSpeed = -(averageStarSpeed * Random.value + minStarSpeed);
+            // TODO: check
+            bgObject.InitializeObject(starInfo.callback.Invoke);
 
 			star.transform.parent = transform;
         }
     }
 
-    private void FGStarEndAction(BaseBGObject bgObject)
+// TODO: merge two callback
+    public void FGStarEndAction(BaseBGObject bgObject)
     {
-        int totalActiveCount = FGStars.Sum(x => x.GetActiveObjectCount());
+        int totalActiveCount = fgStarInfo.starPoolList.Sum(x => x.GetActiveObjectCount());
 
-        for (int i = 0; i < maxFGStars - totalActiveCount; ++i)
+        for (int i = 0; i < fgStarInfo.maxStarCount - totalActiveCount; ++i)
         {
-            MakeStars(maxFGStars, FGStars, starColors, FGStarEndAction);
+            MakeStars(fgStarInfo);
         }
-
     }
 
-    // TODO: merge duplicated function
-    private void BGStarEndAction(BaseBGObject bgObject)
+    public void BGStarEndAction(BaseBGObject bgObject)
     {
-        var totalActiveCount = BGStars.Sum(x => x.GetActiveObjectCount());
+        var totalActiveCount = bgStarInfo.starPoolList.Sum(x => x.GetActiveObjectCount());
 
-        for (int i = 0; i < maxBGStars - totalActiveCount; ++i)
+        for (int i = 0; i < bgStarInfo.maxStarCount - totalActiveCount; ++i)
         {
-            MakeStars(maxBGStars, BGStars, new[] { new Color(1f, 1f, 1f) }, BGStarEndAction);
+            MakeStars(bgStarInfo);
         }
     }
 }

@@ -43034,22 +43034,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a365ab2577e8734487bd05bf516604a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minStarSpeed: 0.5
+  averageStarSpeed: 4.5
   enableBackgroundStars: 1
-  FGStars:
-  - {fileID: 638758364}
-  - {fileID: 1523545560}
-  - {fileID: 196009031}
-  BGStars:
-  - {fileID: 1192973926}
-  maxFGStars: 35
-  maxBGStars: 45
-  onlyWhiteStars: 0
-  starColors:
-  - {r: 0.5, g: 0.5, b: 1, a: 1}
-  - {r: 0, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 0, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
+  fgStarInfo:
+    starPoolList:
+    - {fileID: 638758364}
+    - {fileID: 1523545560}
+    - {fileID: 196009031}
+    maxStarCount: 35
+    starColorList:
+    - {r: 0, g: 1, b: 1, a: 1}
+    - {r: 1, g: 0, b: 0, a: 1}
+    - {r: 0, g: 0, b: 1, a: 1}
+    - {r: 1, g: 1, b: 0, a: 1}
+    - {r: 1, g: 1, b: 1, a: 1}
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 693549001}
+          m_MethodName: FGStarEndAction
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: BaseBGObject, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: BaseBGObjectEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+  bgStarInfo:
+    starPoolList:
+    - {fileID: 1192973926}
+    maxStarCount: 45
+    starColorList:
+    - {r: 1, g: 1, b: 1, a: 1}
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 693549001}
+          m_MethodName: BGStarEndAction
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: BaseBGObject, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: BaseBGObjectEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
 --- !u!1 &697607322
 GameObject:
   m_ObjectHideFlags: 0

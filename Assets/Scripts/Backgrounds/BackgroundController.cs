@@ -6,14 +6,13 @@ public class BackgroundController : MonoBehaviour
     public float bgDeltaTime;
 	public BaseBGObject[] BGObjects;
 
-    // TODO: Random pop
-	Queue<BaseBGObject> availableObjects = new Queue<BaseBGObject>();
+	private List<BaseBGObject> availableObjects = new List<BaseBGObject>();
 
 	private void Start()
 	{
         foreach (var bgObject in BGObjects)
         {
-            availableObjects.Enqueue(bgObject);
+            availableObjects.Add(bgObject);
         }
 	}
 
@@ -33,12 +32,22 @@ public class BackgroundController : MonoBehaviour
 	{
     	if (availableObjects.Count == 0) return;
 
-		var planet = availableObjects.Dequeue();
-        planet.InitializeObject(EnqueueObjects);
+        // TODO : linq?
+		var planet = RandomPopObject(availableObjects);
+        planet.InitializeObject(ReturnToPoolObjects);
 	}
 
-    private void EnqueueObjects(BaseBGObject bgObject)
+    private T RandomPopObject<T>(List<T> sourceList)
+    {
+        int index = Random.Range(0, sourceList.Count);
+        T result = sourceList[index];
+        sourceList.RemoveAt(index);
+
+        return result;
+    }
+
+    private void ReturnToPoolObjects(BaseBGObject bgObject)
 	{
-        availableObjects.Enqueue(bgObject);
+        availableObjects.Add(bgObject);
 	}
 }

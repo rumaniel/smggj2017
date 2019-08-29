@@ -5,11 +5,13 @@ public class BackgroundController : MonoBehaviour
 {
     public float bgDeltaTime;
 	public BaseBGObject[] BGObjects;
+    public BaseBGObjectEvent callbackEvent;
 
 	private List<BaseBGObject> availableObjects = new List<BaseBGObject>();
 
 	private void Start()
 	{
+
         foreach (var bgObject in BGObjects)
         {
             availableObjects.Add(bgObject);
@@ -34,7 +36,7 @@ public class BackgroundController : MonoBehaviour
 
         // TODO : linq?
 		var planet = RandomPopObject(availableObjects);
-        planet.InitializeObject(ReturnToPoolObjects);
+        planet.InitializeObject(callbackEvent);
 	}
 
     private T RandomPopObject<T>(List<T> sourceList)
@@ -46,7 +48,7 @@ public class BackgroundController : MonoBehaviour
         return result;
     }
 
-    private void ReturnToPoolObjects(BaseBGObject bgObject)
+    public void ReturnToPoolObjects(BaseBGObject bgObject)
 	{
         availableObjects.Add(bgObject);
 	}

@@ -14,7 +14,7 @@ public class BaseBGObject : UnitBase
     protected Vector2 min;
     protected Vector2 max;
 
-    protected System.Action<BaseBGObject> endAction = null;
+    protected BaseBGObjectEvent endAction = null;
 
     protected virtual void Awake()
     {
@@ -40,7 +40,7 @@ public class BaseBGObject : UnitBase
         }
 	}
 
-    public virtual void InitializeObject(System.Action<BaseBGObject> endAction)
+    public virtual void InitializeObject(BaseBGObjectEvent endAction)
     {
         ResetPosition();
 
@@ -64,7 +64,7 @@ public class BaseBGObject : UnitBase
 
         if (endAction != null)
         {
-            endAction(this);
+            endAction.Invoke(this);
             endAction = null;
         }
 

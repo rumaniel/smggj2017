@@ -41,6 +41,7 @@ public class StarGenerator : MonoBehaviour
 			var bgObject = star.GetComponent<BaseBGObject>();
             bgObject.moveSpeed = -(averageStarSpeed * Random.value + minStarSpeed);
             // TODO: check
+            starInfo.callback = new BaseBGObjectEvent();
             bgObject.InitializeObject(starInfo.callback);
 
 			star.transform.SetParent(transform);

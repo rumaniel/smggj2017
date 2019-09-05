@@ -5463,6 +5463,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224438332588539206, guid: da5f4035f36b7bb429eb7abfcbc169d0,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -2290688107132071872, guid: da5f4035f36b7bb429eb7abfcbc169d0,
         type: 3}
       propertyPath: min.x
@@ -75927,6 +75932,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nebula2
       objectReference: {fileID: 0}
+    - target: {fileID: -4429290097806898792, guid: 8314aa2e956f5b1499b2c03a7a9f130f,
+        type: 3}
+      propertyPath: min.x
+      value: -200
+      objectReference: {fileID: 0}
+    - target: {fileID: -4429290097806898792, guid: 8314aa2e956f5b1499b2c03a7a9f130f,
+        type: 3}
+      propertyPath: min.y
+      value: -640
+      objectReference: {fileID: 0}
+    - target: {fileID: -4429290097806898792, guid: 8314aa2e956f5b1499b2c03a7a9f130f,
+        type: 3}
+      propertyPath: max.x
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 224738008476064596, guid: 8314aa2e956f5b1499b2c03a7a9f130f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -76031,21 +76051,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4429290097806898792, guid: 8314aa2e956f5b1499b2c03a7a9f130f,
-        type: 3}
-      propertyPath: min.x
-      value: -200
-      objectReference: {fileID: 0}
-    - target: {fileID: -4429290097806898792, guid: 8314aa2e956f5b1499b2c03a7a9f130f,
-        type: 3}
-      propertyPath: min.y
-      value: -640
-      objectReference: {fileID: 0}
-    - target: {fileID: -4429290097806898792, guid: 8314aa2e956f5b1499b2c03a7a9f130f,
-        type: 3}
-      propertyPath: max.x
-      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8314aa2e956f5b1499b2c03a7a9f130f, type: 3}

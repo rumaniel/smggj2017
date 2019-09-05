@@ -11,17 +11,27 @@ public class BaseBGObject : UnitBase
 
     public UnityEvent onBGObjectInit;
 
-    protected Vector2 min;
-    protected Vector2 max;
+    public Vector2 min;
+    public Vector2 max;
 
     protected BaseBGObjectEvent endAction = null;
+
+    private RectTransform _rect;
+    protected RectTransform rectTransform
+    {
+        get
+        {
+            if (_rect == null) _rect = GetComponent<RectTransform>();
+
+            return _rect;
+        }
+    }
 
     protected virtual void Awake()
     {
         isMoving = false;
 
-		max.y = max.y + GetComponent<UnityEngine.UI.Image>().sprite.bounds.extents.y;
-		min.y = min.y - GetComponent<UnityEngine.UI.Image>().sprite.bounds.extents.y;
+		min.y = min.y - (rectTransform.rect.height * rectTransform.localScale.y);
     }
 
     protected override void Update ()
@@ -30,7 +40,7 @@ public class BaseBGObject : UnitBase
 
         if (!isMoving) return;
 
-        if (transform.position.y < min.y)
+        if (rectTransform.anchoredPosition3D.y < min.y)
         {
             ResetPosition();
         }
@@ -60,7 +70,7 @@ public class BaseBGObject : UnitBase
 
     protected virtual void ResetPosition()
     {
-        transform.position = new Vector2(Random.Range(min.x, max.x), max.y);
+        rectTransform.anchoredPosition3D = new Vector3(Random.Range(min.x, max.x), max.y, 0f);
 
         if (endAction != null)
         {

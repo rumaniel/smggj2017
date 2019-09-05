@@ -7,11 +7,10 @@ public class BackgroundController : MonoBehaviour
 	public BaseBGObject[] BGObjects;
     public BaseBGObjectEvent callbackEvent;
 
-	private List<BaseBGObject> availableObjects = new List<BaseBGObject>();
+	public List<BaseBGObject> availableObjects = new List<BaseBGObject>();
 
 	private void Start()
 	{
-
         foreach (var bgObject in BGObjects)
         {
             availableObjects.Add(bgObject);
@@ -22,7 +21,6 @@ public class BackgroundController : MonoBehaviour
     private void Update()
     {
         accumulatedTime += Time.deltaTime;
-
         if (accumulatedTime > bgDeltaTime)
         {
             accumulatedTime = 0f;
@@ -35,7 +33,10 @@ public class BackgroundController : MonoBehaviour
     	if (availableObjects.Count == 0) return;
 
         // TODO : linq?
-		var planet = RandomPopObject(availableObjects);
+		var planet = RandomPopObject<BaseBGObject>(availableObjects);
+
+        Debug.Log(planet.name + ":" + planet == null);
+
         planet.InitializeObject(callbackEvent);
 	}
 

@@ -63,9 +63,9 @@ public class BaseBGObject : UnitBase
 
     protected void UpdatePosition()
     {
-        Vector2 position = new Vector2(transform.position.x, transform.position.y + moveSpeed * Time.deltaTime);
+        Vector3 position = new Vector3(rectTransform.anchoredPosition3D.x, rectTransform.anchoredPosition3D.y + moveSpeed * Time.deltaTime, rectTransform.anchoredPosition3D.z);
 
-        transform.position = position;
+        rectTransform.anchoredPosition3D = position;
     }
 
     protected virtual void ResetPosition()

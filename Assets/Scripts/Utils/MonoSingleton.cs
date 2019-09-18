@@ -3,8 +3,8 @@
 /// http://wiki.unity3d.com/index.php/Singleton
 public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 {
-	private static T _instance;
-	private static object _mutex = new object();
+	private static T instance;
+	private static object mutex = new object();
 	private static bool applicationIsQuitting = false;
 
 	public static T Instance
@@ -13,15 +13,13 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 		{
 			if (applicationIsQuitting)
 			{
-				Debug.LogWarning("[Singleton] Instance '" + typeof(T) +
-					"' already destroyed on application quit." +
-					" Won't create again - returning null.");
+				Debug.LogWarning("[Singleton] Instance '" + typeof(T) + "' already destroyed on application quit.");
 				return null;
 			}
 
-			lock(_mutex)
+			lock(mutex)
 			{
-				if (_instance.IsNull())
+				if (instance.IsNull())
 				{
 					var founds = FindObjectsOfType(typeof(T));
 					if (founds.Length > 1)
@@ -32,9 +30,9 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 					}
 					else if (founds.Length > 0)
 					{
-						_instance = (T)founds[0];
+						instance = founds[0] as T;
 
-						DontDestroyOnLoad(_instance.gameObject);
+						DontDestroyOnLoad(instance.gameObject);
 
 						Debug.Log("[Singleton] Singleton '" + typeof(T) +
 							"' already created in this scene!");
@@ -42,7 +40,7 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 					else
 					{
 						GameObject singleton = new GameObject();
-						_instance = singleton.AddComponent<T>();
+						instance = singleton.AddComponent<T>();
 						singleton.name = "(Singleton) " + typeof(T).ToString();
 
 						DontDestroyOnLoad(singleton);
@@ -53,7 +51,7 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 					}
 				}
 
-				return _instance;
+				return instance;
 			}
 		}
 	}

@@ -2,21 +2,21 @@ using UnityEngine;
 
 public class ScriptableObjectSingleton<T> : ScriptableObject where T : ScriptableObject
 {
-	private static T _instance;
-	private static object _mutex = new object();
+	private static T instance;
+	private static object mutex = new object();
 
 	public static T Instance
 	{
 		get
 		{
-			lock(_mutex)
+			lock(mutex)
 			{
-				if (_instance.IsNull())
+				if (instance.IsNull())
 				{
-					_instance = Resources.Load(typeof(T).Name) as T;
+					instance = Resources.Load(typeof(T).Name) as T;
 				}
 
-				return _instance;
+				return instance;
 			}
 		}
 	}

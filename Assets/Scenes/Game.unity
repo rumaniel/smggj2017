@@ -5463,31 +5463,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224438332588539206, guid: da5f4035f36b7bb429eb7abfcbc169d0,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: -2290688107132071872, guid: da5f4035f36b7bb429eb7abfcbc169d0,
-        type: 3}
-      propertyPath: min.x
-      value: -200
-      objectReference: {fileID: 0}
-    - target: {fileID: -2290688107132071872, guid: da5f4035f36b7bb429eb7abfcbc169d0,
-        type: 3}
-      propertyPath: min.y
-      value: -640
-      objectReference: {fileID: 0}
-    - target: {fileID: -2290688107132071872, guid: da5f4035f36b7bb429eb7abfcbc169d0,
-        type: 3}
-      propertyPath: max.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: -2290688107132071872, guid: da5f4035f36b7bb429eb7abfcbc169d0,
-        type: 3}
-      propertyPath: moveSpeed
-      value: -10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da5f4035f36b7bb429eb7abfcbc169d0, type: 3}
 --- !u!224 &82123159 stripped
@@ -43076,8 +43051,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a365ab2577e8734487bd05bf516604a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minStarSpeed: 0.5
-  averageStarSpeed: 4.5
+  minStarSpeed: 50
+  averageStarSpeed: 45
   enableBackgroundStars: 1
   fgStarInfo:
     starPoolList:
@@ -48520,26 +48495,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4897720151166052062, guid: 185f89cb40697ec499f4c19c8558ccd1,
-        type: 3}
-      propertyPath: min.x
-      value: -200
-      objectReference: {fileID: 0}
-    - target: {fileID: 4897720151166052062, guid: 185f89cb40697ec499f4c19c8558ccd1,
-        type: 3}
-      propertyPath: min.y
-      value: -640
-      objectReference: {fileID: 0}
-    - target: {fileID: 4897720151166052062, guid: 185f89cb40697ec499f4c19c8558ccd1,
-        type: 3}
-      propertyPath: max.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 4897720151166052062, guid: 185f89cb40697ec499f4c19c8558ccd1,
-        type: 3}
-      propertyPath: moveSpeed
-      value: -30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 185f89cb40697ec499f4c19c8558ccd1, type: 3}
@@ -54480,26 +54435,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3824343075105153149, guid: 833a0530b80333244bb388c5b33add20,
-        type: 3}
-      propertyPath: min.x
-      value: -200
-      objectReference: {fileID: 0}
-    - target: {fileID: 3824343075105153149, guid: 833a0530b80333244bb388c5b33add20,
-        type: 3}
-      propertyPath: min.y
-      value: -640
-      objectReference: {fileID: 0}
-    - target: {fileID: 3824343075105153149, guid: 833a0530b80333244bb388c5b33add20,
-        type: 3}
-      propertyPath: max.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 3824343075105153149, guid: 833a0530b80333244bb388c5b33add20,
-        type: 3}
-      propertyPath: moveSpeed
-      value: -50
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 833a0530b80333244bb388c5b33add20, type: 3}
 --- !u!224 &1015662072 stripped
@@ -54913,26 +54848,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -2340631469328451401, guid: 4ca8d539e41e27c4ca01593eee135c58,
-        type: 3}
-      propertyPath: min.x
-      value: -200
-      objectReference: {fileID: 0}
-    - target: {fileID: -2340631469328451401, guid: 4ca8d539e41e27c4ca01593eee135c58,
-        type: 3}
-      propertyPath: min.y
-      value: -640
-      objectReference: {fileID: 0}
-    - target: {fileID: -2340631469328451401, guid: 4ca8d539e41e27c4ca01593eee135c58,
-        type: 3}
-      propertyPath: max.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: -2340631469328451401, guid: 4ca8d539e41e27c4ca01593eee135c58,
-        type: 3}
-      propertyPath: moveSpeed
-      value: -30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ca8d539e41e27c4ca01593eee135c58, type: 3}
@@ -61024,26 +60939,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1028078892838370788, guid: 0855da533786ad8439c74177272372d3,
-        type: 3}
-      propertyPath: min.x
-      value: -200
-      objectReference: {fileID: 0}
-    - target: {fileID: 1028078892838370788, guid: 0855da533786ad8439c74177272372d3,
-        type: 3}
-      propertyPath: max.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 1028078892838370788, guid: 0855da533786ad8439c74177272372d3,
-        type: 3}
-      propertyPath: min.y
-      value: -640
-      objectReference: {fileID: 0}
-    - target: {fileID: 1028078892838370788, guid: 0855da533786ad8439c74177272372d3,
-        type: 3}
-      propertyPath: moveSpeed
-      value: -40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0855da533786ad8439c74177272372d3, type: 3}
@@ -75957,26 +75852,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nebula2
       objectReference: {fileID: 0}
-    - target: {fileID: -4429290097806898792, guid: 8314aa2e956f5b1499b2c03a7a9f130f,
-        type: 3}
-      propertyPath: min.x
-      value: -200
-      objectReference: {fileID: 0}
-    - target: {fileID: -4429290097806898792, guid: 8314aa2e956f5b1499b2c03a7a9f130f,
-        type: 3}
-      propertyPath: min.y
-      value: -640
-      objectReference: {fileID: 0}
-    - target: {fileID: -4429290097806898792, guid: 8314aa2e956f5b1499b2c03a7a9f130f,
-        type: 3}
-      propertyPath: max.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: -4429290097806898792, guid: 8314aa2e956f5b1499b2c03a7a9f130f,
-        type: 3}
-      propertyPath: moveSpeed
-      value: -15
-      objectReference: {fileID: 0}
     - target: {fileID: 224738008476064596, guid: 8314aa2e956f5b1499b2c03a7a9f130f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -86526,6 +86401,7 @@ GameObject:
   - component: {fileID: 1765944831}
   - component: {fileID: 1765944830}
   - component: {fileID: 1765944829}
+  - component: {fileID: 1765944833}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -86614,6 +86490,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1765944833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765944828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c08c269de1bf942b0c25946f8486e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1767192716
 GameObject:
   m_ObjectHideFlags: 0

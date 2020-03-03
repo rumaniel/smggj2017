@@ -1,7 +1,3 @@
-using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-
 public enum SequenceState
 {
     Idle,
@@ -14,13 +10,13 @@ public enum SequenceState
 [System.Serializable]
 public class StageSequencer
 {
-    public float wait;
-    public bool isLoop;
-    public bool previousLoopClear;
-    public ShipInfo appearShip;
-    public PatternInfo patternInfo;
+    private float wait;
+    private bool isLoop;
+    private bool previousLoopClear;
+    private ShipInfo appearShip;
+    private PatternInfo patternInfo;
 
-    public SequenceState state = SequenceState.Idle;
+    private SequenceState state = SequenceState.Idle;
     private float accumulatedTime = 0f;
 
     public StageSequencer(StageSequencer sequencer)
@@ -59,7 +55,7 @@ public class StageSequencer
             }
         }
         // do ships
-        UnitControl unit = UnitManager.Instance.GetUnit().GetComponent<UnitControl>();
+        var unit = UnitManager.Instance.GetUnit().GetComponent<UnitControl>();
         unit.SetUnitInfo(patternInfo, appearShip, true);
         unit.Init();
 
@@ -74,24 +70,11 @@ public class StageSequencer
         }
     }
 
-    public bool IsLoop()
-    {
-        return state == SequenceState.Loop;
-    }
-
-    public bool IsDone()
-    {
-        return state == SequenceState.Done;
-    }
-
-    public bool IsRunning()
-    {
-        return state == SequenceState.Running;
-    }
-
-    public bool NeedClear()
-    {
-        return state == SequenceState.NeedClear;
-    }
+    public void EndLoop() => isLoop = false;
+    public void EndSequence() => state = SequenceState.Done;
+    public bool IsLoop() => state == SequenceState.Loop;
+    public bool IsDone() => state == SequenceState.Done;
+    public bool IsRunning() => state == SequenceState.Running;
+    public bool NeedClear() => state == SequenceState.NeedClear;
 }
 

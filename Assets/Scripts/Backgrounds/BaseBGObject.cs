@@ -21,9 +21,7 @@ public class BaseBGObject : UnitBase
     {
         get
         {
-            if (_rect == null) _rect = GetComponent<RectTransform>();
-
-            return _rect;
+            return _rect ?? GetComponent<RectTransform>();
         }
     }
 

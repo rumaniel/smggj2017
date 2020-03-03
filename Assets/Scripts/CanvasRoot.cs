@@ -1,16 +1,14 @@
 using UnityEngine;
 
 
-public class CanvasRoot : MonoSingleton<CanvasRoot>
+public class CanvasRoot : MonoBehaviour
 {
     private Canvas _rootCanvas;
     public Canvas RootCanvas
     {
         get
         {
-            if (_rootCanvas.IsNull()) _rootCanvas = GetComponent<Canvas>();
-
-            return _rootCanvas;
+            return _rootCanvas ?? GetComponent<Canvas>();
         }
     }
 }

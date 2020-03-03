@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 public class StageManager : MonoSingleton<StageManager>
@@ -47,8 +46,8 @@ public class StageManager : MonoSingleton<StageManager>
                     {
                         if (stageQueue[j].IsLoop())
                         {
-                            stageQueue[j].isLoop = false;
-                            stageQueue[j].state = SequenceState.Done;
+                            stageQueue[j].EndLoop();
+                            stageQueue[j].EndSequence();
                             stageQueue.RemoveAt(j);
                         }
                     }

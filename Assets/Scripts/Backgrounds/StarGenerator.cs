@@ -29,7 +29,7 @@ public class StarGenerator : MonoBehaviour
         MakeStars(fgStarInfo);
         MakeStars(bgStarInfo);
 
-        Debug.Log(CanvasRoot.Instance.RootCanvas.pixelRect);
+        // Debug.Log(CanvasRoot.Instance.RootCanvas.pixelRect);
 	}
 
     private void MakeStars(StarInformation starInfo)
